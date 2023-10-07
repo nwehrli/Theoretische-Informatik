@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  26 MAY 2023 14:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  28 SEP 2023 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -563,23 +563,148 @@ Package: turnstile 2007/06/23 v1.0 turnstile file
 \first=\box92
 \second=\box93
 \turnstilebox=\box94
-) (Beweisideen101.aux)
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen296
+\ar@mcellbox=\box95
+\extrarowheight=\dimen297
+\NC@list=\toks47
+\extratabsurround=\skip91
+\backup@length=\skip92
+\ar@cellbox=\box96
+)
+\TX@col@width=\dimen298
+\TX@old@table=\dimen299
+\TX@old@col=\dimen300
+\TX@target=\dimen301
+\TX@delta=\dimen302
+\TX@cols=\count329
+\TX@ftn=\toks48
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip93
+\multirow@cntb=\count330
+\multirow@dima=\skip94
+\bigstrutjot=\dimen303
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/makecell\makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen304
+\c@nlinenum=\count331
+\TeXr@lab=\toks49
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen305
+\lightrulewidth=\dimen306
+\cmidrulewidth=\dimen307
+\belowrulesep=\dimen308
+\belowbottomsep=\dimen309
+\aboverulesep=\dimen310
+\abovetopsep=\dimen311
+\cmidrulesep=\dimen312
+\cmidrulekern=\dimen313
+\defaultaddspace=\dimen314
+\@cmidla=\count332
+\@cmidlb=\count333
+\@aboverulesep=\dimen315
+\@belowrulesep=\dimen316
+\@thisruleclass=\count334
+\@lastruleclass=\count335
+\@thisrulewidth=\dimen317
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+\enitdp@Checkboxes=\count336
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+)) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2023/03/17 version 6.0.3 text color boxes
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks50
+\verbatim@line=\toks51
+\verbatim@in@stream=\read3
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box97
+\tcb@upperbox=\box98
+\tcb@lowerbox=\box99
+\tcb@phantombox=\box100
+\c@tcbbreakpart=\count337
+\c@tcblayer=\count338
+\c@tcolorbox@number=\count339
+\tcb@temp=\box101
+\tcb@temp=\box102
+\tcb@temp=\box103
+\tcb@temp=\box104
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.0.3'
+\c@tcbrastercolumn=\count340
+\c@tcbrasterrow=\count341
+\c@tcbrasternum=\count342
+\c@tcbraster=\count343
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.0.3'
+(C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill.image.sty
+Package: tikzfill.image 2022/07/20 v1.0.0 Image filling library for TikZ
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzfill-common.sty
+Package: tikzfill-common 2022/07/20 v1.0.0 Auxiliary code for tikzfill
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tikzfill\tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2022/07/20 v1.0.0 Image filling library
+\l__tikzfill_img_box=\box105
+)) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.0.3'
+)) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.0.3'
+(C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/pdfcol\pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+ (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+))
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box106
+\tcb@totalupperbox=\box107
+\tcb@totallowerbox=\box108
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.0.3'
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.0.3'
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.0.3'
+\tcbfitdim=\dimen318
+\tcb@lowerfitdim=\dimen319
+\tcb@upperfitdim=\dimen320
+\tcb@cur@hbadness=\count344
+)) (Beweisideen101.aux)
 \openout1 = `Beweisideen101.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
+LaTeX Font Info:    ... okay on input line 115.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -617,17 +742,17 @@ LaTeX Font Info:    ... okay on input line 54.
 
 (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
-\scratchdimen=\dimen296
-\scratchbox=\box95
-\nofMPsegments=\count330
-\nofMParguments=\count331
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count332
-\MPscratchDim=\dimen297
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count345
+\scratchdimen=\dimen321
+\scratchbox=\box109
+\nofMPsegments=\count346
+\nofMParguments=\count347
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count348
+\MPscratchDim=\dimen322
+\MPnumerator=\count349
+\makeMPintoPDFobject=\count350
+\everyMPtoPDFconversion=\toks53
 ) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -636,16 +761,16 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-\c@lstlisting=\count335
-LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
+\c@lstlisting=\count351
+LaTeX Font Info:    Trying to load font information for U+msa on input line 134.
 (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 134.
  (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 69.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 134.
  (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
@@ -667,10 +792,6 @@ Package fancyhdr Warning: \headheight is too small (5.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
 
 [2]
-Overfull \hbox (9.07536pt too wide) in paragraph at lines 159--160
-[]\OT1/cmr/m/n/10.95 In dieser Berech-nung kom-men $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 + 1$ Zust^^?ande $\OML/cmm/m/it/10.95 q[]; q[]; :::; q[]$ \OT1/cmr/m/n/10.95 vor. Da $\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 Q\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 n[]$\OT1/cmr/m/n/10.95 , ex-istieren $\OML/cmm/m/it/10.95 i; j \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; :::; n[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 ; i <
- []
-
 
 Package fancyhdr Warning: \headheight is too small (5.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -680,6 +801,14 @@ Package fancyhdr Warning: \headheight is too small (5.5pt):
 
 [3]
 
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 325.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 325.
+
+
 Package fancyhdr Warning: \headheight is too small (5.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -687,18 +816,6 @@ Package fancyhdr Warning: \headheight is too small (5.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
 
 [4]
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 222.
-
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 222.
-
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 222.
-
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 222.
-
 
 Package fancyhdr Warning: \headheight is too small (5.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -747,10 +864,6 @@ Package fancyhdr Warning: \headheight is too small (5.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
 
 [10]
-Overfull \hbox (29.90007pt too wide) in paragraph at lines 431--432
-\OT1/cmr/m/n/10.95 F^^?ur den let-zten Punkt (4) muss man ^^?uberpr^^?ufen, ob in der Def-i-ni-tion von $\OML/cmm/m/it/10.95 L \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 M[]\OMS/cmsy/m/n/10.95 g$
- []
-
 
 Package fancyhdr Warning: \headheight is too small (5.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -759,6 +872,10 @@ Package fancyhdr Warning: \headheight is too small (5.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
 
 [11]
+Overfull \hbox (9.07536pt too wide) in paragraph at lines 704--705
+[]\OT1/cmr/m/n/10.95 In dieser Berech-nung kom-men $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 + 1$ Zust^^?ande $\OML/cmm/m/it/10.95 q[]; q[]; :::; q[]$ \OT1/cmr/m/n/10.95 vor. Da $\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 Q\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 n[]$\OT1/cmr/m/n/10.95 , ex-istieren $\OML/cmm/m/it/10.95 i; j \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; :::; n[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 ; i <
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (5.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -774,21 +891,101 @@ Package fancyhdr Warning: \headheight is too small (5.5pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
 
-[13] 
+[13]
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 767.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 767.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 767.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 767.
+
+
+Package fancyhdr Warning: \headheight is too small (5.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+
+[14]
+
+Package fancyhdr Warning: \headheight is too small (5.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (5.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (5.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (5.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+
+[18]
+
+Package fancyhdr Warning: \headheight is too small (5.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+
+[19]
+Overfull \hbox (29.90007pt too wide) in paragraph at lines 976--977
+\OT1/cmr/m/n/10.95 F^^?ur den let-zten Punkt (4) muss man ^^?uberpr^^?ufen, ob in der Def-i-ni-tion von $\OML/cmm/m/it/10.95 L \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 M[]\OMS/cmsy/m/n/10.95 g$
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (5.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+
+[20]
+
+Package fancyhdr Warning: \headheight is too small (5.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+
+[21] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (Beweisideen101.aux) ) 
 Here is how much of TeX's memory you used:
- 28919 strings out of 476315
- 719583 string characters out of 5787197
+ 34159 strings out of 476315
+ 854145 string characters out of 5787197
  1869068 words of memory out of 5000000
- 48894 multiletter control sequences out of 15000+600000
- 523047 words of font info for 73 fonts, out of 8000000 for 9000
+ 54037 multiletter control sequences out of 15000+600000
+ 525798 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,103p,796b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk> <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi657\wasy10.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Beweisideen101.pdf (13 pages, 255228 bytes).
+ 99i,15n,103p,796b,1003s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi657\wasy10.pk> <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Beweisideen101.pdf (21 pages, 316306 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
+ 178 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

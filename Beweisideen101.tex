@@ -20,6 +20,26 @@
 \usepackage{algpseudocode}
 \usepackage{turnstile}
 
+% Tables
+\usepackage{tabularx, multirow}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{placeins}
+% \renewcommand*{\arraystretch}{2}
+
+% Make enumerations more compact
+\usepackage{enumitem}
+\setitemize{itemsep=0.5pt}
+\setenumerate{itemsep=0.75pt}
+
+%Checkboxes for multiple choice
+\newlist{Checkboxes}{itemize}{2}
+\setlist[Checkboxes]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\correct}{\rlap{$\square$}{\raisebox{2pt}{\hspace{1pt}\cmark}}\hspace{-2.5pt}}
+
+
 
 %------------------------------------------------------
 %Custom Commands
@@ -31,6 +51,41 @@
 \def\O{\mathcal{O}}
 \def\Lre{\mathcal{L}_\text{RE}}
 \def\Lr{\mathcal{L}_\text{R}}
+
+
+% define nice looking boxes
+\usepackage[many]{tcolorbox}
+
+% a base set, that is then customised
+\tcbset {
+  base/.style={
+    boxrule=0mm,
+    boxsep = 1mm,
+    leftrule=1mm,
+    left=0.8mm,
+    arc=2mm, 
+    fonttitle=\bfseries, 
+    colbacktitle=black!10!white, 
+    coltitle=black, 
+    toptitle=0.0mm, 
+    bottomtitle=0.0mm,
+    title={#1}
+  }
+}
+
+\definecolor{darkred}{rgb}{0.54, 0, 0}
+\newtcolorbox{mainbox}[1]{
+  colframe=darkred, 
+  base={#1}
+}
+
+\newtcolorbox{subbox}[1]{
+  colframe=black!20!white,
+  base={#1}
+}
+
+
+
 %-----------------------------------------------------
 
 \DeclareMathOperator*{\Bigcdot}{\scalerel*{\cdot}{\bigodot}}
@@ -40,6 +95,12 @@
 
 \pgfplotsset{samples=100}
 \pgfplotsset{compat=1.18}
+
+
+\newcommand\myTitle[1]{{\large \textbf {#1}}}
+\newcommand\ruleSmall{\vspace{-2mm}\begin{center}\rule{0.4\linewidth}{0.3pt}\end{center}\vspace{-2mm}}
+\newcommand\ruleMedium{\begin{center}\rule{0.8\linewidth}{1pt}\end{center}}
+
 
 %--------------------------------------------------
 % HEAD
@@ -64,6 +125,490 @@
     %--------------------------------------------------
    
     \vspace{5pt}
+
+
+    \section{Grundbegriffe} % Sections are added in order to organize your presentation into discrete blocks, all sections and subsections are automatically output to the table of contents as an overview of the talk but NOT output in the presentation as separate slides
+
+%------------------------------------------------
+
+	Für eine Menge $A$ bezeichnet $|A|$ die Kardinalität von $A$ und $\mathcal{P}(A) = \{S \mid S \subseteq A\}$ die Potenzmenge von $A$.
+		
+	 In diesem Kurs definieren wir $\N = \{0,1,2, \dots\}$.
+
+
+\subsection{Alphabet}
+
+
+		
+	 \begin{mainbox}{Definition Alphabet}
+		Eine endliche, nichtleere Menge $\Sigma$ heisst \textbf{Alphabet}. Die Elemente eines Alphabets werden \textbf{Buchstaben (Zeichen, Symbole)} genannt.
+	 \end{mainbox}
+	 
+	 \myTitle{Beispiele}
+	 \begin{itemize}
+		\item $\Sigma_{\text{bool}} = \{0,1\}$
+		\item $\Sigma_{\text{lat}} = \{a, ..., z\}$
+		\item $\Sigma_{\text{Tastatur}} = \Sigma_{\text{lat}} \cup \{A, ..., Z, \text{\textvisiblespace}, >, <, (,),...,! \}$
+		\item $\Sigma_{\text{logic}} = \{0,1,(,),\land, \lor, \lnot\}$
+		\item $\Sigma_{abc} = \{a,b,c\}$ (\textbf{unser Beispiel für weitere Definitionen})
+	 \end{itemize}
+
+
+%------------------------------------------------
+
+\subsection{Wort}
+
+
+	
+	\begin{mainbox}{Definition Wort}
+		\begin{itemize}[label = -]
+			\item Sei $\Sigma$ ein Alphabet. Ein \textbf{Wort} über $\Sigma$ ist eine endliche (eventuell leere) Folge von Buchstaben aus $\Sigma$.
+			\item Das \textbf{leere Wort $\lambda$} ist die leere Buchstabenfolge.
+			
+			\item Die \textbf{Länge $|w|$} eines Wortes $w$ ist die Länge des Wortes als Folge, i.e. die Anzahl der Vorkommen von Buchstaben in $w$. 
+			\item $\Sigma^*$ ist die Menge aller Wörter über $\Sigma$. $\Sigma^+ := \Sigma^* \setminus \{\lambda\}$ ist Menge aller nichtleeren Wörter über $\Sigma$.
+			
+			\item Seien $x \in \Sigma^*$ und $a \in \Sigma$. Dann ist $|x|_a$ definiert als die Anzahl der Vorkommen von $a$ in $x$.
+		\end{itemize}
+	 \end{mainbox}
+	 Achtung Metavariablen! I.e. Das $a$ in der Definition ist steht für einen beliebigen Buchstaben aus $\Sigma$ und \textbf{nicht} nur für den Buchstaben '$a$', der in $\Sigma$ sein könnte.  
+
+
+
+	\myTitle{Bemerkungen}
+	
+	\begin{itemize}[label = -]
+		
+		\item Wir schreiben Wörter ohne Komma, i.e. eine Folge $x_1,x_2,...,x_n$ schreiben wir $x_1x_2...x_n$.
+		\item $|\lambda| = 0$ aber $|\text{\textvisiblespace}| = 1$ von $\Sigma_{\text{Tastatur}}$.
+		\item Der Begriff \textbf{Wort} als Fachbegriff der Informatik entspricht \textbf{nicht} der Bedeutung des Begriffs Wort in natürlichen Sprachen!
+		\item E.g. Mit \textvisiblespace \ kann der Inhalt eines Buches oder ein Programm als ein Wort über $\Sigma_{\text{Tastatur}}$ betrachtet werden.
+	 \end{itemize}
+	 
+	 \myTitle{Beispiel}
+	 Verschiedene Wörter über $\Sigma_{abc}$:
+
+	 $a$, $aa$, $aba$, $cba$, $caaaab$ etc.
+
+
+
+	
+	\begin{mainbox}{}
+		Die \textbf{Verkettung (Konkatenation)} für ein Alphabet $\Sigma$ ist eine Abbildung Kon$: \Sigma^* \times \Sigma^* \to \Sigma^*$, so dass 
+		$$\text{Kon}(x, y) = x \cdot y = xy$$
+		für alle $x, y \in \Sigma^*$.
+	\end{mainbox}
+	
+	\begin{itemize}[label=-]
+		\item Die Verkettung Kon (i.e. Kon von einem Kon (über das gleiche Alphabet $\Sigma$)) ist eine assoziative Operation über $\Sigma^*$.
+		$$\text{Kon}(u, \text{Kon}(v, w)) = \text{Kon}(\text{Kon}(u, v), w), \ \forall u,v,w \in \Sigma^*$$
+		\item $x\cdot \lambda = \lambda \cdot x = x, \ \forall x \in \Sigma^*$
+		\item $\implies$ ($\Sigma^*$, Kon) ist ein Monoid mit neutralem Element $\lambda$.
+		\item Kon nur kommutativ, falls $|\Sigma| = 1$.
+		\item $|xy|=|x\cdot y| = |x|+|y|$. (Wir schreiben ab jetzt $xy$ statt Kon($x$, $y$))
+	\end{itemize}
+
+
+
+	\myTitle{Beispiel}
+
+	Wir betrachten wieder $\Sigma_{abc}$. Sei $x = abba$, $y = cbcbc$, $z = aaac$.
+	\begin{itemize}[label=-]
+		\item Kon($x, \text{Kon}(y, z)) = $  $\text{Kon}(x, yz) = xyz = abbacbcbcaaac$
+		\item $|xy| =$$ |abbacbcbc| = 9 = 4 + 5 = |abba| + |cbcbc| = |x| + |y|$
+	\end{itemize}
+	
+
+	
+
+
+
+	
+	\begin{mainbox}{}
+		Für eine Wort $a = a_1a_2...a_n$, wobei $\forall i \in \{1,2, ..., n\}. \ a_i \in \Sigma$, 
+		bezeichnet $a^\text{R} = a_na_{n-1}...a_1$ die \textbf{Umkehrung (Reversal)} von $a$.
+	\end{mainbox}
+	
+	\begin{mainbox}{}
+		Sei $\Sigma$ ein Alphabet. Für alle $x \in \Sigma^*$ und alle $i \in \N$ definieren wir die $i$-te \textbf{Iteration} $x^i$ von $x$ als 
+		$$x^0 = \lambda, x^1 = x \text{ und } x^i = xx^{i-1}.$$
+	\end{mainbox}
+
+
+
+	\myTitle{Beispiel}
+
+	Wir betrachten wieder $\Sigma_{abc}$. Sei $x = abba$, $y = cbcbc$, $z = aaac$.
+	\begin{itemize}[label = -]
+		\item $z^\text{R} =$  $ (aaac)^\text{R} = caaa$
+		\item $x^\text{R} =$  $ (abba)^\text{R} = abba$
+		\item $x^0 = $  $ \lambda$
+		\item  $y^2 = $ $yy^{2-1}= yy = cbcbccbcbc$
+		\item $z^3 =$  $zz^2= zzz = aaacaaacaaac$
+		\item $(x^\text{R}z^\text{R})^\text{R} = $ $((abba)^\text{R}(aaac)^\text{R})^\text{R} = (abbacaaa)^\text{R} = aaacabba$
+	\end{itemize}
+
+	
+
+
+
+	
+	\begin{mainbox}{}
+		Seien $v, w \in \Sigma^*$ für ein Alphabet $\Sigma$.
+		\begin{itemize}[label=-]
+			\item $v$ heisst ein \textbf{Teilwort} von $w$ $\iff$ $\exists x,y \in \Sigma^*: \ w = xvy$
+			\item $v$ heisst ein \textbf{Präfix} von $w$ $\iff$ $\exists y \in \Sigma^*: \ w = vy$
+			\item $v$ heisst ein \textbf{Suffix} von $w$ $\iff$ $\exists x \in \Sigma^*: \ w = xv$
+			\item $v \neq \lambda$ heisst ein \textbf{echtes} Teilwort (Präfix, Suffix) von $w$ $\iff$ $v \neq w$ und $v$ Teilwort(Präfix, Suffix) von $w$
+		\end{itemize}
+	\end{mainbox}
+
+
+
+	\myTitle{Beispiel}
+
+	Wir betrachten wieder $\Sigma_{abc}$. Sei $x = abba$, $y = cbcbc$, $z = aaac$.
+	\begin{itemize}[label=-]
+		\item $bc$ ist ein echtes Suffix von $y$
+		\item $abba$ ist kein echtes Teilwort von $x$.
+		\item $cbcb$ ist ein echtes Teilwort und echtes Präfix von $y$.
+		\item $ac$ ist ein echtes Suffix.
+		\item $abba$ ist ein Suffix, Präfix und Teilwort von $x$.
+	\end{itemize}
+
+    \myTitle{Aufgabe 1}
+
+	Sei $\Sigma$ ein Alphabet und sei $w \in \Sigma^*$ ein Wort der Länge $n \in \N \setminus \{0\}$. Wie viele unterschiedliche Teilwörter kann $w$ höchstens haben?
+
+	\myTitle{Lösung}
+
+	Wir haben $w = w_1w_2...w_n$ mit $w_i \in \Sigma$ für $i = 1, ...,n$. Wie viele Teilwörter beginnen mit $w_1$? Wie viele Teilwörter beginnen mit $w_2$?
+	 
+	
+	Wir haben also $n + (n-1) + ... + 1 = \frac{n(n+1)}{2}$ Teilwörter. Etwas fehlt aber in unserer Berechnung\dots
+	
+	
+	Das leere Wort $\lambda$ ist auch ein Teilwort! Also haben wir $\frac{n(n+1)}{2}+ 1$ Teilwörter. 
+
+
+    \myTitle{Aufgabe 2}
+
+	Sei $\Sigma = \{a, b, c\}$ und $n \in \N$. Bestimme die Anzahl der Wörter aus $\Sigma^n$, die das Teilwort $a$ enthalten.
+	
+    \myTitle{Lösung}
+    
+	In solchen Aufgaben ist es manchmal einfach, das Gegenteil zu berechnen und so auf die Lösung zu kommen. Wie viele Wörter aus $\Sigma^n$ enthalten das Teilwort $a$ \textbf{nicht}?
+
+	
+	Da wir jetzt die Anzahl Wörter der Länge $n$ wollen, die nur $b$ und $c$ enthalten, kommen wir auf $|\{b,c\}|^n = 2^n$.
+	
+	Daraus folgt, dass genau $|\Sigma|^n - 2^n = 3^n -2^n$ Wörter das Teilwort $a$ enthalten.
+
+    \myTitle{Aufgabe 3}
+
+	Sei $\Sigma= \{a,b,c\}$ und $n \in \N \setminus\{0\}$. Bestimme die Anzahl der Wörter aus $\Sigma^n$, die das Teilwort $aa$ nicht enthalten.
+
+	\myTitle{Lösung}
+
+	Wir bezeichnen die Menge aller Wörter mit Länge $n$ über $\Sigma$, die $aa$ nicht enthalten als $L_n$.
+
+	Schauen wir mal die ersten zwei Fälle an:
+	\begin{itemize}
+		\item $L_1 = \{a,b,c\} \implies |L_1| = 3$
+		\item $L_2 = \{ab, ac, ba, bb, bc, ca, cb, cc\} \implies |L_2| = 8$ 
+	\end{itemize}
+	
+	Nun können wir für $m \geq 3$ jedes Wort $w \in L_m$ als Konkatination $w = x \cdot y \cdot z$ schreiben, wobei wir zwei Fälle unterscheiden:
+	
+	\begin{enumerate}[label= (\alph*)]
+		
+		\item $\boldsymbol{z \neq a}$
+		
+		In diesem Fall kann $y \in \{a,b,c\}$ sein, ohne dass die Teilfolge $aa$ entsteht und somit ist $xy$ ein beliebiges Wort aus $L_{m-1}$. 
+		
+		Dann könnten wir alle Wörter in diesem Case durch $L_{m-1}\cdot \{b,c\}$ beschreiben, was uns die Kardinalität $2 \cdot |L_{m-1}|$ gibt.
+		
+		\item $\boldsymbol{z = a}$
+		
+		In diesem Fall muss $y \neq a$ sein, da sonst $aa$ entstehen würde. 
+		
+		Somit kann $xy$ nur in $b$ oder $c$ enden. $x$ kann aber ein beliebiges Wort der Länge $m-2$ sein. 
+		
+		Deshalb können wir alle Wörter in diesem Case durch $L_{m-2}\cdot\{b, c\} \cdot \{a\}$ beschreiben. Kardinalität: $2 \cdot |L_{m-2}|$.
+	\end{enumerate}
+
+
+
+	
+	\begin{mainbox}{}
+		Sei $\Sigma = \{s_1,s_2, ...,s_m\}, m \geq 1$, ein Alphabet und sei $s_1 < s_2 < ... <s_m$ eine Ordnung auf $\Sigma$. Wir definieren die \textbf{kanonische Ordnung} auf $\Sigma^*$ für $u, v \in \Sigma^*$ wie folgt:
+		\begin{align*}
+			u < v \iff &|u| < |v| \lor (|u| = |v| \land u = x\cdot s_i \cdot u' \land x \cdot s_j \cdot v') \\
+			&\text{ für irgendwelche } x, u', v' \in \Sigma^* \text{ und } i < j. 
+		\end{align*}
+	\end{mainbox}
+
+
+
+	Sei $\Sigma_{abc} = \{a, b, c\}$ und wir betrachten folgende Ordnung auf $\Sigma_{abc}$: $c < a < b$.
+
+	Was wäre die kanonische Ordnung folgender Wörter?
+
+	$c$, $abc$, $aaac$, $aaab$, $bacc$, $a$, $\lambda$
+
+	
+	$\lambda$, $c$, $a$, $abc$, $aaac$, $aaab$, $bacc$
+
+
+%------------------------------------------------
+
+\subsection{Sprache}
+
+
+	
+	\begin{mainbox}{}
+	 Eine \textbf{Sprache $L$} über einem Alphabet $\Sigma$ ist eine Teilmenge von $\Sigma^*$. 
+	\end{mainbox}
+	\begin{itemize}[label=-]
+		\item Das Komplement \textbf{$L^\complement$} der Sprache $L$ bezüglich $\Sigma$ ist die Sprache $\Sigma^* \setminus L$.
+		\item $L_\emptyset = \emptyset$ ist die \textbf{leere Sprache}.
+		\item $L_\lambda = \{\lambda\}$ ist die einelementige Sprache, die nur aus dem leeren Wort besteht.
+	\end{itemize}
+	
+	\myTitle{Konkatenation von Sprachen}
+	\begin{mainbox}{}
+		Sind $L_1$ und $L_2$ Sprachen über $\Sigma$, so ist 
+		$$L_1 \cdot L_2 = L_1L_2 = \{vw \mid v \in L_1 \text{ und } w \in L_2\}$$
+		die \textbf{Konkatenation} von $L_1$ und $L_2$. 
+	\end{mainbox}
+
+
+
+	\begin{mainbox}{}
+		Ist $L$ eine Sprache über $\Sigma$, so definieren wir
+		\begin{align*}
+			&L^0 := L_{\lambda} \text{ und } L^{i+1} := L^{i}\cdot L \text{ für alle } i \in \N,\\
+			&L^* = \bigcup_{i \in \N}L^i \text{ und } L^+ = \bigcup_{i \in \N \setminus \{0\}} L^i = L \cdot L^*.
+		\end{align*}
+		$L^*$ nennt man den \textbf{Kleene'schen Stern} von $L$.
+	\end{mainbox}
+	Man bemerke, dass $\Sigma^i = \{x \in \Sigma^* \mid |x| = i\}$, $L_\emptyset L = L_\emptyset = \emptyset$ und $L_\lambda \cdot L = L$.
+	
+
+
+
+	Mögliche Sprachen über $\Sigma_{abc}$
+	\begin{itemize}[label=-]
+		\item $L_1 = \emptyset$
+		\item $L_2 = \{\lambda\}$
+		\item $L_3 = \{\lambda, ab, baca\}$
+		\item $L_4 = \Sigma_{abc}^*$, $L_5 = \Sigma_{abc}^+$, $L_6 = \Sigma_{abc}$ oder $L_7 = \Sigma_{abc}^{27}$
+		\item $L_8 = \{c\}^* = \{c^i \mid i \in \N\}$
+		\item $L_9 = \{a^p \mid p \text{ ist prim.}\}$
+		\item $L_{10} = \{c^{i}a^{3i^2}ba^ic \mid i \in \N\}$
+	\end{itemize}
+	$\lambda$ ist ein Wort über jedes Alphabet. Aber es muss nicht in jeder Sprache enthalten sein!
+
+
+% --------------------------------------------------------------------------------------
+
+
+	\begin{subbox}{}
+		Seien $L_1$, $L_2$ und $L_3$ Sprachen über einem Alphabet $\Sigma$. Dann gilt
+		\begin{align}
+			&L_1L_2 \cup L_1L_3 = L_1(L_2 \cup L_3) \\
+			&L_1(L_2 \cap L_3) \subseteq L_1L_2 \cap L_1L_3
+		\end{align}
+	\end{subbox}
+	Weshalb nicht '$=$' bei $(2)$?
+
+	Sei $\Sigma = \Sigma_{\text{bool}} = \{0,1\}$, $L_1 = \{\lambda, 1\}$, $L_2 = \{0\}$ und $L_3 = \{10\}$.
+
+	Dann haben wir $L_1(L_2 \cap L_3) = \emptyset \neq \{10\} = L_1L_2 \cap L_1L_3$.
+
+	\textit{Beweise im Buch/Vorlesung}
+
+
+
+	\begin{mainbox}{}
+		Seien $\Sigma_1$ und $\Sigma_2$ zwei beliebige Alphabete. Ein Homomorphismus von $\Sigma_1^*$ nach $\Sigma_2^*$ ist jede Funktion $h: \Sigma_1^* \to \Sigma_2^*$ mit den folgenden Eigenschaften:
+		\begin{enumerate}[label=(\roman*)]
+			\item $h(\lambda) = \lambda$ und 
+			\item $h(uv) = h(u)\cdot h(v)$ für alle $u, v \in \Sigma_1^*$.
+		\end{enumerate}
+	\end{mainbox}
+	Wir können Probleme etc. in anderen Alphabeten kodieren. So wie wir verschiedenste Konzepte, die wir auf Computer übertragen in $\Sigma_{\text{bool}}$ kodieren.
+
+
+\section{Algorithmische Probleme}
+
+	Mathematische Definition folgt in Kapitel 4 (Turingmaschinen).
+	\begin{mainbox}{}
+		Vorerst betrachten wir Programme, die \textbf{für jede zulässige Eingabe halten und eine Ausgabe liefern}, als Algorithmen.
+
+		Wir betrachten ein Programm (Algorithmus) $A$ als Abbildung $A: \Sigma_1^* \to \Sigma_2^*$ für beliebige Alphabete $\Sigma_1$ und $\Sigma_2$. Dies bedeutet, dass 
+		\begin{enumerate}[label=(\roman*)]
+			\item die Eingaben als Wörter über $\Sigma_1$ kodiert sind,
+			\item die Ausgaben als Wörter über $\Sigma_2$ kodiert sind und
+			\item $A$ für jede Eingabe eine eindeutige Ausgabe bestimmt.
+		\end{enumerate}
+	\end{mainbox}
+
+	$A$ und $B$ äquivalent $\iff$ Eingabealphabet $\Sigma$ gleich, $A(x) = B(x), \forall x \in \Sigma^*$
+	
+	Ie. diese Notion von ''Äquivalenz'' bezieht sich nur auf die Ein und Ausgabe.
+
+
+
+
+	\begin{mainbox}{}
+		Das \textbf{Entscheidungsproblem $(\Sigma, L)$} für ein gegebenes Alphabet $\Sigma$ und eine gegebene Sprache $L \subseteq \Sigma^*$ ist, für jedes $x \in \Sigma^*$ zu entscheiden, ob 
+		$$x \in L \text{ oder } x \notin L.$$
+		Ein Algorithmus $A$ \textbf{löst} das Entscheidungsproblem $(\Sigma, L)$, falls für alle $x \in \Sigma^*$ gilt:
+		$$A(x) = \begin{cases}
+			1, &\text{falls }x \in L,\\
+			0, &\text{falls }x \notin L.
+		\end{cases}$$
+		Wir sagen auch, dass $A$ die Sprache $L$ erkennt.
+	\end{mainbox}
+
+
+
+
+
+
+	\begin{subbox}{}
+		Wenn für eine Sprache $L$ ein Algorithmus existiert, der $L$ erkennt, sagen wir, dass $L$ \textbf{rekursiv} ist.
+	\end{subbox}
+
+	Wir sind oft an spezifischen Eigenschaften von Wörtern aus $\Sigma^*$ interessiert, die wir mit einer Sprache $L \subseteq \Sigma^*$ beschreiben können.
+
+	Dabei sind dann $L$ die Wörter, die die Eigenschaft haben und $L^\complement = \Sigma^* \setminus L$ die Wörter, die diese Eigenschaft nicht haben. 
+
+	Jetzt ist die allgemeine Formulierung von Vorteil!
+
+
+
+	\begin{enumerate}[label=\roman*.]
+		\item \textbf{Primzahlen finden}: 
+		
+		Entscheidungsproblem $(\Sigma_{\text{bool}}, L_p)$ wobei \\
+        $L_p = \{x \in (\Sigma_{\text{bool}})^* \mid \text{Nummer}(x) \text{ ist prim}\}$.
+		\item \textbf{Syntaktisch korrekte Programme}: 
+		
+		Entscheidungsproblem $(\Sigma_{\text{Tastatur}}, L_{C++})$ wobei\\ 
+        $L_{C++} = \{x \in (\Sigma_{\text{Tastatur}})^* \mid x \text{ ist ein syntaktisch korrektes C++ Programm}\}$.
+		\item \textbf{Hamiltonkreise finden: } 
+		
+		Entscheidungsproblem $(\Sigma, \text{HK})$ wobei $\Sigma = \{0,1,\#\}$ und \\
+        HK$=\{x \in \Sigma^* \mid x \text{ kodiert einen Graphen, der einen Hamiltonkreis enthält.}\}$
+	\end{enumerate}
+	Äquivalenzprobleme $\subset$ Entscheidungsprobleme
+
+
+
+	\begin{mainbox}{}
+		Seien $\Sigma$ und $\Gamma$ zwei Alphabete. 
+		\begin{itemize}[label=-]
+			\item Wir sagen, dass ein Algorithmus $A$ eine \textbf{Funktion (Transformation) $f: \Sigma^* \to \Gamma^*$ berechnet (realisiert)}, falls
+			$$A(x) = f(x) \text{ für alle } x \in \Sigma^*$$
+			\item Sei $R \subseteq \Sigma^* \times \Gamma^*$ eine Relation in $\Sigma^*$ und $\Gamma^*$. Ein Algorithmus \textbf{$A$ berechnet $R$} 
+			(bzw. \textbf{löst das Relationsproblem $R$}), falls für jedes $x \in \Sigma^*$, für das ein $y \in \Gamma^*$ mit $(x,y) \in R$ existiert, gilt:
+			$$(x, A(x)) \in R$$
+		\end{itemize}
+		
+	\end{mainbox}
+
+
+
+
+	\begin{mainbox}{}
+		Ein \textbf{Optimierungsproblem} ist ein $6$-Tupel $\mathcal{U} = (\Sigma_I, \Sigma_O, L, M, \text{cost}, \text{goal})$, wobei:
+		\begin{enumerate}[label=(\roman*)]
+			\item $\Sigma_I$ ist ein Alphabet (genannt \textbf{Eingabealphabet}),
+			\item $\Sigma_O$ ist ein Alphabet (genannt \textbf{Ausgabealphabet}),
+			\item $L \subseteq \Sigma_I^*$ ist die Sprache der \textbf{zulässigen Eingaben} (als Eingaben kommen nur Wörter in Frage, die eine sinnvolle Bedeutung haben). 
+			Ein $x \in L$ wird ein \textbf{Problemfall (Instanz) von $\mathcal{U}$} genannt.
+			\item $M$ ist eine Funktion von $L$ nach $\mathcal{P}(\Sigma_O^*)$, und für jedes $x \in L$ ist $M(x)$ die \textbf{Menge der zulässigen Lösungen für $x$},
+			\item \textbf{cost} ist eine Funktion, \textbf{cost}$: \bigcup_{x \in L}(\mathcal{M}(x)\times\{x\}) \to \R^+$, genannt \textbf{Kostenfunktion},
+			\item \textbf{goal} $\in \{\text{Minimum}, \text{Maximum}\}$ ist das \textbf{Optimierungsziel}.
+		\end{enumerate}	
+
+	\end{mainbox}
+
+
+
+	\begin{mainbox}{}
+		Eine zulässige Lösung $\alpha \in \mathcal{M}(x)$ heisst \textbf{optimal} für den Problemfall $x$ des Optimierungsproblems $\mathcal{U}$, falls 
+		\begin{center}
+			cost($\alpha, x$) $= \textbf{Opt}_\mathcal{U}(x) = \text{ goal}\{\text{cost}(\beta, x) \mid \beta \mathcal{M}(x)\}$.
+		\end{center}
+		Ein Algorithmus $A$ \textbf{löst $\mathcal{U}$}, falls für jedes $x \in L$
+		\begin{enumerate}[label=(\roman*)]
+			\item $A(x) \in \mathcal{M}(x)$
+			\item cost$(A(x), x) = \text{ goal}\{\text{cost}(\beta, x) \mid \beta \in \mathcal{M}(x)\}$.
+		\end{enumerate} 
+	\end{mainbox}
+
+
+\section{Kolmogorov Komplexität}
+
+	\begin{mainbox}{}
+		Sei $\Sigma$ ein Alphabet und $x \in \Sigma^*$. Wir sagen, dass ein Algorithmus $A$ das Wort $x$ \textbf{generiert}, falls $A$ für die Eingabe $\lambda$ die Ausgabe $x$ liefert.
+	\end{mainbox}
+	Beispiel:
+	\begin{lstlisting}[mathescape = true, escapeinside={(*}{*)}]
+		$A_n$: 	begin
+				for $i$ = 1 to $n$;
+					write(01);
+			end
+	   \end{lstlisting}
+	   $A_n$ generiert $(01)^n$.
+
+
+
+	\begin{mainbox}{}
+		Sei $\Sigma$ ein Alphabet und sei $L \subseteq \Sigma^*$. $A$ ist ein \textbf{Aufzählungsalgorithmus für $L$}, 
+		falls $A$  für jede Eingabe $n \in \N \setminus \{0\}$ die Wortfolge $x_1, ...,x_n$ ausgibt, wobei $x_1, ...,x_n$ die kanonisch $n$ ersten Wörter in $L$ sind.
+	\end{mainbox}
+
+
+
+
+	\begin{mainbox}{Kolmogorov-Komplexität}
+		Für jedes Wort $x \in (\Sigma_{\text{bool}})^*$ ist die \textbf{Kolmogorov-Komplexität $K(x)$ des Wortes $x$} das Minimum der binären Längen, der Pascal-Programme, die $x$ generieren.
+	\end{mainbox}
+	$K(x)$ ist die kürzestmögliche Länge einer Beschreibung von $x$.
+
+	Die einfachste (und triviale) Beschreibung von $x$, ist wenn man $x$ direkt angibt.
+
+	$x$ kann aber eine Struktur oder Regelmässigkeit haben, die eine Komprimierung erlaubt.
+
+
+
+	\myTitle{Beispiel}
+	
+	Sei $w = 0101010101010101010101010101010101010101$. Die Länge von $w$ ist $|w| = 40$ und die triviale Beschreibunglänge wäre wie gegeben $40$.
+
+	Aber durch die Regelmässigkeit von einer $20$-fachen Wiederholung der Sequenz $01$, können $w$ auch durch $(01)^{20}$ beschreiben. 
+	Hierbei ist die Beschreibungslänge ein wenig mehr als $4$ Zeichen.
+
+
+
+	\begin{mainbox}{}
+		Es existiert eine Konstante $d$, so dass für jedes $x \in (\Sigma_{\text{bool}})^*$
+		$$K(x) \leq |x| + d$$
+	\end{mainbox}
+
+	\begin{mainbox}{}
+		Die \textbf{Kolmogorov-Komplexität einer natürlichen Zahl $n$} ist $K(n) = K(\text{Bin}(n))$.
+	\end{mainbox}
+
+	\begin{mainbox}{}
+		Für jede Zahl $n \in \N \setminus\{0\}$ existiert ein Wort $w_n \in (\Sigma_{\text{bool}})^n$, so dass 
+		$$K(w_n) \geq |w_n| = n$$
+	\end{mainbox}
+
     \section*{Kapitel 2}
     \subsection*{Lemma 2.5}
     Für jede Zahl $n \in \N$ existiert ein Wort $w_n \in  (\Sigma_{bool})^n$, so dass $$K(w_n) \geq |w_n| = n$$
