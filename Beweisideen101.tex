@@ -105,9 +105,9 @@
 %--------------------------------------------------
 % HEAD
 \pagestyle{fancy}
-\setlength{\headheight}{5.5pt}
+\setlength{\headheight}{3.5pt}
 \rhead{Nicolas Wehrli}
-\lhead{ETH Zürich, Autumn 2022}
+\lhead{ETH Zürich, Autumn 2023}
 % page numbering
 \cfoot{Seite \thepage\  von \pageref{LastPage}}
 %--------------------------------------------------
@@ -290,7 +290,7 @@
 	
 	Das leere Wort $\lambda$ ist auch ein Teilwort! Also haben wir $\frac{n(n+1)}{2}+ 1$ Teilwörter. 
 
-
+    \vspace*{1cm}
     \myTitle{Aufgabe 2}
 
 	Sei $\Sigma = \{a, b, c\}$ und $n \in \N$. Bestimme die Anzahl der Wörter aus $\Sigma^n$, die das Teilwort $a$ enthalten.
@@ -303,6 +303,7 @@
 	Da wir jetzt die Anzahl Wörter der Länge $n$ wollen, die nur $b$ und $c$ enthalten, kommen wir auf $|\{b,c\}|^n = 2^n$.
 	
 	Daraus folgt, dass genau $|\Sigma|^n - 2^n = 3^n -2^n$ Wörter das Teilwort $a$ enthalten.
+    \vspace*{1cm}
 
     \myTitle{Aufgabe 3}
 
@@ -337,7 +338,13 @@
 		Deshalb können wir alle Wörter in diesem Case durch $L_{m-2}\cdot\{b, c\} \cdot \{a\}$ beschreiben. Kardinalität: $2 \cdot |L_{m-2}|$.
 	\end{enumerate}
 
+    Daraus folgt $$|L_n| = \begin{cases}
+        3 &  n = 1\\
+        8 & n = 2\\
+        2|L_{n-1}|+ 2|L_{n-2}| &n \geq 3
+    \end{cases}$$
 
+\vspace*{1cm}
 
 	
 	\begin{mainbox}{}
@@ -430,7 +437,7 @@
 
 
 
-	\begin{mainbox}{}
+	\begin{mainbox}{Homomorphismus}
 		Seien $\Sigma_1$ und $\Sigma_2$ zwei beliebige Alphabete. Ein Homomorphismus von $\Sigma_1^*$ nach $\Sigma_2^*$ ist jede Funktion $h: \Sigma_1^* \to \Sigma_2^*$ mit den folgenden Eigenschaften:
 		\begin{enumerate}[label=(\roman*)]
 			\item $h(\lambda) = \lambda$ und 
@@ -443,7 +450,7 @@
 \section{Algorithmische Probleme}
 
 	Mathematische Definition folgt in Kapitel 4 (Turingmaschinen).
-	\begin{mainbox}{}
+	\begin{mainbox}{Algorithmen - Provisorische Definition}
 		Vorerst betrachten wir Programme, die \textbf{für jede zulässige Eingabe halten und eine Ausgabe liefern}, als Algorithmen.
 
 		Wir betrachten ein Programm (Algorithmus) $A$ als Abbildung $A: \Sigma_1^* \to \Sigma_2^*$ für beliebige Alphabete $\Sigma_1$ und $\Sigma_2$. Dies bedeutet, dass 
@@ -461,7 +468,7 @@
 
 
 
-	\begin{mainbox}{}
+	\begin{mainbox}{Entscheidungsproblem}
 		Das \textbf{Entscheidungsproblem $(\Sigma, L)$} für ein gegebenes Alphabet $\Sigma$ und eine gegebene Sprache $L \subseteq \Sigma^*$ ist, für jedes $x \in \Sigma^*$ zu entscheiden, ob 
 		$$x \in L \text{ oder } x \notin L.$$
 		Ein Algorithmus $A$ \textbf{löst} das Entscheidungsproblem $(\Sigma, L)$, falls für alle $x \in \Sigma^*$ gilt:
@@ -477,7 +484,7 @@
 
 
 
-	\begin{subbox}{}
+	\begin{subbox}{Rekursive Sprachen}
 		Wenn für eine Sprache $L$ ein Algorithmus existiert, der $L$ erkennt, sagen wir, dass $L$ \textbf{rekursiv} ist.
 	\end{subbox}
 
@@ -522,7 +529,7 @@
 
 
 
-	\begin{mainbox}{}
+	\begin{mainbox}{Optimierungsproblem}
 		Ein \textbf{Optimierungsproblem} ist ein $6$-Tupel $\mathcal{U} = (\Sigma_I, \Sigma_O, L, M, \text{cost}, \text{goal})$, wobei:
 		\begin{enumerate}[label=(\roman*)]
 			\item $\Sigma_I$ ist ein Alphabet (genannt \textbf{Eingabealphabet}),
@@ -533,13 +540,7 @@
 			\item \textbf{cost} ist eine Funktion, \textbf{cost}$: \bigcup_{x \in L}(\mathcal{M}(x)\times\{x\}) \to \R^+$, genannt \textbf{Kostenfunktion},
 			\item \textbf{goal} $\in \{\text{Minimum}, \text{Maximum}\}$ ist das \textbf{Optimierungsziel}.
 		\end{enumerate}	
-
-	\end{mainbox}
-
-
-
-	\begin{mainbox}{}
-		Eine zulässige Lösung $\alpha \in \mathcal{M}(x)$ heisst \textbf{optimal} für den Problemfall $x$ des Optimierungsproblems $\mathcal{U}$, falls 
+        Eine zulässige Lösung $\alpha \in \mathcal{M}(x)$ heisst \textbf{optimal} für den Problemfall $x$ des Optimierungsproblems $\mathcal{U}$, falls 
 		\begin{center}
 			cost($\alpha, x$) $= \textbf{Opt}_\mathcal{U}(x) = \text{ goal}\{\text{cost}(\beta, x) \mid \beta \mathcal{M}(x)\}$.
 		\end{center}
@@ -550,67 +551,309 @@
 		\end{enumerate} 
 	\end{mainbox}
 
+    \section{Kolmogorov Komplexität}
+    \subsection{Theorie}
+        \begin{mainbox}{Algorithmen generieren Wörter}
+            Sei $\Sigma$ ein Alphabet und $x \in \Sigma^*$. Wir sagen, dass ein Algorithmus $A$ das Wort $x$ \textbf{generiert}, falls $A$ für die Eingabe $\lambda$ die Ausgabe $x$ liefert.
+        \end{mainbox}
+        Beispiel:
+        \begin{lstlisting}[mathescape = true, escapeinside={(*}{*)}]
+            $A_n$: 	begin
+                    for $i$ = 1 to $n$;
+                        write(01);
+                end
+           \end{lstlisting}
+           $A_n$ generiert $(01)^n$.
+    
+        \begin{mainbox}{Aufzählungsalgorithmus}
+            Sei $\Sigma$ ein Alphabet und sei $L \subseteq \Sigma^*$. $A$ ist ein \textbf{Aufzählungsalgorithmus für $L$}, 
+            falls $A$  für jede Eingabe $n \in \N \setminus \{0\}$ die Wortfolge $x_1, ...,x_n$ ausgibt, wobei $x_1, ...,x_n$ die kanonisch $n$ ersten Wörter in $L$ sind.
+        \end{mainbox}
+    
+        \textbf{Aufgabe 2.21}
+        
+        Beweisen Sie, dass eine Sprache $L$ genau dann rekursiv ist, wenn ein Aufzählungsalgorithmus für $L$ existiert.
+        \begin{mainbox}{}
+            Das \textbf{Entscheidungsproblem $(\Sigma, L)$} für ein gegebenes Alphabet $\Sigma$ und eine gegebene Sprache $L \subseteq \Sigma^*$ ist, für jedes $x \in \Sigma^*$ zu entscheiden, ob 
+            $$x \in L \text{ oder } x \notin L.$$
+            Ein Algorithmus $A$ \textbf{löst} das Entscheidungsproblem $(\Sigma, L)$, falls für alle $x \in \Sigma^*$ gilt:
+            $$A(x) = \begin{cases}
+                1, &\text{falls }x \in L,\\
+                0, &\text{falls }x \notin L.
+            \end{cases}$$
+            Wir sagen auch, dass $A$ die Sprache $L$ erkennt.
+        \end{mainbox}
+    
+        $L$ rekursiv $(\implies)$ existiert Aufzählungsalgorithmus:
+    
+        Sei $A$ ein Algorithmus, der $L$ erkennt. Wir beschreiben nun einen Aufzählungsalgorithmus $B$ konstruktiv. 
+    
+        \begin{algorithm}[H]
+            \caption{$B(\Sigma, n)$}
+            \begin{algorithmic}
+                \State i $\leftarrow$ 0
+                \While{i $\leq n$}
+                    \State $w$ $\leftarrow$ kanonisch nächstes Wort über $\Sigma^*$
+                    \If{$A(w) = 1$}
+                    \State print($w$)
+                    \State $i \leftarrow i + 1$
+                    \EndIf 
+                \EndWhile
+            \end{algorithmic}
+        \end{algorithm}
+    
+        Aufzählungsalgorithmus $B$ $\implies$ $L$ rekursiv:
+    
+        \begin{algorithm}[H]
+            \caption{$A(\Sigma, w)$}
+            \begin{algorithmic}
+                \State$n \leftarrow$ $|\Sigma|^{|w| + 1}$
+                \State $L \leftarrow B(\Sigma, n)$
+                \If{$w \in L$}
+                \State print(1)
+                \Else
+                \State print(0)
+                \EndIf
+            \end{algorithmic}
+        \end{algorithm}
+        Es gibt ein kleines Problem. $B$ könnte unendlich lange laufen, falls $n > |L|$.\\ 
+        Es sollte nicht so schwierig sein, $B$ zu modifizieren, dass es die Berechnung aufhört, falls es keine weiteren Wörter in $L$ gibt.
+    
+    
+    
+        \textbf{Information messen}
+        Wir beschränken uns auf $\Sigma_{\text{bool}}$
+        \begin{mainbox}{Kolmogorov-Komplexität}
+            Für jedes Wort $x \in (\Sigma_{\text{bool}})^*$ ist die \textbf{Kolmogorov-Komplexität $K(x)$ des Wortes $x$} das Minimum der binären Längen, der Pascal-Programme, die $x$ generieren.
+        \end{mainbox}
+        $K(x)$ ist die kürzestmögliche Länge einer Beschreibung von $x$.
+    
+        Die einfachste (und triviale) Beschreibung von $x$, ist wenn man $x$ direkt angibt.
+    
+        $x$ kann aber eine Struktur oder Regelmässigkeit haben, die eine Komprimierung erlaubt.
+    
+        Welche Programmiersprache gewählt wird verändert die Kolmogorov-Komplexität nur um eine Konstante. (Satz 2.1)
+    
+    
+    
+        \textbf{Beispiel}
+        
+        Sei $w = 0101010101010101010101010101010101010101$. Die Länge von $w$ ist $|w| = 40$ und die triviale Beschreibunglänge wäre wie gegeben $40$.
+    
+        Aber durch die Regelmässigkeit von einer $20$-fachen Wiederholung der Sequenz $01$, können $w$ auch durch $(01)^{20}$ beschreiben. 
+        Hierbei ist die Beschreibungslänge ein wenig mehr als $4$ Zeichen.
+    
+    
+    
+        \textbf{Grundlegende Resultate}
+        \begin{mainbox}{}
+            Es existiert eine Konstante $d$, so dass für jedes $x \in (\Sigma_{\text{bool}})^*$
+            $$K(x) \leq |x| + d$$
+        \end{mainbox}
+    
+        \begin{mainbox}{}
+            Die \textbf{Kolmogorov-Komplexität einer natürlichen Zahl $n$} ist $K(n) = K(\text{Bin}(n))$.
+        \end{mainbox}
+    
+        
+        \begin{mainbox}{Lemma 2.5 - Nichtkomprimierbar}
+            Für jede Zahl $n \in \N \setminus\{0\}$ existiert ein Wort $w_n \in (\Sigma_{\text{bool}})^n$, so dass 
+            $$K(w_n) \geq |w_n| = n$$
+        \end{mainbox}
+        \textbf{Beweis}
 
-\section{Kolmogorov Komplexität}
+        Es gibt $2^n$ Wörter $x_1, ..., x_{2^n}$ über $\Sigma_{bool}$ der Länge $n$. 
+        Wir bezeichnen $C(x_i)$ als den Bitstring des kürzesten Programms, der $x_i$ generieren kann. Es ist klar, dass für $i \neq j: C(x_i) \neq C(x_j)$.
+    
+        Die Anzahl der nichtleeren Bitstrings, i.e. der Wörter der Länge $< n$ über $\Sigma_{bool}$ ist:
+        $$\sum_{i = 1}^{n-1} 2^i = 2^n - 2 < 2^n$$
+        Also muss es unter den Wörtern $x_1, ...,x_{2^n}$ mindestens ein Wort $x_k$ mit $K(x_k) \geq n$ geben.
+        
+        \hspace*{0pt}\hfill$\blacksquare$
+    
+    
+    
+        \textbf{Satz 2.1 - Programmiersprachen}
 
-	\begin{mainbox}{}
-		Sei $\Sigma$ ein Alphabet und $x \in \Sigma^*$. Wir sagen, dass ein Algorithmus $A$ das Wort $x$ \textbf{generiert}, falls $A$ für die Eingabe $\lambda$ die Ausgabe $x$ liefert.
-	\end{mainbox}
-	Beispiel:
-	\begin{lstlisting}[mathescape = true, escapeinside={(*}{*)}]
-		$A_n$: 	begin
-				for $i$ = 1 to $n$;
-					write(01);
-			end
-	   \end{lstlisting}
-	   $A_n$ generiert $(01)^n$.
+        Für jedes Wort $x \in (\Sigma_{\text{bool}})^*$ und jede Programmiersprache $A$ sei $K_A(x)$ die Kolmogorov-Komplexität von $x$ bezüglich der Programmiersprache $A$.
+        \begin{mainbox}{}
+            Seien $A$ und $B$ Programmiersprachen. Es existiert eine Konstante $c_{A,B}$, die nur von $A$ und $B$ abhängt, so dass 
+            $$|K_A(x) -K_B(x)|\leq c_{A,B}$$
+            für alle $x \in (\Sigma_{\text{bool}})^*$.
+        \end{mainbox}
+        \textit{Beweis im Buch/Vorlesung}
+    
+        \begin{mainbox}{Ein zufälliges Wort}
+            Ein Wort $x \in (\Sigma_{\text{bool}})^*$ heisst \textbf{zufällig}, falls $K(x) \geq |x|$. 
+            
+            Eine Zahl $n$ heisst \textbf{zufällig}, falls $K(n) = K(\text{Bin}(n)) \geq \left\lceil\log_2(n + 1) \right\rceil - 1$.
+        \end{mainbox}
+        Jede Binär-Darstellung beginnt immer mit einer $1$, deshalb können wir die Länge der Binär-Darstellung um $1$ verkürzen.
+    
+        Zufälligkeit hier bedeutet, dass ein Wort völlig unstrukturiert ist und sich nicht komprimieren lässt. Es hat nichts mit Wahrscheinlichkeit zu tun.
+    
+        \begin{mainbox}{Satz 2.2}
+            Sei $L$ eine Sprache über $\Sigma_{\text{bool}}$. Sei für jedes $n \in \N \setminus \{0\}$, $z_n$ das $n$-te Wort in $L$ bezüglich der kanonischen Ordnung. 
+            Wenn ein Programm $A_L$ existiert, das das Entscheidungsproblem $(\Sigma_{\text{bool}}, L)$ löst, dann gilt für alle $n \in \N\setminus\{0\}$, dass
+            $$K(z_n) \leq \left\lceil\log_2(n+1)\right\rceil + c$$
+            wobei $c$ eine von $n$ unabhängige Konstante ist.
+        \end{mainbox}
+        \textbf{Beweisidee}
+
+        Wir können aus $A_L$, ein Programm entwerfen, dass das kanonisch $n$-te Wort generiert, indem wir in der kanonischen Reihenfolge alle Wörter $x \in (\Sigma_{bool})^*$ durchgehen und mit $A_L$ entscheiden, ob $x \in L$. Dann können wir einen Counter $c$ haben und den Prozess abbrechen, wenn der Counter $c = n$ wird und dann dieses Wort ausgeben.
+    
+        Wir sehen, dass dieses Programm ausser der Eingabe $n$ immer gleich ist. Sei die Länge dieses Programms $c$, dann können wir für das $n$-te Wort der Sprache $L, z_n,$ die Kolmogorov-Komplexität auf $n$ reduzieren, bzw:
+        $$K(z_n) \leq \lceil \log_2(n+1)\rceil + c$$
+        \hspace*{0pt}\hfill$\blacksquare$
+    
+    
+    
+        \textbf{Primzahlsatz}
+
+        Für jede positive ganz Zahl $n$ sei Prim($n$) die Anzahl der Primzahlen kleiner gleich $n$. 
+        \begin{mainbox}{}
+            $$\lim_{n \to \infty}\frac{\text{Prim}(n)}{n/\ln n} = 1$$
+        \end{mainbox}
+        Nützliche Ungleichung
+        $$\ln n - \frac{3}{2} < \frac{n}{\text{Prim(n)}} < \ln n - \frac{1}{2}$$
+        für alle $n \geq 67$.
+    
+        \begin{mainbox}{Lemma 2.6 - schwache Version des Primzahlsatzes}
+            Sei $n_1, n_2, n_3, ...$ eine steigende unendliche Folge natürlicher Zahlen mit $K(n_i) \geq \lceil \log_2 n_i \rceil / 2$. Für jedes $i \in \N \setminus \{0\}$ sei $q_i$ die grösste Primzahl, die die Zahl $n_i$ teilt. Dann ist die Menge $Q = \{q_i \mid i \in \N \setminus\{0\}\}$ unendlich.
+        \end{mainbox}
+        \textbf{Beweis: }
+        Wir beweisen diese Aussage per Widerspruch:
+    
+        Nehmen wir zum Widerspruch an, dass die Menge $Q = \{q_i \mid i \in \N \setminus \{0\}\}$ sei endlich. 
+        
+        Sei $q_m$ die grösste Primzahl in $Q$. Dann können wir jede Zahl $n_i$ eindeutig als 
+        $$n_i = q_1^{r_{i, 1}} \cdot q_2^{r_{i,2}} \cdot \cdots \cdot q_m^{r_{i,m}}$$
+        für irgendwelche $r_{i,1}, r_{i,2}, ..., r_{i,m} \in \N$ darstellen. Sei $c$ die binäre Länge eines Programms, dass diese $r_{i,j}$ als Eingaben nimmt und $n_i$ erzeugt (A ist für alle $i\in \N$ bis auf die Eingaben $r_{i,1}, ..., r_{i,m}$ gleich).
+        
+        Dann gilt:
+        $$K(n_i) \leq c + 8 \cdot (\lceil \log_2(r_{i,1}+1)\rceil + \lceil \log_2(r_{i,2}+1)\rceil + ... + \lceil \log_2(r_{i,m}+1)\rceil)$$
+        Die multiplikative Konstante $8$ kommt daher, dass wir für die Zahlen $r_{i,1}, r_{i,2}, ..., r_{i,m}$ dieselbe Kodierung, wie für den Rest des Programmes verwenden (z.B. ASCII-Kodierung), damit ihre Darstellungen eindeutig voneinander getrennt werden können. Weil  $r_{i,j} \leq \log_2 n_i, \forall j \in \{1, ..., m\}$ erhalten wir 
+        $$K(n_i) \leq c + 8m \cdot \lceil \log_2(\log_2 n_i + 1)\rceil, \forall i \in \N \setminus \{0\}$$
+       
+        Weil $m$ und $c$ Konstanten unabhängig von $i$ sind, kann 
+        $$\lceil \log_2 n_i \rceil / 2 \leq K(n_i) \leq c + 8m \cdot \lceil \log_2(\log_2 n_i + 1)\rceil$$
+        $$\lceil \log_2 n_i \rceil/2 \leq c + 8m \cdot \lceil \log_2(\log_2 n_i + 1)\rceil$$
+        nur für endlich viele $i \in \N \setminus \{0\}$ gelten. 
+    
+        Dies ist ein Widerspruch! 
+    
+        Folglich ist die Menge $Q$ unendlich.
+    
+        \hspace*{0pt}\hfill$\blacksquare$
+    
+    
+    
+    \subsection{How To Kolmogorov}
+    
+    
+    
+        \textbf{Aufgabentyp 1}
+
+        Sei $w_n = (010)^{3^{2n^3}} \in \{0,1\}^*$ für alle $n \in \N \setminus \{0\}$. Gib eine möglichst gute obere Schranke für die Kolmogorov-Komplexität von $w_n$ an, gemessen in der Länge von $w_n$.
+        
+        \textbf{Lösung Typ 1}
+        
+        Wir zeigen ein Programm, dass $n$ als Eingabe nimmt und $w_n$ druckt:
+        \begin{lstlisting}[language= Pascal, mathescape = true, escapeinside={(*}{*)}]
+            $W_n$:     	begin
+                    $M := n$;
+                    $M := 2 \times M \times M \times M$;
+                    $J := 1$;
+                    for $I$ = 1 to $M$                  
+                        $J$ := $J \ \times \ $3;
+                    for $I$ = 1 to $J$;
+                        write(010);
+                end
+        \end{lstlisting}
+    
+        Der einzige variable Teil dieses Algorithmus ist $n$. Der restliche Code ist von konstanter Länge. Die binäre Länge dieses Programms kann von oben durch 
+        $$\left\lceil\log_2(n+1)\right\rceil + c$$
+        beschränkt werden, für eine Konstante $c$.
+    
+        Somit folgt
+        $$K(w_n) \leq \log_2(n) + c'$$
+        Wir berechnen die Länge von $w_n$ als $|w_n| = |010| \cdot 3^{2n^3} = 3^{2n^3+1}$. 
+        
+        Mit ein wenig umrechnen erhalten wir $$n = \sqrt[3]{\frac{\log_3|w_n| - 1}{2}}$$
+        und die obere Schranke
+        $$K(w_n) \leq \log_2 \left(\sqrt[3]{\frac{\log_3|w_n| - 1}{2}}\right)+ c' \leq \log_2 \log_3 |w_n| + c''$$
+    
+    \vspace*{1cm}
+    
+        \textbf{Aufgabentyp 2}
+
+        Geben Sie eine unendliche Folge von Wörtern $y_1 < y_2 < ...$ an, so dass eine Konstante $c \in \N$ existiert, so dass für alle $i \geq 1$ 
+        $$K(y_i) \leq \log_2\log_2\log_3\log_2(|y_i|) + c$$
+
+        \textbf{Lösung Typ 2}
+        
+        Wir definieren die Folge $y_1,y_2,...$ mit $y_i = 0^{2^{3^{2^i}}}$ für alle $i \in \N$. Da $|y_i| < |y_{i+1}|$ folgt die geforderte Ordnung.
+    
+        Es gilt
+        $$i = \log_2\log_3\log_2|y_i|  \text{ für } i \geq 1$$
+    
+        Wir zeigen ein Programm, dass $i$ als Eingabe nimmt und $y_i$ druckt:
+    
+        \begin{lstlisting}[language= Pascal, mathescape = true, escapeinside={(*}{*)}]
+            begin
+                $M := i$;
+                $M := $2^(3^(2^$M$));
+                for $I$ = 1 to $M$;
+                    write(010);
+            end
+        \end{lstlisting}
+        Das \^ \ für die Exponentiation ist nicht Teil der originalen Pascal Syntax, aber wir verwenden es um unser Programm lesbarer zu machen.
+    
+        Der einzige variable Teil dieses Programms ist das $i$. Der Rest hat konstante Länge. Demnach kann die Länge diese Programms für eine Konstante $c'$ durch 
+        $$\left\lceil\log_2(i+1)\right\rceil + c'$$
+        von oben beschränkt werden.
+    
+        Somit folgt
+        \begin{align*}
+            K(y_i) &\leq \log_2(i) + c\\
+            &\leq \log_2\log_2\log_3\log_2|y_i| + c
+        \end{align*}
+        für eine Konstante $c$. 
+    
+    \vspace*{1cm}
+    
+        \textbf{Aufgabentyp 3}
+
+        Sei $M = \{7^i \mid i \in \N, \ i \leq 2^n-1\}$. Beweisen Sie, dass mindestens sieben Achtel der Zahlen in $M$ Kolmogorov-Komplexität von mindestens $n-3$ haben.
+    
+        \textbf{Lösung Typ 3}
+
+        Wir zeigen, dass höchstens $\frac{1}{8}$ der Zahlen $x \in M$ eine Kolmogorov-Komplexität $K(x) \leq n-4$ haben. 
+    
+        Nehmen wir zum Widerspruch an, dass $M$ mehr als $\frac{1}{8}|M|$ Zahlen $x$ enthält, mit $K(x) \leq n-4$. 
+    
+        Die Programme, die diese Wörter generieren, müssen paarweise verschieden sein, da die Wörter paarweise verschieden sind.
+    
+        Es gibt aber höchstens 
+        $$\sum_{k=0}^{n-4}2^k = 2^{n-3} - 1 < \frac{1}{8}|M|$$
+        Bitstrings mit Länge $\leq n-4$. \textbf{Widerspruch.}
+    
+
+
+        \vspace*{1cm}
+    
 
 
 
-	\begin{mainbox}{}
-		Sei $\Sigma$ ein Alphabet und sei $L \subseteq \Sigma^*$. $A$ ist ein \textbf{Aufzählungsalgorithmus für $L$}, 
-		falls $A$  für jede Eingabe $n \in \N \setminus \{0\}$ die Wortfolge $x_1, ...,x_n$ ausgibt, wobei $x_1, ...,x_n$ die kanonisch $n$ ersten Wörter in $L$ sind.
-	\end{mainbox}
 
 
+    % --------------------------------------------------------------------------------------------
+    % Beweise
 
+    \section{Beweisesammlung}
 
-	\begin{mainbox}{Kolmogorov-Komplexität}
-		Für jedes Wort $x \in (\Sigma_{\text{bool}})^*$ ist die \textbf{Kolmogorov-Komplexität $K(x)$ des Wortes $x$} das Minimum der binären Längen, der Pascal-Programme, die $x$ generieren.
-	\end{mainbox}
-	$K(x)$ ist die kürzestmögliche Länge einer Beschreibung von $x$.
-
-	Die einfachste (und triviale) Beschreibung von $x$, ist wenn man $x$ direkt angibt.
-
-	$x$ kann aber eine Struktur oder Regelmässigkeit haben, die eine Komprimierung erlaubt.
-
-
-
-	\myTitle{Beispiel}
-	
-	Sei $w = 0101010101010101010101010101010101010101$. Die Länge von $w$ ist $|w| = 40$ und die triviale Beschreibunglänge wäre wie gegeben $40$.
-
-	Aber durch die Regelmässigkeit von einer $20$-fachen Wiederholung der Sequenz $01$, können $w$ auch durch $(01)^{20}$ beschreiben. 
-	Hierbei ist die Beschreibungslänge ein wenig mehr als $4$ Zeichen.
-
-
-
-	\begin{mainbox}{}
-		Es existiert eine Konstante $d$, so dass für jedes $x \in (\Sigma_{\text{bool}})^*$
-		$$K(x) \leq |x| + d$$
-	\end{mainbox}
-
-	\begin{mainbox}{}
-		Die \textbf{Kolmogorov-Komplexität einer natürlichen Zahl $n$} ist $K(n) = K(\text{Bin}(n))$.
-	\end{mainbox}
-
-	\begin{mainbox}{}
-		Für jede Zahl $n \in \N \setminus\{0\}$ existiert ein Wort $w_n \in (\Sigma_{\text{bool}})^n$, so dass 
-		$$K(w_n) \geq |w_n| = n$$
-	\end{mainbox}
-
-    \section*{Kapitel 2}
-    \subsection*{Lemma 2.5}
+    \subsection*{Kapitel 2}
+    \subsubsection*{Lemma 2.5}
     Für jede Zahl $n \in \N$ existiert ein Wort $w_n \in  (\Sigma_{bool})^n$, so dass $$K(w_n) \geq |w_n| = n$$
     d.h., es existiert für jede Zahl $n$ ein nichtkomprimierbares Wort der Länge $n$.
 
@@ -624,7 +867,7 @@
     
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \subsection*{Satz 2.2}
+    \subsubsection*{Satz 2.2}
     Sei $L$ eine Sprache über $\Sigma_{bool}$. Sei, für jedes $n \in \N \setminus \{0\}$, $z_n$ das $n$-te Wort in $L$ bezüglich der kanonischen Ordnung. Wenn ein Programm $A_L$ existiert, dass das Entscheidungsproblem $(\Sigma_{bool}, L)$ löst, dann gilt für alle $n \in \N \setminus \{0\}$, dass 
     $$K(z_n) \leq \lceil \log_2(n+1)\rceil + c$$
     wobei $c$ eine von $n$ unabhängige Konstante ist.
@@ -637,7 +880,7 @@
     $$K(z_n) \leq \lceil \log_2(n+1)\rceil + c$$
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \subsection*{Lemma 2.6}
+    \subsubsection*{Lemma 2.6}
     Sei $n_1, n_2, n_3, ...$ eine steigende unendliche Folge natürlicher Zahlen mit $K(n_i) \geq \lceil \log_2 n_i \rceil / 2$. Für jedes $i \in \N \setminus \{0\}$ sei $q_i$ die grösste Primzahl, die die Zahl $n_i$ teilt. Dann ist die Menge $Q = \{q_i \mid i \in \N \setminus\{0\}\}$ unendlich.
 
     \textbf{Beweis: }
@@ -663,8 +906,8 @@
     \hspace*{0pt}\hfill$\blacksquare$
 
 
-    \section*{Kapitel 3}
-    \subsection*{Lemma 3.3}
+    \subsection*{Kapitel 3}
+    \subsubsection*{Lemma 3.3}
     Sei $A = (Q, \Sigma, \delta_A, q_0, F)$ ein EA. Seien $x, y \in \Sigma^*, x \neq y$, so dass 
     $$\hat{\delta}_A(q_0, x) = p = \hat{\delta}_A(q_0, y)$$
     für ein $p \in Q$ (also $x,y \in \text{Kl[$p$]}$). Dann existiert für jedes $z \in \Sigma^*$ ein $r \in Q$, so dass $xz$ und $yz \in$ Kl[$r$], also gilt insbesondere 
@@ -687,7 +930,7 @@
 
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \subsection*{Lemma 3.4: Pumping-Lemma}
+    \subsubsection*{Lemma 3.4: Pumping-Lemma}
     Sei $L$ regulär. Dann existiert eine Konstante $n_0 \in \N$, so dass sich jedes Wort $w \in \Sigma^*$ mit $|w| \geq n_0$ in drei Teile $y, x$ und $z$ zerlegen lässt, das heisst $w = yxz$, wobei
     \begin{enumerate}[label = (\roman*)]
         \item $|yx| \leq n_0$,
@@ -718,7 +961,7 @@
     \end{enumerate}
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \subsection*{Lemma 3.6}
+    \subsubsection*{Lemma 3.6}
     Sei $L_k = \{x1y \mid x \in (\Sigma_{bool})^*, y \in (\Sigma_{bool})^k\}$.
 
     Für alle $k \in \N\setminus\{0\}$ muss jeder EA, der $L_k$ akzeptiert, mindestens $2^k$ Zustände haben.
@@ -754,8 +997,8 @@
     
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \section*{Kapitel 4}
-    \subsection*{Lemma 4.2}
+    \subsection*{Kapitel 4}
+    \subsubsection*{Lemma 4.2}
     Für jede Mehrband-TM $A$ existiert eine zu $A$ äquivalente TM $B$.
 
     \textbf{Beweis: }
@@ -780,9 +1023,9 @@
     \hspace*{0pt}\hfill$\blacksquare$
 
 
-    \section*{Kapitel 5}
+    \subsection*{Kapitel 5}
 
-    \subsection*{Satz 5.4}
+    \subsubsection*{Satz 5.4}
     $\mathcal{P}((\Sigma_{bool})^*)$ ist nicht abzählbar.
 
     \textbf{Beweis: }
@@ -809,7 +1052,7 @@
     
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \subsection*{Satz 5.5}
+    \subsubsection*{Satz 5.5}
     $L_{\text{diag}} \notin \L_{\text{RE}}$.
 
     \textbf{Beweis:}
@@ -832,7 +1075,7 @@
 
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \subsection*{Lemma 5.4}
+    \subsubsection*{Lemma 5.4}
     Sei $\Sigma$ ein Alphabet. Für jede Sprache $L \subseteq \Sigma^*$ gilt:
     
     $$L \leq_\text{R} L^\complement \text{ und } L^\complement \leq_\text{R} L$$
@@ -846,7 +1089,7 @@
 
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \subsection*{Korollar 5.2 (bzw. Anwendung von Lemma 5.4)}
+    \subsubsection*{Korollar 5.2 (bzw. Anwendung von Lemma 5.4)}
     $(L_\text{diag})^\complement \notin \L_\text{R}$.
     
     \textbf{Beweis:} 
@@ -860,7 +1103,7 @@
 
     
    
-    \subsection*{Lemma 5.8}
+    \subsubsection*{Lemma 5.8}
     $L_{\text{H}, \lambda} \notin \Lr$.
 
     \textbf{Beweis: }
@@ -879,9 +1122,9 @@
 
     \hspace*{0pt}\hfill$\blacksquare$
 
-    \section*{Kapitel 6}
+    \subsection*{Kapitel 6}
     
-    \subsection*{Lemma 6.1}
+    \subsubsection*{Lemma 6.1}
     Sei $k$ eine positive ganze Zahl. Für jede $k$-Band Turingmaschine $A$, die immer hält, existiert eine äquivalente $1$-Band-TM $B$, so dass
     $$\text{Space}_B(n) \leq \text{Space}_A(n)$$
 
@@ -890,7 +1133,7 @@
     Gleiche Konstruktion wie in Lemma 4.2. Wir können leicht sehen, dass $B$ genau so viele Felder braucht, wie $A$.
 
 
-    \subsection*{Lemma 6.2}
+    \subsubsection*{Lemma 6.2}
     Zu jeder MTM $A$ existiert eine äquivalente MTM $B$ mit 
     $$\text{Space}_B(n) \leq \frac{\text{Space}_A(n)}{2}+2$$
 
@@ -898,25 +1141,25 @@
 
     Wir fassen jeweils 2 Felder von $A$ zu einem Feld in $B$ zusammen. $\Gamma_B = \Gamma_A \times \Gamma_A$. Wir addieren $1$ für das $\cent$ am linken Rand und $1$ für das Aufrunden im Fall von ungerader Länge.
 
-    \subsection*{Lemma 6.3}
+    \subsubsection*{Lemma 6.3}
     TIME($t$) $\subseteq$ SPACE($t$)
 
     \textbf{Beweisskizze: }
     In $t$ Schritten sind höchstens $t$ Felder beschreibbar.
 
-    \subsection*{Lemma 6.4}
+    \subsubsection*{Lemma 6.4}
     Sei $S$ platzkonstruierbar. Für jede MTM $M$, für welche Space$_M(w) \leq s(|w|)$ nur für alle $w \in L(M)$ erfüllt, existiert eine äquivalente MTM $M'$, welche dies für alle $w \in \Sigma^*$ erfüllt.
 
     \textbf{Beweisskizze: }
     Erzeuge für jede Eingabe $x \in \Sigma^*$ zuerst $0^{s(|x|)}$ auf einem zusätzlichen Band und nutze das als Platzüberwachung. Wenn $M'$ diesen Platz überschreiten will, wird die Simulation unterbrochen und die Eingabe verworfen.
 
-    \subsection*{Lemma 6.5}
+    \subsubsection*{Lemma 6.5}
     Sei $t$ zeitkonstruierbar. Zu jeder MTM, welche Time$_M(w) \leq t(|w|)$ nur für alle $w \in L(M)$ erfüllt, existiert eine äquivalente MTM $M'$, welche zumindest Time$_M(w) \leq 2t(|w|) \in \O(t(|w|))$ für alle $w \in \Sigma^*$ erfüllt.
 
     \textbf{Beweisskizze: }
     Schreibe für jede Eingabe $x \in \Sigma^*$ $0^{t(|x|)}$ auf ein zusätzliches Arbeitsband und nutze dies zur Zeitzählung. Wenn $M'$ mehr Schritte machen will, wird die Simulation abgebrochen und die Eingabe verworfen.
 
-    \subsection*{Satz 6.2}
+    \subsubsection*{Satz 6.2}
     Für jede Funktion $s$ mit $s(n) \geq \log_2(n)$ gilt:
 
     $$\textbf{SPACE}(s(n)) \subseteq \bigcup_{c \in \N} \textbf{TIME}(c^{s(n)})$$

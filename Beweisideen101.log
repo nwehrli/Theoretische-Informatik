@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  28 SEP 2023 23:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  12 OCT 2023 11:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -723,7 +723,7 @@ LaTeX Font Info:    ... okay on input line 115.
 * \oddsidemargin=-26.46106pt
 * \evensidemargin=-26.46106pt
 * \topmargin=-2.51526pt
-* \headheight=5.5pt
+* \headheight=3.5pt
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
@@ -775,217 +775,275 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 134
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [1{C:/Users/nshar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [2]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [3]
 
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 325.
-
-
-LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 325.
-
-
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [4]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 326.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 326.
+
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [5]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [6]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [7]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [8]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [9]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [10]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [11]
-Overfull \hbox (9.07536pt too wide) in paragraph at lines 704--705
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[12]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[13] (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[14]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[15]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[16]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[17]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[18]
+Overfull \hbox (9.07536pt too wide) in paragraph at lines 947--948
 []\OT1/cmr/m/n/10.95 In dieser Berech-nung kom-men $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 + 1$ Zust^^?ande $\OML/cmm/m/it/10.95 q[]; q[]; :::; q[]$ \OT1/cmr/m/n/10.95 vor. Da $\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 Q\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 n[]$\OT1/cmr/m/n/10.95 , ex-istieren $\OML/cmm/m/it/10.95 i; j \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; :::; n[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 ; i <
  []
 
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
-
-[12]
-
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
-
-[13]
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 767.
-
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 767.
-
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 767.
-
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 767.
-
-
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
-
-[14]
-
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
-
-[15]
-
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
-
-[16]
-
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
-
-[17]
-
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
-
-[18]
-
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
 [19]
-Overfull \hbox (29.90007pt too wide) in paragraph at lines 976--977
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[20]
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1010.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1010.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1010.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1010.
+
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[21]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[23]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[24]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[25]
+Overfull \hbox (29.90007pt too wide) in paragraph at lines 1219--1220
 \OT1/cmr/m/n/10.95 F^^?ur den let-zten Punkt (4) muss man ^^?uberpr^^?ufen, ob in der Def-i-ni-tion von $\OML/cmm/m/it/10.95 L \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 M[]\OMS/cmsy/m/n/10.95 g$
  []
 
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
-[20]
+[26]
 
-Package fancyhdr Warning: \headheight is too small (5.5pt): 
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
 (fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-8.09999pt}.
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
 
-[21] 
+[27]
+
+Package fancyhdr Warning: \headheight is too small (3.5pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-10.09999pt}.
+
+[28] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (Beweisideen101.aux) ) 
 Here is how much of TeX's memory you used:
- 34159 strings out of 476315
- 854145 string characters out of 5787197
- 1869068 words of memory out of 5000000
- 54037 multiletter control sequences out of 15000+600000
+ 34273 strings out of 476315
+ 855632 string characters out of 5787197
+ 1873068 words of memory out of 5000000
+ 54147 multiletter control sequences out of 15000+600000
  525798 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,15n,103p,796b,1003s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,16n,103p,796b,1761s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi657\wasy10.pk> <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Beweisideen101.pdf (21 pages, 316306 bytes).
+Output written on Beweisideen101.pdf (28 pages, 340164 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
+ 200 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
