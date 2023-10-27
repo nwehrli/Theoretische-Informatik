@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  21 OCT 2023 21:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  27 OCT 2023 17:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -614,6 +614,8 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisrulewidth=\dimen317
 ) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
 Package: placeins 2005/04/18  v 2.2
+) (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\centernot.sty
+Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 )
 \enitdp@Checkboxes=\count336
  (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\pifont.sty
@@ -691,20 +693,20 @@ Library (tcolorbox): 'tcbfitting.code.tex' version '6.0.3'
 )) (Beweisideen101.aux)
 \openout1 = `Beweisideen101.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -783,49 +785,106 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
  [1] [2] [3]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 335.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 338.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 335.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 338.
 
 [4] [5] [6] [7] [8] [9] [10] [11] (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 ) [12] [13] [14] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1059
+Underfull \hbox (badness 10000) in paragraph at lines 1057--1062
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 1140--1141
+Underfull \hbox (badness 10000) in paragraph at lines 1143--1144
 
  []
 
 [18]
-Overfull \hbox (9.07536pt too wide) in paragraph at lines 1178--1179
+Overfull \hbox (9.07536pt too wide) in paragraph at lines 1181--1182
 []\OT1/cmr/m/n/10.95 In dieser Berech-nung kom-men $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 + 1$ Zust^^?ande $\OML/cmm/m/it/10.95 q[]; q[]; :::; q[]$ \OT1/cmr/m/n/10.95 vor. Da $\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 Q\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 n[]$\OT1/cmr/m/n/10.95 , ex-istieren $\OML/cmm/m/it/10.95 i; j \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; :::; n[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 ; i <
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 1212--1216
+Underfull \hbox (badness 10000) in paragraph at lines 1215--1219
 
  []
 
-[20] [21] [22] [23] [24] 
+[20] [21] [22] [23] [24]
+<Beispiel_NEA.png, id=105, 804.50563pt x 246.9225pt>
+File: Beispiel_NEA.png Graphic file (type png)
+<use Beispiel_NEA.png>
+Package pdftex.def Info: Beispiel_NEA.png  used on input line 1491.
+(pdftex.def)             Requested size: 404.71353pt x 124.21448pt.
+
+Overfull \hbox (0.414pt too wide) in paragraph at lines 1487--1494
+[]\OT1/cmr/bx/n/12 NEA - Beispiel aus der Vor-lesung \OT1/cmr/m/n/10.95 Wir be-tra-chten fol-gen-den NEA $\OML/cmm/m/it/10.95 M \OT1/cmr/m/n/10.95 = (\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 q[]; q[]; q[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 ^^F[]\OML/cmm/m/it/10.95 ; ^^N; q[]; \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 q[]\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 )$
+ []
+
+<Berechnungsbaum.png, id=107, 620.3175pt x 357.335pt>
+File: Berechnungsbaum.png Graphic file (type png)
+<use Berechnungsbaum.png>
+Package pdftex.def Info: Berechnungsbaum.png  used on input line 1501.
+(pdftex.def)             Requested size: 303.53708pt x 174.85031pt.
+[25 <./Beispiel_NEA.png> <./Berechnungsbaum.png>]
+<Potenzmengenkonstruktion_Beispiel.png, id=113, 679.03688pt x 417.56pt>
+File: Potenzmengenkonstruktion_Beispiel.png Graphic file (type png)
+<use Potenzmengenkonstruktion_Beispiel.png>
+Package pdftex.def Info: Potenzmengenkonstruktion_Beispiel.png  used on input line 1550.
+(pdftex.def)             Requested size: 379.4175pt x 233.3159pt.
+<NEA_A_k.png, id=114, 617.80812pt x 118.94438pt>
+File: NEA_A_k.png Graphic file (type png)
+<use NEA_A_k.png>
+Package pdftex.def Info: NEA_A_k.png  used on input line 1561.
+(pdftex.def)             Requested size: 404.71353pt x 77.92093pt.
+ [26] [27 <./Potenzmengenkonstruktion_Beispiel.png> <./NEA_A_k.png>] [28]
+Overfull \hbox (23.28157pt too wide) in paragraph at lines 1681--1701
+[]\OT1/cmr/m/n/10.95 Wir ze-ich-nen den zugeh^^?origen EA zuerst. [] 
+ []
+
+[29]
+<Turingmaschine.png, id=129, 872.25874pt x 288.07625pt>
+File: Turingmaschine.png Graphic file (type png)
+<use Turingmaschine.png>
+Package pdftex.def Info: Turingmaschine.png  used on input line 1767.
+(pdftex.def)             Requested size: 354.12144pt x 116.95155pt.
+ [30]
+<Schrittrelation.png, id=134, 1039.63406pt x 289.08pt>
+File: Schrittrelation.png Graphic file (type png)
+<use Schrittrelation.png>
+Package pdftex.def Info: Schrittrelation.png  used on input line 1800.
+(pdftex.def)             Requested size: 505.89pt x 140.66678pt.
+ [31 <./Turingmaschine.png>] [32 <./Schrittrelation.png>]
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1904.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1904.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1904.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1904.
+
+[33] [34] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (Beweisideen101.aux) ) 
 Here is how much of TeX's memory you used:
- 34538 strings out of 476315
- 860653 string characters out of 5787197
+ 34650 strings out of 476315
+ 863246 string characters out of 5787197
  1879068 words of memory out of 5000000
- 54408 multiletter control sequences out of 15000+600000
+ 54509 multiletter control sequences out of 15000+600000
  526760 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,103p,796b,1128s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Beweisideen101.pdf (25 pages, 354043 bytes).
+ <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi657\wasy10.pk> <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Beweisideen101.pdf (35 pages, 835399 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
+ 240 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
