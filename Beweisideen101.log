@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  27 OCT 2023 17:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  27 OCT 2023 18:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -817,31 +817,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 1215--1219
 <Beispiel_NEA.png, id=105, 804.50563pt x 246.9225pt>
 File: Beispiel_NEA.png Graphic file (type png)
 <use Beispiel_NEA.png>
-Package pdftex.def Info: Beispiel_NEA.png  used on input line 1491.
+Package pdftex.def Info: Beispiel_NEA.png  used on input line 1492.
 (pdftex.def)             Requested size: 404.71353pt x 124.21448pt.
-
-Overfull \hbox (0.414pt too wide) in paragraph at lines 1487--1494
-[]\OT1/cmr/bx/n/12 NEA - Beispiel aus der Vor-lesung \OT1/cmr/m/n/10.95 Wir be-tra-chten fol-gen-den NEA $\OML/cmm/m/it/10.95 M \OT1/cmr/m/n/10.95 = (\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 q[]; q[]; q[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 ^^F[]\OML/cmm/m/it/10.95 ; ^^N; q[]; \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 q[]\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 )$
- []
-
 <Berechnungsbaum.png, id=107, 620.3175pt x 357.335pt>
 File: Berechnungsbaum.png Graphic file (type png)
 <use Berechnungsbaum.png>
-Package pdftex.def Info: Berechnungsbaum.png  used on input line 1501.
+Package pdftex.def Info: Berechnungsbaum.png  used on input line 1502.
 (pdftex.def)             Requested size: 303.53708pt x 174.85031pt.
-[25 <./Beispiel_NEA.png> <./Berechnungsbaum.png>]
+ [25 <./Beispiel_NEA.png> <./Berechnungsbaum.png>]
 <Potenzmengenkonstruktion_Beispiel.png, id=113, 679.03688pt x 417.56pt>
 File: Potenzmengenkonstruktion_Beispiel.png Graphic file (type png)
 <use Potenzmengenkonstruktion_Beispiel.png>
-Package pdftex.def Info: Potenzmengenkonstruktion_Beispiel.png  used on input line 1550.
+Package pdftex.def Info: Potenzmengenkonstruktion_Beispiel.png  used on input line 1551.
 (pdftex.def)             Requested size: 379.4175pt x 233.3159pt.
 <NEA_A_k.png, id=114, 617.80812pt x 118.94438pt>
 File: NEA_A_k.png Graphic file (type png)
 <use NEA_A_k.png>
-Package pdftex.def Info: NEA_A_k.png  used on input line 1561.
+Package pdftex.def Info: NEA_A_k.png  used on input line 1562.
 (pdftex.def)             Requested size: 404.71353pt x 77.92093pt.
  [26] [27 <./Potenzmengenkonstruktion_Beispiel.png> <./NEA_A_k.png>] [28]
-Overfull \hbox (23.28157pt too wide) in paragraph at lines 1681--1701
+Overfull \hbox (23.28157pt too wide) in paragraph at lines 1682--1702
 []\OT1/cmr/m/n/10.95 Wir ze-ich-nen den zugeh^^?origen EA zuerst. [] 
  []
 
@@ -849,26 +844,26 @@ Overfull \hbox (23.28157pt too wide) in paragraph at lines 1681--1701
 <Turingmaschine.png, id=129, 872.25874pt x 288.07625pt>
 File: Turingmaschine.png Graphic file (type png)
 <use Turingmaschine.png>
-Package pdftex.def Info: Turingmaschine.png  used on input line 1767.
+Package pdftex.def Info: Turingmaschine.png  used on input line 1768.
 (pdftex.def)             Requested size: 354.12144pt x 116.95155pt.
  [30]
 <Schrittrelation.png, id=134, 1039.63406pt x 289.08pt>
 File: Schrittrelation.png Graphic file (type png)
 <use Schrittrelation.png>
-Package pdftex.def Info: Schrittrelation.png  used on input line 1800.
+Package pdftex.def Info: Schrittrelation.png  used on input line 1801.
 (pdftex.def)             Requested size: 505.89pt x 140.66678pt.
  [31 <./Turingmaschine.png>] [32 <./Schrittrelation.png>]
 
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1904.
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1905.
 
 
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1904.
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1905.
 
 
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1904.
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1905.
 
 
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1904.
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1905.
 
 [33] [34] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -882,7 +877,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,16n,103p,796b,1128s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi657\wasy10.pk> <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Beweisideen101.pdf (35 pages, 835399 bytes).
+Output written on Beweisideen101.pdf (35 pages, 835388 bytes).
 PDF statistics:
  240 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
