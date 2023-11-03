@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  27 OCT 2023 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  2 NOV 2023 21:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,11 +778,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 2.
  (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/wasysym\uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
-))
+) [1])
 \tf@toc=\write4
 \openout4 = `Beweisideen101.toc'.
 
- [1] [2] [3]
+ [2] [3] [4]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 338.
@@ -791,95 +791,114 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 338.
 
-[4] [5] [6] [7] [8] [9] [10] [11] (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[5] [6] [7] [8] [9] [10] [11] [12] (C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
-) [12] [13] [14] [15] [16]
+) [13] [14] [15] [16] [17]
 Underfull \hbox (badness 10000) in paragraph at lines 1057--1062
 
  []
 
-[17]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 1143--1144
 
  []
 
-[18]
+[19]
 Overfull \hbox (9.07536pt too wide) in paragraph at lines 1181--1182
 []\OT1/cmr/m/n/10.95 In dieser Berech-nung kom-men $\OML/cmm/m/it/10.95 n[] \OT1/cmr/m/n/10.95 + 1$ Zust^^?ande $\OML/cmm/m/it/10.95 q[]; q[]; :::; q[]$ \OT1/cmr/m/n/10.95 vor. Da $\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 Q\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 n[]$\OT1/cmr/m/n/10.95 , ex-istieren $\OML/cmm/m/it/10.95 i; j \OMS/cmsy/m/n/10.95 2 f\OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; :::; n[]\OMS/cmsy/m/n/10.95 g\OML/cmm/m/it/10.95 ; i <
  []
 
-[19]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 1215--1219
 
  []
 
-[20] [21] [22] [23] [24]
-<Beispiel_NEA.png, id=105, 804.50563pt x 246.9225pt>
-File: Beispiel_NEA.png Graphic file (type png)
-<use Beispiel_NEA.png>
-Package pdftex.def Info: Beispiel_NEA.png  used on input line 1492.
+[21] [22] [23] [24] [25] [26]
+<Images/Beispiel_NEA.png, id=111, 804.50563pt x 246.9225pt>
+File: Images/Beispiel_NEA.png Graphic file (type png)
+<use Images/Beispiel_NEA.png>
+Package pdftex.def Info: Images/Beispiel_NEA.png  used on input line 1494.
 (pdftex.def)             Requested size: 404.71353pt x 124.21448pt.
-<Berechnungsbaum.png, id=107, 620.3175pt x 357.335pt>
-File: Berechnungsbaum.png Graphic file (type png)
-<use Berechnungsbaum.png>
-Package pdftex.def Info: Berechnungsbaum.png  used on input line 1502.
+<Images/Berechnungsbaum.png, id=113, 620.3175pt x 357.335pt>
+File: Images/Berechnungsbaum.png Graphic file (type png)
+<use Images/Berechnungsbaum.png>
+Package pdftex.def Info: Images/Berechnungsbaum.png  used on input line 1504.
 (pdftex.def)             Requested size: 303.53708pt x 174.85031pt.
- [25 <./Beispiel_NEA.png> <./Berechnungsbaum.png>]
-<Potenzmengenkonstruktion_Beispiel.png, id=113, 679.03688pt x 417.56pt>
-File: Potenzmengenkonstruktion_Beispiel.png Graphic file (type png)
-<use Potenzmengenkonstruktion_Beispiel.png>
-Package pdftex.def Info: Potenzmengenkonstruktion_Beispiel.png  used on input line 1551.
+ [27 <./Images/Beispiel_NEA.png> <./Images/Berechnungsbaum.png>]
+<Images/Potenzmengenkonstruktion_Beispiel.png, id=119, 679.03688pt x 417.56pt>
+File: Images/Potenzmengenkonstruktion_Beispiel.png Graphic file (type png)
+<use Images/Potenzmengenkonstruktion_Beispiel.png>
+Package pdftex.def Info: Images/Potenzmengenkonstruktion_Beispiel.png  used on input line 1553.
 (pdftex.def)             Requested size: 379.4175pt x 233.3159pt.
-<NEA_A_k.png, id=114, 617.80812pt x 118.94438pt>
-File: NEA_A_k.png Graphic file (type png)
-<use NEA_A_k.png>
-Package pdftex.def Info: NEA_A_k.png  used on input line 1562.
+<Images/NEA_A_k.png, id=120, 617.80812pt x 118.94438pt>
+File: Images/NEA_A_k.png Graphic file (type png)
+<use Images/NEA_A_k.png>
+Package pdftex.def Info: Images/NEA_A_k.png  used on input line 1564.
 (pdftex.def)             Requested size: 404.71353pt x 77.92093pt.
- [26] [27 <./Potenzmengenkonstruktion_Beispiel.png> <./NEA_A_k.png>] [28]
-Overfull \hbox (23.28157pt too wide) in paragraph at lines 1682--1702
-[]\OT1/cmr/m/n/10.95 Wir ze-ich-nen den zugeh^^?origen EA zuerst. [] 
+ [28 <./Images/Potenzmengenkonstruktion_Beispiel.png>] [29 <./Images/NEA_A_k.png>] [30] [31]
+<Images/Turingmaschine.png, id=136, 872.25874pt x 288.07625pt>
+File: Images/Turingmaschine.png Graphic file (type png)
+<use Images/Turingmaschine.png>
+Package pdftex.def Info: Images/Turingmaschine.png  used on input line 1772.
+(pdftex.def)             Requested size: 354.12144pt x 116.95155pt.
+ [32 <./Images/Turingmaschine.png>]
+<Images/Schrittrelation.png, id=142, 1039.63406pt x 289.08pt>
+File: Images/Schrittrelation.png Graphic file (type png)
+<use Images/Schrittrelation.png>
+Package pdftex.def Info: Images/Schrittrelation.png  used on input line 1805.
+(pdftex.def)             Requested size: 505.89pt x 140.66678pt.
+ [33 <./Images/Schrittrelation.png>] [34]
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1910.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1910.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1910.
+
+
+LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1910.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1937--1938
+[]\OT1/cmr/m/n/10.95 Eine \OT1/cmr/bx/n/10.95 nicht-de-ter-min-is-tis-che Tur-ing-mas-chine (NTM) \OT1/cmr/m/n/10.95 ist ein $7$-Tupel $\OML/cmm/m/it/10.95 M \OT1/cmr/m/n/10.95 =
  []
 
-[29]
-<Turingmaschine.png, id=129, 872.25874pt x 288.07625pt>
-File: Turingmaschine.png Graphic file (type png)
-<use Turingmaschine.png>
-Package pdftex.def Info: Turingmaschine.png  used on input line 1768.
-(pdftex.def)             Requested size: 354.12144pt x 116.95155pt.
- [30]
-<Schrittrelation.png, id=134, 1039.63406pt x 289.08pt>
-File: Schrittrelation.png Graphic file (type png)
-<use Schrittrelation.png>
-Package pdftex.def Info: Schrittrelation.png  used on input line 1801.
-(pdftex.def)             Requested size: 505.89pt x 140.66678pt.
- [31 <./Turingmaschine.png>] [32 <./Schrittrelation.png>]
+[35]
 
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1905.
+LaTeX Warning: Command \textasciidieresis invalid in math mode on input line 1969.
 
 
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1905.
+LaTeX Warning: Command \textasciidieresis invalid in math mode on input line 1969.
 
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1905.
-
-
-LaTeX Warning: Command \textvisiblespace invalid in math mode on input line 1905.
-
-[33] [34] 
+Missing character: There is no � in font cmr10!
+[36] [37]
+<Images/Abz채hlen.png, id=160, 444.66125pt x 226.34563pt>
+File: Images/Abz채hlen.png Graphic file (type png)
+<use Images/Abz채hlen.png>
+Package pdftex.def Info: Images/Abz채hlen.png  used on input line 2048.
+(pdftex.def)             Requested size: 354.12144pt x 180.2582pt.
+<Images/Diagonalisierung.png, id=161, 414.54875pt x 209.28188pt>
+File: Images/Diagonalisierung.png Graphic file (type png)
+<use Images/Diagonalisierung.png>
+Package pdftex.def Info: Images/Diagonalisierung.png  used on input line 2073.
+(pdftex.def)             Requested size: 354.12144pt x 178.78136pt.
+ [38 <./Images/Abz채hlen.png>] [39 <./Images/Diagonalisierung.png>] [40] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (Beweisideen101.aux) ) 
 Here is how much of TeX's memory you used:
- 34650 strings out of 476315
- 863246 string characters out of 5787197
+ 34679 strings out of 476315
+ 864111 string characters out of 5787197
  1879068 words of memory out of 5000000
- 54509 multiletter control sequences out of 15000+600000
+ 54535 multiletter control sequences out of 15000+600000
  526760 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,103p,796b,1128s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi657\wasy10.pk> <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Beweisideen101.pdf (35 pages, 835388 bytes).
+Output written on Beweisideen101.pdf (41 pages, 906335 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
+ 265 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

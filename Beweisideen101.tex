@@ -1483,13 +1483,15 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
     
         $\hfill\blacksquare$
     
+        
+        \pagebreak
     
         \myTitle{NEA - Beispiel aus der Vorlesung}
         
         Wir betrachten folgenden NEA $M = (\{q_0,q_1,q_2\}, \Sigma_{\text{bool}}, \delta, q_0, \{q_2\})$
-        \begin{figure}
+        \begin{figure}[htp]
             \centering
-            \includegraphics[width=0.8\textwidth]{Beispiel_NEA.png}
+            \includegraphics[width=0.8\textwidth]{Images/Beispiel_NEA.png}
             \caption[]{Abb. 3.15 aus dem Buch}
         \end{figure}
     
@@ -1499,7 +1501,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
     
         \begin{figure}[htp]
             \centering
-            \includegraphics[width=0.6\textwidth]{Berechnungsbaum.png}
+            \includegraphics[width=0.6\textwidth]{Images/Berechnungsbaum.png}
             \caption{Abb. 3.16 aus dem Buch}
         \end{figure}
     
@@ -1548,7 +1550,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
     
         \begin{figure}[htp]
             \centering
-            \includegraphics[width=0.75\textwidth]{Potenzmengenkonstruktion_Beispiel.png}
+            \includegraphics[width=0.75\textwidth]{Images/Potenzmengenkonstruktion_Beispiel.png}
             \caption{Abb. 3.18 im Buch}
         \end{figure}
     
@@ -1559,7 +1561,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
         $$L_k = \{x1y \mid x \in (\Sigma_{\text{bool}})^*, \ y \in (\Sigma_{\text{bool}})^{k-1}\}$$
         Folgender NEA $A_k$ mit $k+1$ akzeptiert $L_k$.
         \begin{figure}
-            \includegraphics[width=0.8\textwidth]{NEA_A_k.png}
+            \includegraphics[width=0.8\textwidth]{Images/NEA_A_k.png}
             \caption{Abb. 3.19 im Buch}
         \end{figure}
     
@@ -1680,6 +1682,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
         
         
         Wir zeichnen den zugehörigen EA zuerst.
+
         \begin{tikzpicture}[shorten >=2pt,node distance=3cm,on grid,auto]
             \node[state,initial]    (q_0) {$q_0$};
             \node[state]            (q_1)  [right of=q_0] {$q_1$};
@@ -1710,7 +1713,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
         $$\forall z \in \Sigma^*: w_iz \in L \iff w_jz \in L$$
         
         Wir betrachten folgende Tabelle mit Suffixen.
-        \begin{table}
+        \begin{table}[htp]
             \centering
             \begin{tabular}{c|cccc}
                           & $0$  & $00$& $000$     & $001$    \\
@@ -1730,7 +1733,8 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
         Somit ist unsere Annahme falsch und $L$ nicht regulär.
     
         $\hfill\blacksquare$
-    \textbf{Bemerkung}
+    
+        \textbf{Bemerkung}
 
         Manchmal ist es zu schwierig einen minimalen EA zu finden und es funktioniert einfacher die Wörter durch Trial and Error zu finden. (Siehe Midterm HS22)
     
@@ -1765,7 +1769,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
     
         \begin{figure}[htp]
             \centering
-            \includegraphics[width=0.7\textwidth]{Turingmaschine.png}
+            \includegraphics[width=0.7\textwidth]{Images/Turingmaschine.png}
             \caption{Abb. 4.1 vom Buch}
         \end{figure}
     
@@ -1798,7 +1802,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
         Es gibt wieder eine Schrittrelation $\sststile{M}{} \subseteq \text{Konf}(M) \times \text{Konf}(M)$.
     
         \begin{figure}[htp]
-            \includegraphics[width=\textwidth]{Schrittrelation.png}
+            \includegraphics[width=\textwidth]{Images/Schrittrelation.png}
             \caption{Diagramm von Adeline}
         \end{figure}
     
@@ -1898,6 +1902,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
             Zu jeder Mehrband-TM $A$ existiert eine zu $A$ äquivalente TM $B$
         \end{mainbox}
         \textbf{Beweis}
+        
         Sei $A$ eine $k$-Band-Turingmaschine für ein $k \in \N \setminus \{0\}$. Wir konstruieren eine TM $B$, die Schritt für Schritt $A$ simuliert.
 
         $B$ speichert die Inhalte aller $k+1$ Bänder von $A$ auf ihrem einzigen Band. Anschaulich gesprochen ist jedes Feld auf dem Band von $B$ ein $2(k+1)$-Tupel und jedes Element dieses Tupels ist auf einer Spur. 
@@ -1927,7 +1932,224 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
             \item Maschinenmodelle sind Klassen von Maschinen (i.e. Mengen von Maschinen mit gewissen Eigenschaften).
         \end{itemize}
     
-    
+        \subsection{Nichtdeterministische Turingmaschinen}
+            \begin{mainbox}{Definition von NTM}
+                Eine \textbf{nichtdeterministische Turingmaschine (NTM)} ist ein $7$-Tupel $M = (Q, \Sigma, \Gamma, \delta, q_0, q_{\text{accept}}, q_{\text{reject}})$, wobei 
+                \begin{enumerate}[label=(\roman*)]
+                    \item $Q, \Sigma, \Gamma, q_{\text{accept}}, q_{\text{reject}}$ die gleiche Bedeutung wie bei einer TM haben, und
+                    \item $\delta: (Q \setminus \{q_{\text{accept}}, q_{\text{reject}}\}) \times \Gamma \to \mathcal{P}(Q \times \Gamma \times \{\text{L, R, N}\})$ 
+                    die \textbf{Übergangsfunktion} von $M$ ist und die folgende Eigenschaft hat:
+                    $$\delta(p, \cent) \subseteq \{(q, \cent, X) \mid q \in Q, X \in \{R, N\}\}$$
+                    für alle $p \in Q$
+                \end{enumerate}
+            \end{mainbox}
+            \textbf{Konfiguration} ähnlich wie bei TMs.
+            \begin{center}
+                Konfiguration akzeptierend $\iff$ enthält $q_{\text{accept}}$\\
+                Konfiguration verwerfend $\iff$ enthält $q_{\text{reject}}$
+            \end{center}
+        
+        
+        
+            \textbf{Die üblichen Sachen}
+            \begin{itemize}[label=-]
+                \item Schrittrelation $\sststile{M}{}$ ''verbindet zwei Konfigurationen, wenn man von der einen in die andere kommen kann''
+                \item Reflexive und transitive Hülle ist $\sststile{M}{*}$.
+                \item Berechnung von $M$ ist eine Folge von Konfigurationen $C_1, C_2, ...$, so dass $C_i \sststile{M}{} C_{i+1}$.
+                \item Eine Berechnung von $M$ auf $x$ ist beginnt in $q_0\cent x$ und endet entweder unendlich oder endet in $\{q_{\text{accept}}, q_{\text{reject}}\}$.
+            \end{itemize}
+            \begin{mainbox}{Akzeptierte Sprache}
+                $$L(M) = \{w \in \Sigma^* \mid q_0\cent w \sststile{M}{*} yq_{\text{accept}}z \text{ für irgendwelche }y,z \in \Gamma^*\}$$
+            \end{mainbox}
+        
+        
+        
+            \textbf{Berechnungsbaum}
+            \begin{mainbox}{}
+                Sei $M¨=  (Q, \Sigma, \Gamma, \delta, q_0, q_{\text{accept}}, q_{\text{reject}})$ eine NTM 
+                und sei $x$ ein Wort über dem Eingabealphabet $\Sigma$ von $M$. 
+                Ein \textbf{Berechnungsbaum $\mathbf{T_{M, x}}$ von $\mathbf{M}$ auf $\mathbf{x}$} ist ein 
+                (potentiell unendlicher) gerichteter Baum mit einer Wurzel, der wie folgt definiert wird.
+        
+                \begin{enumerate}[label=(\roman*)]
+                    \item Jeder Knoten von $T_{M,x}$ ist mit einer Konfiguration beschriftet.
+                    \item Die Wurzel ist der einzige Knoten von $T_{M,x}$ mit dem Eingangsgrad $0$ und ist mit der Startkonfiguration $q_0\cent x$ beschriftet.
+                    \item Jeder Knoten des Baumes, der mit einer Konfiguration $C$ beschriftet ist, hat genauso viele Kinder wie $C$ Nachfolgekonfigurationen hat, und diese Kinder sind mit diesen Nachfolgekonfigurationen $C$ markiert.
+                \end{enumerate}
+            \end{mainbox}
+        
+        
+        
+            \textbf{Äquivalenz NTM und TM}
+            \begin{mainbox}{Satz 4.2}
+                Sei $M$ eine NTM. Dann existiert eine TM $A$, so dass 
+                \begin{enumerate}[label=(\roman*)]
+                    \item $L(M) = L(A)$ und 
+                    \item falls $M$ keine unendlichen Berechnungen auf Wörtern aus $L(M)^\complement$ hat, dann hält $A$ immer.
+                \end{enumerate}
+            \end{mainbox}
+            \textbf{Beweisidee:} 
+            
+            ''BFS im Berechnungsbaum'', i.e. wir simulieren einzelne Schritte der verschiedenen Berechnungsstränge.
+        
+        
+        \section{Einstieg Berechnenbarkeit}
+        
+        \subsection{Diagonalisierung}
+        
+        
+            \textbf{Bijektion, Injektion, Schreibweise}
+            \begin{mainbox}{}
+                Seien $A$ und $B$ zwei Mengen.
+        
+                Wir sagen, dass 
+                \begin{enumerate}[label=\roman*.]
+                    \item $\mathbf{|A| \leq |B|}$, falls eine injektive Funktion $f: A \to B$ existiert.
+                    \item $\mathbf{|A| = |B|}$, falls $|A| \leq |B|$ und $|B| \leq |A|$.
+                    \item $\mathbf{|A| < |B|}$, falls $|A| \leq |B|$ und keine injektive Abbildung von $B$ nach $A$ existiert.
+                \end{enumerate}
+            \end{mainbox}
+            \textbf{Zur Erinnerung:}
+            \begin{center}
+                $f: A \to B$ injektiv $\iff $ $\forall x,y \in A, x\neq y. f(x) \neq f(y)$
+            \end{center}
+        
+        
+        
+            \textbf{Abzählbarkeit}
+            \begin{mainbox}
+                Eine Menge $A$ heisst \textbf{abzählbar}, falls $A$ endlich ist oder $|A| = |\N|$.
+            \end{mainbox}
+            \begin{subbox}{Lemma 5.1}
+            Sei $\Sigma$ ein beliebiges Alphabet. Dann ist $\Sigma^*$ abzählbar.
+            \end{subbox}
+            \textbf{Beweisidee}
+        
+            kanonische Ordnung gibt uns eine Bijektion zwischen $\N$ und $\Sigma^*$.
+        
+            \begin{mainbox}{Satz 5.1}
+                Die Menge \textbf{KodTM} der Turingmaschinenkodierungen ist abzählbar.
+            \end{mainbox}
+            \textbf{Beweisidee}
+        
+            KodTM $\subseteq (\Sigma_{\text{bool}})^*$ und Lemma 5.1
+        
+            \begin{mainbox}{Lemma 5.2}
+                $(\N\setminus\{0\}) \times (\N \setminus \{0\})$ ist abzählbar.
+            \end{mainbox}
+            \textbf{Beweisidee}
+        
+            Unendliche 2-dimensionale Tabelle, so dass an der $i$-ten Zeile und $j$-ten Spalte, sich das Element $(i,j) \in (\N\setminus\{0\}) \times (\N \setminus \{0\})$ befindet.
+        
+            Formal definiert man dabei die lineare Ordnung 
+            $$(a,b) < (c,d) \iff a+b < c+d \text{ oder }(a+b = c+d \text{ und } b <d)$$
+        
+            \begin{figure}[htp]
+                \includegraphics[width=0.7\textwidth]{Images/Abzählen.png}
+                \caption{Abbildung 5.3 im Buch}
+            \end{figure}
+        
+            Die $i$-te Diagonale hat $i$ Elemente. Ein beliebiges Element $(a,b) \in (\N\setminus\{0\}) \times (\N \setminus \{0\})$ ist das $b$-te Element auf der $(a+b-1)$-ten Diagonale.
+            
+            Auf den ersten $a+b-2$ Diagonalen gibt es 
+            $$\sum_{i = 1}^{a+b-2}i = \frac{(a+b-2)\cdot((a+b-2)+1)}{2} = \binom{a+b-1}{2}$$
+            Elemente.
+        
+            Folglich ist 
+            $$f((a,b)) = \binom{a+b-1}{2} + b$$
+            eine Bijektion von $(\N\setminus\{0\}) \times (\N \setminus \{0\})$ nach $\N\setminus\{0\}$.
+        
+        
+        
+            \textbf{Überabzählbarkeit}
+            \begin{mainbox}{Satz 5.3}
+                $[0,1]$ ist nicht abzählbar.
+            \end{mainbox}
+            \textbf{Beweisidee}
+            
+            Klassisches Diagonalisierungsargument. Aufpassen auf $0$ und $9$. I.e. $1 = 0.\overline{99}$.
+        
+            \begin{figure}[htp]
+                \includegraphics[width=0.7\textwidth]{Images/Diagonalisierung.png}
+            \end{figure}
+        
+            \begin{mainbox}{Satz 5.4}
+                $\mathcal{P}((\Sigma_{\text{bool}})^*)$ ist nicht abzählbar.
+            \end{mainbox}
+            \textbf{Beweis: }
+        
+                Wir definieren eine injektive Funktion von $f: [0, 1] \to \mathcal{P}((\Sigma_{bool})^*)$ und beweisen so $|\mathcal{P}((\Sigma_{bool})^*)| \geq |[0, 1]|$.
+            
+                Sei $a \in [0, 1]$ beliebig. Wir können $a$ wie folgt binär darstellen:
+                $$\text{Nummer}(a) = 0.a_1a_2a_3a_4... \text{ mit } a = \sum_{i = 1}^{\infty} a_i\cdot 2^{-i}.$$ 
+                
+                Hier ist zu beachten, dass wir für eine Zahl $a$ immer die lexikographisch letzte Darstellung wählen.
+            
+            Dies tun wir, weil eine reelle Zahl 2 verschiedene Binärdarstellungen haben kann. Beispiel: $\frac{1}{2} = 0.1\overline{0} = 0.0\overline{1}$.
+                
+                Für jedes $a$ definieren wir:
+                $$f(a) = \{a_1, a_2a_3, a_4a_5a_6, ..., a_{\binom{n}{2}+1}a_{\binom{n}{2}+2}...a_{\binom{n+1}{2}} , ...\}$$
+            
+                Da $f(a) \subseteq (\Sigma_{bool})^*$ gilt $f(a) \in \mathcal{P}((\Sigma_{bool})^*)$.
+            
+                Wir haben für alle $n \in \N \setminus\{0\}$, dass $f(a)$ \textbf{genau} ein Wort dieser Länge enthält. Nun können wir daraus folgendes schliessen:
+            
+                Weil die Binärdarstellung zweier unterschiedlichen reellen Zahlen an mindestens einer Stelle unterschiedlich ist, gilt $b \neq c \implies f(b) \neq f(c), \forall b,c \in [0, 1]$. 
+            
+                Folglich ist $f$ injektiv und wir haben $|\mathcal{P}((\Sigma_{bool})^*)| \geq |[0, 1]|$.
+            
+                Da $[0,1]$ nicht abzählbar ist, folgt daraus:
+            
+                $\mathcal{P}((\Sigma_{bool})^*)$ ist nicht abzählbar.
+                
+                \hspace*{0pt}\hfill$\blacksquare$
+        
+        
+        
+            \textbf{Diagonalsprache $L_{\text{diag}}$ }
+            Zur Erinnerung:
+            \begin{mainbox}{Rekursiv aufzählbare Sprachen}
+                Eien Sprache $L \subseteq \Sigma^*$ heisst \textbf{rekursiv aufzählbar}, falls eine TM $M$ existiert, so dass $L = L(M)$.
+                $$\mathbf{\mathcal{L}_{\textbf{RE}}} = \{L(M) \mid M \text{ ist eine TM}\}$$
+                ist die \textbf{Klasse aller rekursiv aufzählbaren Sprachen}.
+            \end{mainbox}
+            Wir zeigen jetzt per Diagonalisierung, die Existenz einer Sprache die nicht rekursiv aufzählbar ist.
+        
+        
+            Sei $w_1, w_2,...$ die kanonische Ordnung aller Wörter über $\Sigma_{\text{bool}}$ und sei $M_1, M_2, M_3,...$ die Folge aller Turingmaschinen.
+            
+            Wir definieren eine unendliche (bool'sche) Matrix $A = [d_{ij}]_{i,j = 1, 2, ...}$ mit 
+            $$d_{ij} = 1 \iff M_i \text{ akzeptiert }w_j.$$
+        
+            Wir definieren
+            $$L_{\text{diag}} = \{w \mid w = w_i \text{ und $M_i$ akzeptiert $w_i$ nicht für ein $i \in \N\setminus\{0\}$}\}$$
+        
+        
+            \begin{mainbox}{Satz 5.5}
+                $$L_{\text{diag}} \notin \L_{\text{RE}}$$
+            \end{mainbox}
+        
+            \textbf{Beweis:}
+        
+            Wir haben 
+            $$L_{\text{diag}} = \{w \mid w = w_i \text{ und $M_i$ akzeptiert $w_i$ nicht für ein $i \in \N\setminus\{0\}$}\}$$
+        
+            Widerspruchsbeweis:
+        
+            Sei $L_\text{diag} \in \L_{\text{RE}}$. Dann existiert eine TM $M$, so dass $L(M) = L_\text{diag}$. Da diese TM eine TM in der Nummerierung aller TM ist, existiert ein $i \in \N$, so dass $M_i = M$.
+        
+            Wir betrachten nun das Wort $w_i$ für diese $i \in \N$. Per Definition von $L_\text{diag}$, gilt:
+        
+            $$w_i \in L_\text{diag} \iff w_i \notin L(M_i)$$
+        
+            Da aber $L(M_i) = L_\text{diag}$, haben wir folgenden Widerspruch:
+            $$w_i \in L_\text{diag} \iff w_i \notin L_\text{diag}$$
+        
+            Folglich gilt $L_\text{diag} \notin \L_\text{RE}$.
+            
+            \hspace*{0pt}\hfill$\blacksquare$
+        
+        
     
     
     \section{Midterm Prep}
