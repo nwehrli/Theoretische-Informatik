@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1700081932 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" "Beweisideen101.pdf" "Beweisideen101" 1700081940 0
-  "Beweisideen101.aux" 1700081939 7406 7d2c735e081157710442321a74d688fe "pdflatex"
-  "Beweisideen101.tex" 1700081931 135023 3312b767956d93d1359d39ba61d7b336 ""
-  "Beweisideen101.toc" 1700081939 3764 5ddb48f43a918cb241283ff911457f15 "pdflatex"
+["pdflatex"] 1700227191 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" "Beweisideen101.pdf" "Beweisideen101" 1700227198 0
+  "Beweisideen101.aux" 1700227197 8096 ff10e9d919dc4fc3ea63dbf2e27ef5f3 "pdflatex"
+  "Beweisideen101.tex" 1700224862 155045 99529d93595989b9406959a4605376f3 ""
+  "Beweisideen101.toc" 1700227197 4208 f25b47d63fbdb05f3244afbcd6f885b3 "pdflatex"
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1699536922 356719 66d2b7a56ceb46004626970aadcbfa64 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1670535525 12668 dfb72ac077806cdc6bad8d5cb073bbb5 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/pk/ljfour/public/wasy/dpi657/wasy10.pk" 1670620225 16476 efde6fbc466769b0b895e5e3099d5dac ""
@@ -264,7 +264,7 @@
   "Images/Potenzmengenkonstruktion_Beispiel.png" 1698046702 115978 0b8b645d3093e96729a0937eb936b938 ""
   "Images/Schrittrelation.png" 1698303131 207294 e1b19300818545e3f361f579b28e2bd3 ""
   "Images/Turingmaschine.png" 1698051027 66365 7fd2755d40ab2bce1d36243d79b37086 ""
-  "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" 1700081931 135023 3312b767956d93d1359d39ba61d7b336 ""
+  "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" 1700224862 155045 99529d93595989b9406959a4605376f3 ""
   (generated)
   "Beweisideen101.aux"
   "Beweisideen101.log"

@@ -2295,219 +2295,556 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
             
             
             
-                \subsection{Beispielaufgabe 17a HS22}
+              
 
-                Beweise $$L_H \leq_{\text{EE}} L_U$$
-                wobei 
-                $$L_H = \{\text{Kod}(M)\#w \mid M\text{ hält auf }w\land w \in (\Sigma_{\text{bool}})^*\}$$
-                und 
-                $$L_U=\{\text{Kod}(M)\#w \mid M \text{ akzeptiert }w \land w \in (\Sigma_{\text{bool}})^*\}$$
-            
-            
-                \textbf{Lösung}
-            
-                Wir wollen $L_H \leq_{\text{EE}} L_U$ zeigen.
-            
-                    Wir geben die Reduktion zuerst als Zeichnung an.
-            
-                    \begin{figure}[htp]
-                        \centering
-                        \includegraphics[width = 0.7\textwidth]{Images/17a_Zeichnung.png}
-                        \caption{EE-Reduktion von $L_H$ auf $L_U$}
-                    \end{figure}
+                \begin{mainbox}{Lemma 5.5}
+                    $$L_{\text{diag}}^{\complement} \in \Lre$$
+                \end{mainbox}
+                \textbf{Beweis}
                     
-        
-                Wir definieren eine Funktion $M(x)$ für ein $x \in \{0,1,\#\}^*$, so dass
+                
+                    Direkter Beweis: Wir beschreiben eine TM $A$ mit $L(A) = L_{\text{diag}}^\complement$.
+                    
+                    \textbf{Eingabe}: $x \in (\Sigma_{\text{bool}})^*$
+                    
+                    \begin{enumerate}[label=(\roman*)]
+                        \item Berechne $i$, so dass $w_i = x$ in kanonischer Ordnung
+                        \item Generiere $\text{Kod}(M_i)$.
+                        \item Simuliere die Berechnung von $M_i$ auf $w_i = x$. 
+                    \end{enumerate}
+                   
+                
+                    \begin{itemize}[label=-]
+                        \item Falls $w_i \in L(M_i)$ akzeptiert, akzeptiert $A$ die Eingabe $x$.
+                        \item Falls $M_i$ verwirft (hält in $q_{\text{reject}}$), dann hält $A$ und verwirft $x = w_i$ auch.
+                        \item Falls $M_i$ unendlich lange arbeitet, wird $A$ auch nicht halten und dann folgt auch $x \notin L(A)$.  
+                    \end{itemize}
+                    Aus dem folgt $L(A) = L_{\text{diag}}^\complement$.
+                
+                    $\hfill\blacksquare$
+                    \begin{subbox}{Korollar 5.3}
+                        $L_{\text{diag}}^\complement \in \Lre \setminus \Lr$ und daher $\Lr \subsetneq \Lre$.
+                    \end{subbox}
+                
+                
+                
+                    \subsection{Universelle Sprache}
+                    Sei 
+                    $$L_U := \{\text{Kod}(M)\#w \mid w \in (\Sigma_{\text{bool}})^* \text{ und } M \text{ akzeptiert }w\}$$
+                    \begin{mainbox}{Satz 5.6}
+                        Es gibt eine TM $U$, \textbf{universelle TM} genannt, so dass 
+                        $$L(U) = L_U$$
+                        Daher gilt $L_U \in \Lre$.
+                    \end{mainbox} 
+                    \textbf{Beweis}
+                
+                    Direkter Beweis: Konstruktion einer TM.
+                
+                    \textit{Siehe Buch/Vorlesung.}
+                
+                    \begin{mainbox}{Satz 5.7}
+                        $$L_U \notin \Lr$$
+                    \end{mainbox}
+                    \textbf{Beweis}
+                
+                    Wir zeigen $L_{\text{diag}}^\complement \leq_{\text{R}} L_U$.
+                
+                    \textit{Siehe Buch/Vorlesung.}
+                    \subsection{Halteproblem}
+                    Sei $$L_H = \{\text{Kod}(M)\#w \mid M \text{ hält auf }w\}$$
+                    \begin{mainbox}{Satz 5.8}
+                        $$L_H \notin \Lr$$
+                    \end{mainbox}
+                    \textbf{Beweis}
+                
+                    Wir zeigen $L_U \leq_{\text{R}} L_H$.
+                
+                    \textit{Siehe Buch/Vorlesung.}
+                
+                
+                
+                
+                
+                    \subsection{Parallele Simulation vs Nichtdeterminismus}
+                    Sei 
+                    $$L_{\text{empty}} = \{\text{Kod}(M) \mid L(M) = \emptyset\}$$
+                    und 
+                    $$L_{\text{empty}}^\complement = \{\text{Kod}(M) \mid L(M) \neq \emptyset\} \cup \{x \in \{0,1, \#\}\mid x \notin \textbf{KodTM}\}$$
+                    \begin{mainbox}{Lemma 5.6}
+                        $$L_{\text{empty}}^\complement \in \Lre$$
+                    \end{mainbox}
+                
+                
+                
+                    \myTitle{Nichtdeterminismus}
+
+                    \textbf{Beweis}
+                
+                    Da für jede NTM $M_1$ eine TM $M_2$ existiert mit $L(M_1) = L(M_2)$, reicht es eine NTM $M_1$ mit $L(M_1) = L_{\text{empty}}^\complement$ zu finden.
+                
+                    Eingabe: $x \in \{0,1,\#\}$
+                    \begin{enumerate}[label=(\roman*)]
+                        \item $M_1$ prüft deterministisch, ob $x = \text{Kod}(M)$ für eine TM $M$. 
+                        
+                        Falls $x$ keine TM kodiert, wird $x$ akzeptiert.
+                        
+                        \item Sonst gilt $x = \text{Kod}(M)$ für eine TM $M$ und $M_1$ wählt nichtdeterministisch ein Wort $y \in (\Sigma_{\text{bool}})^*$. 
+                        
+                        \item Dann simuliert $M_1$ die TM $M$ auf $y$ deterministisch und übernimmt die Ausgabe. 
+                    \end{enumerate} 
+                
+                
+                    Wir unterscheiden zwischen 3 Fällen
+                    \begin{enumerate}[label = \Roman*]
+                        
+                        \item $x = \text{Kod}(M)$ und $L(M) = \emptyset$
+                        
+                        Dann gilt $x \notin L_{\text{empty}}^\complement$ und da es keine akzeptierende Berechnung gibt, auch $x \notin L(M_1)$.
+                        
+                        \item $x = \text{Kod}(M)$ und $L(M) \neq \emptyset$
+                        
+                        Dann gilt $x \in L_{\text{empty}}^\complement$ und da es eine akzeptierende Berechnung gibt, auch $x \in L(M_1)$.
+                        
+                        \item $x$ kodiert keine TM
+                        
+                        Wir haben $x \in L_{\text{empty}}^\complement$ und wegen Schritt (i) auch $x \in L(M_1)$.
+                    \end{enumerate}
+                    Somit gilt $L(M_1) = L_{\text{empty}}^\complement$.
+                
+                    $\hfill\blacksquare$
+                
+                
+                
+                    \myTitle{Parallele Simulation}
+
+                    \textbf{Alternativer Beweis}
+                
+                    Wir konstruieren eine TM $A$ mit $L(A) = L$ direkt.
+                    Eingabe: $x \in \{0,1,\#\}$
+                    \begin{enumerate}[label=\Roman*.]
+                        
+                        \item Falls $x$ keine Kodierung einer TM ist, akzeptiert $A$ die Eingabe.
+                        
+                        \item Falls $x = \text{Kod}(M)$ für eine TM $M$, arbeitet $A$ wie folgt
+                        \begin{itemize}[label=-]
+                            \item Generiert systematisch alle Paare $(i, j) \in (\N \setminus \{0\}) \times (\N \setminus \{0\})$. (Abzählbarkeit)
+                            \item Für jedes Paar $(i, j)$, generiert $A$ das kanonisch $i$-te Wort $w_i$ und simuliert $j$ Berechnungsschritte der TM $M$ auf $w_i$.
+                            \item Falls $M$ an ein Wort akzeptiert, akzeptiert $A$ das Wort $x$.
+                        \end{itemize}
+                    \end{enumerate}
+                
+                    Falls $L(M) \neq \emptyset$ existiert ein $y \in L(M)$. Dann ist $y = w_k$ für ein $k \in \N\setminus\{0\}$ und die akzeptierende Berechnung von $M$ auf $y$ hat eine endliche Länge $l$.
+                
+                    Das Paar $(k, l)$ wird in endlich vielen Schritten erreicht und somit akzeptiert $A$ die Eingabe $x$, falls $L(M) \neq \emptyset$.
+                
+                    Somit folgt $L(A) = L_{\text{diag}}^\complement$.
+                
+                    $\hfill\blacksquare$
+                
+                
+                
+                    \subsection{Aufgabe 5.22}
+                    Wir zeigen
+                    $$L \in \Lre \land L^\complement \in \Lre \iff L \in \Lr$$
+                
+                    $\mathbf{(\implies):}$
+                    
+                    Nehmen wir $L \in \Lre \land L^\complement \in \Lre$ an.
+                
+                    Dann existiert eine TM $M$ und $M_C$ mit $L(M) = L$ und $L(M_C) = L^\complement$.
+                
+                    Wir konstruieren eine TM $A$, die für eine Eingabe $w$ die beiden TM's $M$ und $M_C$ parallel auf $w$ simuliert.
+                    
+                    $A$ akzeptiert $w$, falls $M$ das Wort akzeptiert und verwirft, falls $M_C$ das Wort akzeptiert.
+                    
+                    Bemerke, dass $L(M) \cap L(M_C) = \emptyset$ und $L(M) \cup L(M_C) = \Sigma^*$.
+                
+                    Da $w \in L(M)$ oder $w \in L(M_C)$, hält $A$ immer.
+                
+                    Da $A$ genau dann akzeptiert, falls $w \in L(M)$, folgt $L(A) = L(M) = L$.
+                
+                    Demnach gilt $L \in \Lr$.
+                
+                    
+                    $\mathbf{(\impliedby):}$
+                
+                    Nehmen wir $L \in \Lr$ an. Per Lemma 5.4 gilt $L^\complement \leq_{\text{R}} L$ und daraus folgt auch $L^\complement \in \Lr$.
+                
+                    Da $\Lr \subset \Lre$, folgt $L \in \Lre \land L^\complement \in \Lre$.
+                
+                    $\hfill\blacksquare$
+                
+                
+                    \begin{mainbox}{Lemma 5.7}
+                        $$L_{\text{empty}}^\complement \notin \Lr$$
+                    \end{mainbox}
+                    \textbf{Beweis }
+                
+                    Wir zeigen $L_U \leq_{\text{EE}} L_{\text{empty}}^\complement$.
+                
+                    \textit{Siehe Buch/Vorlesung.}
+                   
+                
+                    \begin{subbox}{Korollar 5.4}
+                        $$L_{\text{empty}} \notin \Lr$$
+                    \end{subbox}
+                    \begin{subbox}{Korollar 5.5}
+                        $$L_{\text{EQ}} \notin \Lr$$
+                        für $L_{\text{EQ}} = \{\text{Kod}(M)\#\text{Kod}(\overline{M}) \mid L(M) = L(\overline{M})\}$.
+                    \end{subbox}
+                
+                    \subsection{Beispielaufgabe 17a HS22}
+
+                    Beweise $$L_H \leq_{\text{EE}} L_U$$
+                    wobei 
+                    $$L_H = \{\text{Kod}(M)\#w \mid M\text{ hält auf }w\land w \in (\Sigma_{\text{bool}})^*\}$$
+                    und 
+                    $$L_U=\{\text{Kod}(M)\#w \mid M \text{ akzeptiert }w \land w \in (\Sigma_{\text{bool}})^*\}$$
+                
+                
+                    \textbf{Lösung}
+                
+                    Wir wollen $L_H \leq_{\text{EE}} L_U$ zeigen.
+                
+                        Wir geben die Reduktion zuerst als Zeichnung an.
+                
+                        \begin{figure}[htp]
+                            \centering
+                            \includegraphics[width = 0.7\textwidth]{Images/17a_Zeichnung.png}
+                            \caption{EE-Reduktion von $L_H$ auf $L_U$}
+                        \end{figure}
+                        
+            
+                    Wir definieren eine Funktion $M(x)$ für ein $x \in \{0,1,\#\}^*$, so dass
+                        $$x \in L_H \iff M(x) \in L_U \qquad (1)$$
+                    
+                        Falls $x$ nicht die richtige Form hat, ist $M(x) = \lambda$, sonst ist $M(x) = \text{Kod}(M')\#w$ wobei $M'$ gleich aufgebaut ist wie $M$, ausser dass alle Transitionen zu $q_{reject}$ zu $q_{accept}$ umgeleitet werden. Wir sehen, dass $M'$ genau dann $w$ akzeptiert, wenn $M$ auf $w$ hält. 
+                        
+                        Dieses $M(x)$ übergeben wir dem Algorithmus für $L_U$. 
+                
+                        
+                    Wir beweisen nun $x \in L_H \iff M(x) \in L_U$:
+                
+                        \begin{enumerate}[label=(\roman*)]
+                            \item $x \in L_H$
+                
+                                Dann ist $x = \text{Kod}(M)\#w$ von der richtigen Form, und $M$ hält auf $w$. 
+                                Das heisst die Simulation von $M$ auf $w$ endet entweder in $q_{reject}$ oder in $q_{accept}$. 
+                                
+                                Folglich wird $M'$ $w$ immer akzeptieren, da alle Transitionen zu $q_{reject}$ zu $q_{accept}$ umgeleitet wurden. 
+                                
+                                $x \in L_H \implies M(x) \in L_U$
+                
+                            \item $x \notin L_H$
+                
+                                Dann unterscheiden wir zwischen zwei Fällen:
+                
+                                \begin{enumerate}[label=(\alph*)]
+                                    \item 
+                                    
+                                    $x$ hat nicht die richtige Form, i.e. $x \neq \text{Kod}(M)\#w$.
+                                    Dann ist $M(x) = \lambda$ und da es keine Kodierung einer Turingmaschine $M$ gibt, so dass Kod$(M) = \lambda$, gilt   $\lambda \notin L_U$.
+                            
+                
+                   
+                    \item
+                
+                                    $x = \text{Kod}(M)\#w$ hat die richtige Form. Dann haben wir $M(x) = $ Kod$(M')\#w$.
+                                    
+                                    Da aber $x \notin L_H$, hält $M$ nicht auf $w$. Da $M$ nicht auf $w$ hält, erreicht es nie $q_{reject}$ oder $q_{accept}$ in $M$ und so wird $w$ von $M'$ nicht akzeptiert. 
+                
+                                    $\implies M(x) \notin L_U$
+                
+                                   
+                                    
+                                    
+                                \end{enumerate}
+                                
+                                 So haben wir mit diesen Fällen (a) und (b) $x \notin L_H \implies M(x) \notin L_U$ bewiesen. 
+                                 
+                                 Aus indirekter Implikation folgt $M(x) \in L_U \implies x \in L_H$
+                                     
+                        \end{enumerate}
+                
+                   
+                
+                    Aus (i) und (ii) folgt 
+                    
                     $$x \in L_H \iff M(x) \in L_U \qquad (1)$$
                 
-                    Falls $x$ nicht die richtige Form hat, ist $M(x) = \lambda$, sonst ist $M(x) = \text{Kod}(M')\#w$ wobei $M'$ gleich aufgebaut ist wie $M$, ausser dass alle Transitionen zu $q_{reject}$ zu $q_{accept}$ umgeleitet werden. Wir sehen, dass $M'$ genau dann $w$ akzeptiert, wenn $M$ auf $w$ hält. 
+                    Somit ist die Reduktion korrekt.
+                
+                    \hspace*{0pt}\hfill$\blacksquare$
+                
+                
+                
+                    \subsection{Beispielaufgabe 18b HS22}
+    
+                    Sei $$L_{\text{infinite}} = \{\text{Kod}(M) \mid \text{$M$ hält auf keiner Eingabe}\}$$
+                    Zeige $(L_{\text{infinite}})^C \notin \Lr$
+                
+                
+                    \textbf{Lösung}
+    
+                    Wir zeigen, dass $(L_{\text{infinite}})^C \notin \Lr$ mit einer geeigneten Reduktion.
+                
+                    Wir beweisen $L_H \leq_{\text{R}} (L_{\text{infinite}})^C$
+                
+                    Um dies zu zeigen nehmen wir an, dass wir einen Algorithmus $A$ haben, der $(L_{\text{infinite}})^C$ entscheidet.
+                     Wir konstruieren einen Algorithmus $B$, der mit Hilfe von $A$, die Sprache $L_H$ entscheidet. 
+                     
+                    Wir betrachten folgende Abbildung:
                     
-                    Dieses $M(x)$ übergeben wir dem Algorithmus für $L_U$. 
-            
-                    
-                Wir beweisen nun $x \in L_H \iff M(x) \in L_U$:
-            
-                    \begin{enumerate}[label=(\roman*)]
-                        \item $x \in L_H$
-            
-                            Dann ist $x = \text{Kod}(M)\#w$ von der richtigen Form, und $M$ hält auf $w$. 
-                            Das heisst die Simulation von $M$ auf $w$ endet entweder in $q_{reject}$ oder in $q_{accept}$. 
-                            
-                            Folglich wird $M'$ $w$ immer akzeptieren, da alle Transitionen zu $q_{reject}$ zu $q_{accept}$ umgeleitet wurden. 
-                            
-                            $x \in L_H \implies M(x) \in L_U$
-            
-                        \item $x \notin L_H$
-            
-                            Dann unterscheiden wir zwischen zwei Fällen:
-            
-                            \begin{enumerate}[label=(\alph*)]
-                                \item 
-                                
-                                $x$ hat nicht die richtige Form, i.e. $x \neq \text{Kod}(M)\#w$.
-                                Dann ist $M(x) = \lambda$ und da es keine Kodierung einer Turingmaschine $M$ gibt, so dass Kod$(M) = \lambda$, gilt   $\lambda \notin L_U$.
+                    \begin{figure}[htp]
+                        \centering
+                        \includegraphics[width=0.75\textwidth]{Images/18b_Zeichnung.png}
+                        \caption{R-Reduktion von $L_H$ auf $(L_{\text{infinite}})^C$}
+                    \end{figure}
+                
+                
+                    \begin{enumerate}[label=\Roman*.]
+                        \item Für eine Eingabe $x \in \{0,1,\#\}^*$ berechnet das Teilprogramm $C$, ob $x$ die richtige Form hat(i.e. ob $x = $ Kod$(M)\#w$ für eine TM $M$).
+                        \item Falls nicht, verwirft $B$ die Eingabe $x$.
                         
-            
-               
-                \item
-            
-                                $x = \text{Kod}(M)\#w$ hat die richtige Form. Dann haben wir $M(x) = $ Kod$(M')\#w$.
-                                
-                                Da aber $x \notin L_H$, hält $M$ nicht auf $w$. Da $M$ nicht auf $w$ hält, erreicht es nie $q_{reject}$ oder $q_{accept}$ in $M$ und so wird $w$ von $M'$ nicht akzeptiert. 
-            
-                                $\implies M(x) \notin L_U$
-            
-                               
-                                
-                                
+                        \item Ansonsten, konstruiert $C$ eine Turingmaschine $M'$, die Eingaben ignoriert und immer $M$ auf $w$ simuliert. Wir sehen, dass $M'$ genau dann hält, wenn $M$ auf $w$ hält. 
+                        \item Folglich hält $M'$ entweder für jede Eingabe ($M$ hält auf $w$) oder für keine ($M$ hält nicht auf $w$).
+                         
+                        \item Da $A$ genau dann akzeptiert, wenn die Eingabe keine gültige Kodierung ist(ausgeschlossen, da $C$ das herausfiltert) oder wenn die Eingabe $M(x)= \text{Kod}(M')$ und $M'$ für mindestens eine Eingabe hält, akzeptiert $A$ $M(x)$ genau dann, wenn $x = \text{Kod}(M)\#w$ die richtige Form hat und $M$ auf $w$ hält.
+                    \end{enumerate}
+                    
+                    
+                    Folglich gilt $$x \in L_H \iff M(x) \in (L_{\text{infinite}})^C$$
+                    $\implies L_H \leq_R (L_{\text{infinite}})^C$ 
+                
+                    Also folgt die Aussage
+                    $$(L_{\text{infinite}})^C \in \L_R \implies L_H \in \L_R$$
+                
+                    Da wir $L_H \notin \L_R$ (\textbf{Satz 5.8}), folgt per indirekter Implikation:
+                    $$(L_{\text{infinite}})^C \notin \L_R$$
+                
+                    \hspace*{0pt}\hfill$\blacksquare$
+                
+                \section{Satz von Rice}
+                
+                
+                    \myTitle{Spezialfall des Halteproblems}
+                    Wir definieren $L_{\text{H}, \lambda} = \{\text{Kod}(M) \mid M \text{ hält auf }\lambda\}$.
+                    \begin{mainbox}{Lemma 5.8}
+                        $$L_{\text{H}, \lambda} \notin \Lr$$
+                    \end{mainbox}
+                    \textbf{Beweis: }
+                
+                    Wir zeigen $L_\text{H} \leq_\text{EE} L_{\text{H}, \lambda}$. Wir beschreiben einen Algorithmus $B$, so dass $x \in L_\text{H} \iff B(x) \in L_{\text{H}, \lambda}$.
+                
+                    Für jede Eingabe arbeitet $B$ wie folgt:
+                    \begin{itemize}
+                        \item Falls $x$ von der falschen Form, dann $B(x) = M_{inf}$, wobei $M_{inf}$ unabhängig von der Eingabe immer unendlich läuft.
+                        \item Sonst $x = \text{Kod}(M)\#w$: Dann $B(x) = M'$, wobei $M'$ die Eingabe ignoriert und immer $M$ auf $w$ simuliert.
+                    \end{itemize}
+                
+                    Wir sehen, dass $M'$ genau dann auf $\lambda$ hält, wenn $x \in L_{\text{H}}$.
+                
+                    Daraus folgt $x \in L_\text{H} \iff B(x) \in L_{\text{H}, \lambda}$.
+                
+                    \hspace*{0pt}\hfill$\blacksquare$
+                
+                    \myTitle{Satz von Rice}
+                    \begin{mainbox}{Satz 5.9}
+                        Jedes semantisch nichttriviale Entscheidungsproblem über Turingmaschinen ist unentscheidbar.
+                    \end{mainbox}
+                    \begin{itemize}
+                        \item 'über Turingmaschinen' = $L \subseteq \textbf{KodTM}$.
+                        \item 'nichttrivial' = $\exists M_1: \text{Kod}(M_1) \in L$ und $\exists M_2: \text{Kod}(M_2) \notin L$
+                        \item 'semantisch' = Für $A, B$ mit $L(A) = L(B)$ gilt $\text{Kod}(A) \in L \iff \text{Kod}(B) \in L$.
+                    \end{itemize}
+                
+                    
+                
+                    \subsection{Beispielaufgabe: Satz von Rice}
+                    Wir definieren $$L_{\text{all}} = \{\text{Kod}(M) \mid L(M) = (\Sigma_{\text{bool}})^*\}.$$
+                
+                    Zeige $$L_{\text{all}} \notin \Lr.$$
+                
+                
+                
+                
+                \section{How To Reduktion}
+                
+                    \subsection{$L \in \Lr$ }
+                        Wir kennen zwei Methoden um dies zu beweisen:
+                        \begin{enumerate}[label=\Roman*.]
+                            \item \textbf{Reduktion}
+                            \begin{enumerate}[label = (\alph*)]
+                                \item Wir finden eine Sprache $L' \in \L_\text{R}$ (entweder schon in Vorlesung bewiesen oder selbst beweisen).
+                                \item  Zeige die Reduktion $L \leq_{\text{R}} L'$ (folgt trivial aus Lemma 5.4 für $L' = L^\complement$).
+                            \end{enumerate}
+                                \item \textbf{Direkter Beweis: TM Konstruktion}
+                                \begin{enumerate}[label=(\alph*)]
+                                    \item Beschreibung einer TM (bzw. ein Algorithmus) $M$ mit $L(M) = L$. Dabei kann man eine schon bekannte TM $A$ verwenden, die immer hält (i.e. $L(A) \in \Lr$).
+                                    \item Beweise $L(M) = L$ und dass die TM $M$ \textbf{immer} hält.
+                                \end{enumerate}
+                        \end{enumerate}
+                
+                
+                
+                    \subsection{$L \notin \Lr$}
+                        Wir kennen hier auch 3 Arten:
+                        \begin{itemize}[label=-]
+                            \item \textbf{Trivial}
+                            
+                            Folgt sofort aus $L \notin \L_{\text{RE}}$, da $\L_{\text{R}} \subset \L_{\text{RE}}$.
+                            \item \textbf{Reduktion}
+                            \begin{enumerate}[label=(\alph*)]
+                               \item Finde eine Sprache $L'$, so dass $L' \notin \L_{\text{R}}$ (muss bewiesen werden, falls nicht im Buch).
+                               \item Beweise $L' \leq_{\text{R/EE}} L$.
+                               \item Geeignete Sprachen als $L'$ sind: $L_{empty}^\complement, L_{diag}^\complement, L_\text{H}, L_\text{U}, L_{\text{H}, \lambda}$. (Alle im Buch bewiesen)
+                            \end{enumerate}
+                            \item \textbf{Satz von Rice} 
+                        \end{itemize}
+                
+                
+                \subsection{Anwendung von Satz von Rice}
+                    Für den \textbf{Satz von Rice}:
+                    \begin{itemize}[label=-]
+                        \item Wir können mit diesem Satz nur $L \notin \L_{\text{R}}$ beweisen!
+                        \item Wir haben folgende Bedingungen:
+                        \begin{enumerate}[label=\roman*.]
+                            \item $L \subseteq \text{KodTM}$
+                            \item $\exists$ TM $M$: Kod$(M) \in L$
+                            \item $\exists$ TM $M$: Kod$(M) \notin L$
+                            \item $\forall$ TM $M_1, M_2$: $L(M_1) = L(M_2) \implies \left(\text{Kod}(M_1) \in L \iff \text{Kod}(M_2) \in L\right)$
+                        \end{enumerate}
+                        Für den letzten Punkt (4) muss man überprüfen, ob in der Definition von $L = \{\text{Kod}(M) \mid M \text{ ist TM und ...}\}$ überall nur $L(M)$ vorkommt und nirgends $M$ direkt. 
+                        
+                        Beziehungsweise reicht es, wenn man die Bedingung so umschreiben kann, dass sie nur noch durch $L(M)$ beschrieben ist.
+                    \end{itemize}
+                
+                
+                
+                    \subsection{$L \in \L_{\text{RE}}$}
+                    \begin{enumerate}[label=\Roman*.]
+                        \item  Wir beschreiben eine TM $M$ mit $L(M) = L$, die nicht immer halten muss. 
+                        \item  Meistens muss die TM eine Eigenschaft, für alle möglichen Wörter prüfen. 
+                        \item  Bsp: $L = \{\text{Kod}(M_1) \mid \text{Kod}(M_1) \in L_\text{H}^\complement\}$: Wir gehen alle Wörter durch, um dasjenige zu finden, für das $M_1$ hält.
+                        \item  Wir verwenden oft einen von den folgenden 2 Tricks, um dies zu tun:
+                        \begin{itemize}[label=-]
+                            \item Da es für jede NTM $M'$, eine TM $M$ gibt, so dass $L(M') = L(M)$, können wir eine solche definieren, für die $L(M') = L$ gilt.
+                            \item Die andere Variante, ist die parallele Simulation von Wörtern, bei dem man das Diagonalisierungsverfahren aus dem Buch verwendet. (Bsp: Beweis $L_{\text{empty}} \in \L_{\text{RE}}$, S. 156 Buch)
+                        \end{itemize}
+                    \end{enumerate}
+                
+                    \subsection{$L \notin \L_{\text{RE}}$}
+                        Hier haben wir 2 mögliche (offizielle) Methoden:
+                        \begin{itemize}[label=-]
+                            \item Diagonalisierungsargument mit Widerspruch, wie beim Beweis von $L_{\text{diag}} \notin \L_{\text{RE}}$.
+                            \item Widerspruchsbeweis mit der Aussage $L \in \L_{\text{RE}} \land L^\complement \in \L_{\text{RE}} \implies L \in \L_{\text{R}}$ (Aufgabe 5.22, muss begründet werden!).
+                        \end{itemize}
+                        Inoffiziell könnten wir auch die EE-Reduktion verwenden, wird aber weder in der Vorlesung noch im Buch erwähnt.
+                    
+                
+                
+                
+                    \subsection{EE- und R-Reduktionen: Tipps und Tricks}
+                        \begin{itemize}[label=-]
+                            \item Die vorgeschaltete TM $A$ muss immer terminieren! I.e. sie muss ein Algorithmus sein.
+                            
+                            \item Die Eingabe sollte immer zuerst auf die Richtige Form überprüft werden!
+                            
+                            Auch im Korrektsheitsbeweis, sollte dieser Fall als erstes abgehandelt werden.
+                            \item Für Korrektheit müssen wir immer $x \in L_1 \iff A(x) \in L_2$ beweisen.
+                            
+                            \item Wir verwenden meistens folgende 2 Tricks:
+                            \begin{enumerate}[label=\roman*.]
+                                \item Transitionen nach $q_{accept}$ oder $ q_{reject}$ umleiten nach $q_{reject}$/$q_{accept}$ oder einer \textbf{Endlosschleife}. 
+                                \item TM $M'$ konstruieren, die ihre Eingabe ignoriert und immer dasselbe tut (z.B. eine TM dessen Kodierung gegeben ist, auf ein fixes Wort simuliern).
                             \end{enumerate}
                             
-                             So haben wir mit diesen Fällen (a) und (b) $x \notin L_H \implies M(x) \notin L_U$ bewiesen. 
-                             
-                             Aus indirekter Implikation folgt $M(x) \in L_U \implies x \in L_H$
-                                 
-                    \end{enumerate}
-            
-               
-            
-                Aus (i) und (ii) folgt 
+                            \item Die Kodierung einer TM generieren, dessen Sprache gewisse Eigenschaften hat(z.B. sie akzeptiert alle Eingaben, läuft immer unendlich etc.)
+                        \end{itemize}
                 
-                $$x \in L_H \iff M(x) \in L_U \qquad (1)$$
             
-                Somit ist die Reduktion korrekt.
+            % \section{How To Reduktion}
             
-                \hspace*{0pt}\hfill$\blacksquare$
-            
-            
-            
-                \subsection{Beispielaufgabe 18b HS22}
+            %     \subsection{$L \in \Lr$ }
 
-                Sei $$L_{\text{infinite}} = \{\text{Kod}(M) \mid \text{$M$ hält auf keiner Eingabe}\}$$
-                Zeige $(L_{\text{infinite}})^C \notin \Lr$
+            %         Wir kennen zwei Methoden um dies zu beweisen:
+            %         \begin{itemize}[label=-]
+            %             \item Wir finden eine Sprache $L' \in \L_\text{R}$ und zeigen $L \leq_{\text{R}} L'$. (Meistens ein wenig umständlich)
+            %             \item Direkter Beweis:  Eine TM (bzw. ein Algorithmus) $A$ beschreiben, so dass $L(A) = L$ und $A$ immer terminiert.
+            %         \end{itemize}
             
             
-                \textbf{Lösung}
+            
+            %     \subsection{$L \notin \Lr$}
 
-                Wir zeigen, dass $(L_{\text{infinite}})^C \notin \Lr$ mit einer geeigneten Reduktion.
-            
-                Wir beweisen $L_H \leq_{\text{R}} (L_{\text{infinite}})^C$
-            
-                Um dies zu zeigen nehmen wir an, dass wir einen Algorithmus $A$ haben, der $(L_{\text{infinite}})^C$ entscheidet.
-                 Wir konstruieren einen Algorithmus $B$, der mit Hilfe von $A$, die Sprache $L_H$ entscheidet. 
-                 
-                Wir betrachten folgende Abbildung:
-                
-                \begin{figure}[htp]
-                    \centering
-                    \includegraphics[width=0.75\textwidth]{Images/18b_Zeichnung.png}
-                    \caption{R-Reduktion von $L_H$ auf $(L_{\text{infinite}})^C$}
-                \end{figure}
+            %         Wir kennen hier auch 3 Arten:
+            %         \begin{itemize}[label=-]
+            %             \item Folgt sofort aus $L \notin \L_{\text{RE}}$, da $\L_{\text{R}} \subset \L_{\text{RE}}$.
+            %             \item Wir wählen eine Sprache $L'$, so dass $L' \notin \L_{\text{R}}$ und beweisen $L' \leq_{\text{R/EE}} L$.
+                        
+            %                 Geeignete Sprachen als $L'$ sind: $L_{empty}^\complement, L_{diag}^\complement, L_\text{H}, L_\text{U}, L_{\text{H}, \lambda}$. (Alle im Buch bewiesen)
+            %             \item Satz von Rice 
+            %         \end{itemize}
             
             
-                \begin{enumerate}[label=\Roman*.]
-                    \item Für eine Eingabe $x \in \{0,1,\#\}^*$ berechnet das Teilprogramm $C$, ob $x$ die richtige Form hat(i.e. ob $x = $ Kod$(M)\#w$ für eine TM $M$).
-                    \item Falls nicht, verwirft $B$ die Eingabe $x$.
+            % \subsection{Anwendung von Satz von Rice}
+
+            %     Für den \textbf{Satz von Rice}:
+            %     \begin{itemize}[label=-]
+            %         \item Wir können mit diesem Satz nur $L \notin \L_{\text{R}}$ beweisen!
+            %         \item Wir haben folgende Bedingungen:
+            %         \begin{enumerate}[label=\roman*.]
+            %             \item $L \subseteq \text{KodTM}$
+            %             \item $\exists$ TM $M$: Kod$(M) \in L$
+            %             \item $\exists$ TM $M$: Kod$(M) \notin L$
+            %             \item $\forall$ TM $M_1, M_2$: $L(M_1) = L(M_2) \implies \left(\text{Kod}(M_1) \in L \iff \text{Kod}(M_2) \in L\right)$
+            %         \end{enumerate}
+            %         Für den letzten Punkt (4) muss man überprüfen, ob in der Definition von $L = \{\text{Kod}(M) \mid M \text{ ist TM und ...}\}$ überall nur $L(M)$ vorkommt und nirgends $M$ direkt. Beziehungsweise reicht es, wenn man die Bedingung so umschreiben kann, dass sie nur noch durch $L(M)$ beschrieben ist.
+            %     \end{itemize}
+            
+            
+            
+            %     \subsection{$L \in \L_{\text{RE}}$}
+
+            %         Wir beschreiben eine TM $M$ mit $L(M) = L$, die nicht immer halten muss. 
                     
-                    \item Ansonsten, konstruiert $C$ eine Turingmaschine $M'$, die Eingaben ignoriert und immer $M$ auf $w$ simuliert. Wir sehen, dass $M'$ genau dann hält, wenn $M$ auf $w$ hält. 
-                    \item Folglich hält $M'$ entweder für jede Eingabe ($M$ hält auf $w$) oder für keine ($M$ hält nicht auf $w$).
-                     
-                    \item Da $A$ genau dann akzeptiert, wenn die Eingabe keine gültige Kodierung ist(ausgeschlossen, da $C$ das herausfiltert) oder wenn die Eingabe $M(x)= \text{Kod}(M')$ und $M'$ für mindestens eine Eingabe hält, akzeptiert $A$ $M(x)$ genau dann, wenn $x = \text{Kod}(M)\#w$ die richtige Form hat und $M$ auf $w$ hält.
-                \end{enumerate}
-                
-                
-                Folglich gilt $$x \in L_H \iff M(x) \in (L_{\text{infinite}})^C$$
-                $\implies L_H \leq_R (L_{\text{infinite}})^C$ 
-            
-                Also folgt die Aussage
-                $$(L_{\text{infinite}})^C \in \L_R \implies L_H \in \L_R$$
-            
-                Da wir $L_H \notin \L_R$ (\textbf{Satz 5.8}), folgt per indirekter Implikation:
-                $$(L_{\text{infinite}})^C \notin \L_R$$
-            
-                \hspace*{0pt}\hfill$\blacksquare$
-            
-            \section{How To Reduktion}
-            
-                \subsection{$L \in \Lr$ }
-
-                    Wir kennen zwei Methoden um dies zu beweisen:
-                    \begin{itemize}[label=-]
-                        \item Wir finden eine Sprache $L' \in \L_\text{R}$ und zeigen $L \leq_{\text{R}} L'$. (Meistens ein wenig umständlich)
-                        \item Direkter Beweis:  Eine TM (bzw. ein Algorithmus) $A$ beschreiben, so dass $L(A) = L$ und $A$ immer terminiert.
-                    \end{itemize}
-            
-            
-            
-                \subsection{$L \notin \Lr$}
-
-                    Wir kennen hier auch 3 Arten:
-                    \begin{itemize}[label=-]
-                        \item Folgt sofort aus $L \notin \L_{\text{RE}}$, da $\L_{\text{R}} \subset \L_{\text{RE}}$.
-                        \item Wir wählen eine Sprache $L'$, so dass $L' \notin \L_{\text{R}}$ und beweisen $L' \leq_{\text{R/EE}} L$.
-                        
-                            Geeignete Sprachen als $L'$ sind: $L_{empty}^\complement, L_{diag}^\complement, L_\text{H}, L_\text{U}, L_{\text{H}, \lambda}$. (Alle im Buch bewiesen)
-                        \item Satz von Rice 
-                    \end{itemize}
-            
-            
-            \subsection{Anwendung von Satz von Rice}
-
-                Für den \textbf{Satz von Rice}:
-                \begin{itemize}[label=-]
-                    \item Wir können mit diesem Satz nur $L \notin \L_{\text{R}}$ beweisen!
-                    \item Wir haben folgende Bedingungen:
-                    \begin{enumerate}[label=\roman*.]
-                        \item $L \subseteq \text{KodTM}$
-                        \item $\exists$ TM $M$: Kod$(M) \in L$
-                        \item $\exists$ TM $M$: Kod$(M) \notin L$
-                        \item $\forall$ TM $M_1, M_2$: $L(M_1) = L(M_2) \implies \left(\text{Kod}(M_1) \in L \iff \text{Kod}(M_2) \in L\right)$
-                    \end{enumerate}
-                    Für den letzten Punkt (4) muss man überprüfen, ob in der Definition von $L = \{\text{Kod}(M) \mid M \text{ ist TM und ...}\}$ überall nur $L(M)$ vorkommt und nirgends $M$ direkt. Beziehungsweise reicht es, wenn man die Bedingung so umschreiben kann, dass sie nur noch durch $L(M)$ beschrieben ist.
-                \end{itemize}
-            
-            
-            
-                \subsection{$L \in \L_{\text{RE}}$}
-
-                    Wir beschreiben eine TM $M$ mit $L(M) = L$, die nicht immer halten muss. 
+            %         Meistens muss die TM eine Eigenschaft, für alle möglichen Wörter prüfen. (Bsp: $\text{Kod}(M_1) \in L_\text{H}^\complement$: Wir gehen alle Wörter durch, um dasjenige zu finden, für das $M_1$ hält.)
                     
-                    Meistens muss die TM eine Eigenschaft, für alle möglichen Wörter prüfen. (Bsp: $\text{Kod}(M_1) \in L_\text{H}^\complement$: Wir gehen alle Wörter durch, um dasjenige zu finden, für das $M_1$ hält.)
-                    
-                    Wir verwenden oft einen von den folgenden 2 Tricks, um dies zu tun:
-                    \begin{itemize}
-                        \item Da es für jede NTM $M'$, eine TM $M$ gibt, so dass $L(M') = L(M)$, können wir eine solche definieren, für die $L(M') = L$ gilt.
-                        \item Die andere Variante, ist die parallele Simulation von Wörtern, bei dem man das Diagonalisierungsverfahren aus dem Buch verwendet. (Bsp: Beweis $L_{\text{empty}} \in \L_{\text{RE}}$, S. 156 Buch)
-                    \end{itemize}
+            %         Wir verwenden oft einen von den folgenden 2 Tricks, um dies zu tun:
+            %         \begin{itemize}
+            %             \item Da es für jede NTM $M'$, eine TM $M$ gibt, so dass $L(M') = L(M)$, können wir eine solche definieren, für die $L(M') = L$ gilt.
+            %             \item Die andere Variante, ist die parallele Simulation von Wörtern, bei dem man das Diagonalisierungsverfahren aus dem Buch verwendet. (Bsp: Beweis $L_{\text{empty}} \in \L_{\text{RE}}$, S. 156 Buch)
+            %         \end{itemize}
             
             
             
-                \subsection{$L \notin \L_{\text{RE}}$}
+            %     \subsection{$L \notin \L_{\text{RE}}$}
 
-                    Hier haben wir 2 mögliche (offizielle) Methoden:
-                    \begin{itemize}[label=-]
-                        \item Diagonalisierungsargument mit Widerspruch, wie beim Beweis von $L_{\text{diag}} \notin \L_{\text{RE}}$.
-                        \item Widerspruchsbeweis mit der Aussage $L \in \L_{\text{RE}} \land L^\complement \in \L_{\text{RE}} \implies L \in \L_{\text{R}}$.
-                    \end{itemize}
-                    Inoffiziell könnten wir auch die EE-Reduktion verwenden, wird aber weder in der Vorlesung noch im Buch erwähnt.
+            %         Hier haben wir 2 mögliche (offizielle) Methoden:
+            %         \begin{itemize}[label=-]
+            %             \item Diagonalisierungsargument mit Widerspruch, wie beim Beweis von $L_{\text{diag}} \notin \L_{\text{RE}}$.
+            %             \item Widerspruchsbeweis mit der Aussage $L \in \L_{\text{RE}} \land L^\complement \in \L_{\text{RE}} \implies L \in \L_{\text{R}}$.
+            %         \end{itemize}
+            %         Inoffiziell könnten wir auch die EE-Reduktion verwenden, wird aber weder in der Vorlesung noch im Buch erwähnt.
             
-                \subsection{EE- und R-Reduktionen: Tipps und Tricks}
+            %     \subsection{EE- und R-Reduktionen: Tipps und Tricks}
 
-                    \begin{itemize}[label=-]
-                        \item Die vorgeschaltete TM $A$ muss immer terminieren! I.e. sie muss ein Algorithmus sein.
+            %         \begin{itemize}[label=-]
+            %             \item Die vorgeschaltete TM $A$ muss immer terminieren! I.e. sie muss ein Algorithmus sein.
                         
-                        \item Die Eingabe sollte immer zuerst auf die Richtige Form überprüft werden!
+            %             \item Die Eingabe sollte immer zuerst auf die Richtige Form überprüft werden!
                         
-                        Auch im Korrektsheitsbeweis, sollte dieser Fall als erstes abgehandelt werden.
-                        \item Für Korrektheit müssen wir immer $x \in L_1 \iff A(x) \in L_2$ beweisen.
+            %             Auch im Korrektsheitsbeweis, sollte dieser Fall als erstes abgehandelt werden.
+            %             \item Für Korrektheit müssen wir immer $x \in L_1 \iff A(x) \in L_2$ beweisen.
                         
-                        \item Wir verwenden meistens folgende 2 Tricks:
-                        \begin{enumerate}[label=\roman*.]
-                            \item Transitionen nach $q_{accept}$ oder $ q_{reject}$ umleiten nach $q_{reject}$/$q_{accept}$ oder einer \textbf{Endlosschleife}. 
-                            \item TM $M'$ konstruieren, die ihre Eingabe ignoriert und immer dasselbe tut (z.B. eine TM dessen Kodierung gegeben ist, auf ein fixes Wort simuliern).
-                        \end{enumerate}
+            %             \item Wir verwenden meistens folgende 2 Tricks:
+            %             \begin{enumerate}[label=\roman*.]
+            %                 \item Transitionen nach $q_{accept}$ oder $ q_{reject}$ umleiten nach $q_{reject}$/$q_{accept}$ oder einer \textbf{Endlosschleife}. 
+            %                 \item TM $M'$ konstruieren, die ihre Eingabe ignoriert und immer dasselbe tut (z.B. eine TM dessen Kodierung gegeben ist, auf ein fixes Wort simuliern).
+            %             \end{enumerate}
                         
-                        \item Die Kodierung einer TM generieren, dessen Sprache gewisse Eigenschaften hat(z.B. sie akzeptiert alle Eingaben, läuft immer unendlich etc.)
-                    \end{itemize}
+            %             \item Die Kodierung einer TM generieren, dessen Sprache gewisse Eigenschaften hat(z.B. sie akzeptiert alle Eingaben, läuft immer unendlich etc.)
+            %         \end{itemize}
     
 
 
