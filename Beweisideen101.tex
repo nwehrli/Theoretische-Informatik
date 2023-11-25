@@ -2167,9 +2167,9 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                     \node at (-0.25, -1.75) {$\{0^n1^n \,|\, n\in \mathbb{N}\}$};
                     \node at (-3.5, 3) {$L_\text{diag}$};
                     \node at (2.5, 2) {$L_{H}$};
-                    \node at (-1.75, -2.75) {$L_U$};
+                    \node at (-1.75, -2.75) {$L_{\text{U}}$};
                     \node at (3.75, -2.75) {$L_\text{empty}$};
-                    \node at (3.75, 2.75) {$(L_H)^C$};
+                    \node at (3.75, 2.75) {$(L_{\text{H}})^C$};
                     \node at (-1.5, 1.25) {$L_\text{prim}$};
                     
                 \end{tikzpicture}
@@ -2330,11 +2330,11 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                 
                     \subsection{Universelle Sprache}
                     Sei 
-                    $$L_U := \{\text{Kod}(M)\#w \mid w \in (\Sigma_{\text{bool}})^* \text{ und } M \text{ akzeptiert }w\}$$
+                    $$L_{\text{U}} := \{\text{Kod}(M)\#w \mid w \in (\Sigma_{\text{bool}})^* \text{ und } M \text{ akzeptiert }w\}$$
                     \begin{mainbox}{Satz 5.6}
                         Es gibt eine TM $U$, \textbf{universelle TM} genannt, so dass 
-                        $$L(U) = L_U$$
-                        Daher gilt $L_U \in \Lre$.
+                        $$L(U) = L_{\text{U}}$$
+                        Daher gilt $L_{\text{U}} \in \Lre$.
                     \end{mainbox} 
                     \textbf{Beweis}
                 
@@ -2343,21 +2343,21 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                     \textit{Siehe Buch/Vorlesung.}
                 
                     \begin{mainbox}{Satz 5.7}
-                        $$L_U \notin \Lr$$
+                        $$L_{\text{U}} \notin \Lr$$
                     \end{mainbox}
                     \textbf{Beweis}
                 
-                    Wir zeigen $L_{\text{diag}}^\complement \leq_{\text{R}} L_U$.
+                    Wir zeigen $L_{\text{diag}}^\complement \leq_{\text{R}} L_{\text{U}}$.
                 
                     \textit{Siehe Buch/Vorlesung.}
                     \subsection{Halteproblem}
-                    Sei $$L_H = \{\text{Kod}(M)\#w \mid M \text{ hält auf }w\}$$
+                    Sei $$L_{\text{H}} = \{\text{Kod}(M)\#w \mid M \text{ hält auf }w\}$$
                     \begin{mainbox}{Satz 5.8}
-                        $$L_H \notin \Lr$$
+                        $$L_{\text{H}} \notin \Lr$$
                     \end{mainbox}
                     \textbf{Beweis}
                 
-                    Wir zeigen $L_U \leq_{\text{R}} L_H$.
+                    Wir zeigen $L_{\text{U}} \leq_{\text{R}} L_{\text{H}}$.
                 
                     \textit{Siehe Buch/Vorlesung.}
                 
@@ -2480,7 +2480,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                     \end{mainbox}
                     \textbf{Beweis }
                 
-                    Wir zeigen $L_U \leq_{\text{EE}} L_{\text{empty}}^\complement$.
+                    Wir zeigen $L_{\text{U}} \leq_{\text{EE}} L_{\text{empty}}^\complement$.
                 
                     \textit{Siehe Buch/Vorlesung.}
                    
@@ -2495,47 +2495,47 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                 
                     \subsection{Beispielaufgabe 17a HS22}
 
-                    Beweise $$L_H \leq_{\text{EE}} L_U$$
+                    Beweise $$L_{\text{H}} \leq_{\text{EE}} L_{\text{U}}$$
                     wobei 
-                    $$L_H = \{\text{Kod}(M)\#w \mid M\text{ hält auf }w\land w \in (\Sigma_{\text{bool}})^*\}$$
+                    $$L_{\text{H}} = \{\text{Kod}(M)\#w \mid M\text{ hält auf }w\land w \in (\Sigma_{\text{bool}})^*\}$$
                     und 
-                    $$L_U=\{\text{Kod}(M)\#w \mid M \text{ akzeptiert }w \land w \in (\Sigma_{\text{bool}})^*\}$$
+                    $$L_{\text{U}}=\{\text{Kod}(M)\#w \mid M \text{ akzeptiert }w \land w \in (\Sigma_{\text{bool}})^*\}$$
                 
                 
                     \textbf{Lösung}
                 
-                    Wir wollen $L_H \leq_{\text{EE}} L_U$ zeigen.
+                    Wir wollen $L_{\text{H}} \leq_{\text{EE}} L_{\text{U}}$ zeigen.
                 
                         Wir geben die Reduktion zuerst als Zeichnung an.
                 
                         \begin{figure}[htp]
                             \centering
                             \includegraphics[width = 0.7\textwidth]{Images/17a_Zeichnung.png}
-                            \caption{EE-Reduktion von $L_H$ auf $L_U$}
+                            \caption{EE-Reduktion von $L_{\text{H}}$ auf $L_{\text{U}}$}
                         \end{figure}
                         
             
                     Wir definieren eine Funktion $M(x)$ für ein $x \in \{0,1,\#\}^*$, so dass
-                        $$x \in L_H \iff M(x) \in L_U \qquad (1)$$
+                        $$x \in L_{\text{H}} \iff M(x) \in L_{\text{U}} \qquad (1)$$
                     
                         Falls $x$ nicht die richtige Form hat, ist $M(x) = \lambda$, sonst ist $M(x) = \text{Kod}(M')\#w$ wobei $M'$ gleich aufgebaut ist wie $M$, ausser dass alle Transitionen zu $q_{reject}$ zu $q_{accept}$ umgeleitet werden. Wir sehen, dass $M'$ genau dann $w$ akzeptiert, wenn $M$ auf $w$ hält. 
                         
-                        Dieses $M(x)$ übergeben wir dem Algorithmus für $L_U$. 
+                        Dieses $M(x)$ übergeben wir dem Algorithmus für $L_{\text{U}}$. 
                 
                         
-                    Wir beweisen nun $x \in L_H \iff M(x) \in L_U$:
+                    Wir beweisen nun $x \in L_{\text{H}} \iff M(x) \in L_{\text{U}}$:
                 
                         \begin{enumerate}[label=(\roman*)]
-                            \item $x \in L_H$
+                            \item $x \in L_{\text{H}}$
                 
                                 Dann ist $x = \text{Kod}(M)\#w$ von der richtigen Form, und $M$ hält auf $w$. 
                                 Das heisst die Simulation von $M$ auf $w$ endet entweder in $q_{reject}$ oder in $q_{accept}$. 
                                 
                                 Folglich wird $M'$ $w$ immer akzeptieren, da alle Transitionen zu $q_{reject}$ zu $q_{accept}$ umgeleitet wurden. 
                                 
-                                $x \in L_H \implies M(x) \in L_U$
+                                $x \in L_{\text{H}} \implies M(x) \in L_{\text{U}}$
                 
-                            \item $x \notin L_H$
+                            \item $x \notin L_{\text{H}}$
                 
                                 Dann unterscheiden wir zwischen zwei Fällen:
                 
@@ -2543,7 +2543,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                                     \item 
                                     
                                     $x$ hat nicht die richtige Form, i.e. $x \neq \text{Kod}(M)\#w$.
-                                    Dann ist $M(x) = \lambda$ und da es keine Kodierung einer Turingmaschine $M$ gibt, so dass Kod$(M) = \lambda$, gilt   $\lambda \notin L_U$.
+                                    Dann ist $M(x) = \lambda$ und da es keine Kodierung einer Turingmaschine $M$ gibt, so dass Kod$(M) = \lambda$, gilt   $\lambda \notin L_{\text{U}}$.
                             
                 
                    
@@ -2551,18 +2551,18 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                 
                                     $x = \text{Kod}(M)\#w$ hat die richtige Form. Dann haben wir $M(x) = $ Kod$(M')\#w$.
                                     
-                                    Da aber $x \notin L_H$, hält $M$ nicht auf $w$. Da $M$ nicht auf $w$ hält, erreicht es nie $q_{reject}$ oder $q_{accept}$ in $M$ und so wird $w$ von $M'$ nicht akzeptiert. 
+                                    Da aber $x \notin L_{\text{H}}$, hält $M$ nicht auf $w$. Da $M$ nicht auf $w$ hält, erreicht es nie $q_{reject}$ oder $q_{accept}$ in $M$ und so wird $w$ von $M'$ nicht akzeptiert. 
                 
-                                    $\implies M(x) \notin L_U$
+                                    $\implies M(x) \notin L_{\text{U}}$
                 
                                    
                                     
                                     
                                 \end{enumerate}
                                 
-                                 So haben wir mit diesen Fällen (a) und (b) $x \notin L_H \implies M(x) \notin L_U$ bewiesen. 
+                                 So haben wir mit diesen Fällen (a) und (b) $x \notin L_{\text{H}} \implies M(x) \notin L_{\text{U}}$ bewiesen. 
                                  
-                                 Aus indirekter Implikation folgt $M(x) \in L_U \implies x \in L_H$
+                                 Aus indirekter Implikation folgt $M(x) \in L_{\text{U}} \implies x \in L_{\text{H}}$
                                      
                         \end{enumerate}
                 
@@ -2570,7 +2570,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                 
                     Aus (i) und (ii) folgt 
                     
-                    $$x \in L_H \iff M(x) \in L_U \qquad (1)$$
+                    $$x \in L_{\text{H}} \iff M(x) \in L_{\text{U}} \qquad (1)$$
                 
                     Somit ist die Reduktion korrekt.
                 
@@ -2588,17 +2588,17 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
     
                     Wir zeigen, dass $(L_{\text{infinite}})^C \notin \Lr$ mit einer geeigneten Reduktion.
                 
-                    Wir beweisen $L_H \leq_{\text{R}} (L_{\text{infinite}})^C$
+                    Wir beweisen $L_{\text{H}} \leq_{\text{R}} (L_{\text{infinite}})^C$
                 
                     Um dies zu zeigen nehmen wir an, dass wir einen Algorithmus $A$ haben, der $(L_{\text{infinite}})^C$ entscheidet.
-                     Wir konstruieren einen Algorithmus $B$, der mit Hilfe von $A$, die Sprache $L_H$ entscheidet. 
+                     Wir konstruieren einen Algorithmus $B$, der mit Hilfe von $A$, die Sprache $L_{\text{H}}$ entscheidet. 
                      
                     Wir betrachten folgende Abbildung:
                     
                     \begin{figure}[htp]
                         \centering
                         \includegraphics[width=0.75\textwidth]{Images/18b_Zeichnung.png}
-                        \caption{R-Reduktion von $L_H$ auf $(L_{\text{infinite}})^C$}
+                        \caption{R-Reduktion von $L_{\text{H}}$ auf $(L_{\text{infinite}})^C$}
                     \end{figure}
                 
                 
@@ -2613,16 +2613,65 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                     \end{enumerate}
                     
                     
-                    Folglich gilt $$x \in L_H \iff M(x) \in (L_{\text{infinite}})^C$$
-                    $\implies L_H \leq_R (L_{\text{infinite}})^C$ 
+                    Folglich gilt $$x \in L_{\text{H}} \iff M(x) \in (L_{\text{infinite}})^C$$
+                    $\implies L_{\text{H}} \leq_R (L_{\text{infinite}})^C$ 
                 
                     Also folgt die Aussage
-                    $$(L_{\text{infinite}})^C \in \L_R \implies L_H \in \L_R$$
+                    $$(L_{\text{infinite}})^C \in \L_R \implies L_{\text{H}} \in \L_R$$
                 
-                    Da wir $L_H \notin \L_R$ (\textbf{Satz 5.8}), folgt per indirekter Implikation:
+                    Da wir $L_{\text{H}} \notin \L_R$ (\textbf{Satz 5.8}), folgt per indirekter Implikation:
                     $$(L_{\text{infinite}})^C \notin \L_R$$
                 
                     \hspace*{0pt}\hfill$\blacksquare$
+
+                    
+                        \subsection{Aufgabe 1}
+                        Zeige 
+                        $$L_{\text{diag}} \leq_{\text{EE}} L_{\text{H}}^\complement$$
+                        
+                        Zur Erinnerung:
+                        $$L_{\text{diag}} = \{w_i \in (\Sigma_{\text{bool}})^* \mid M_i \text{ akzeptiert } w_i \text{ nicht}\}$$
+                        \begin{align*}
+                            L_{\text{H}}^\complement &= \{\text{Kod}(M)\#w \in \{0,1 , \#\}^* \mid M \text{ hält nicht auf }w\}\\
+                                                    & \cup \{x \in \{0, 1, \#\}^* \mid x \text{ nicht von der Form Kod}(M)\#w\}
+                        \end{align*}
+                    
+                    
+                    
+                        \myTitle{Lösung 1}
+                        Wir beschreiben einen Algorithmus $A$, so dass 
+                        $$x \in L_{\text{diag}} \iff A(x) \in L_{\text{H}}^\complement$$
+                        \textbf{Eingabe:} $x \in (\Sigma_{\text{bool}})^*$
+                        
+                        \begin{enumerate}[label=\arabic*.]
+                            \item Findet $i$ so dass $x = w_i$
+                            \item Generiert Kod$(M_i)$
+                            \item Generiert Kod$(\overline{M}_i)$ mit folgenden Modifikationen zu Kod$(M_i)$
+                            
+                            \begin{itemize}[label=-]
+                                \item Transitionen nach $q_{\text{reject}}$ werden in eine Endlosschleife umgeleitet.
+                            \end{itemize}
+                            \item Gibt Kod$(\overline{M}_i)\#w_i$ aus.
+                        \end{enumerate}
+                
+                        \textbf{Case Distinction}
+                        \begin{enumerate}[label=\Roman*.]
+                            \item $\mathbf{x \in L_{\text{diag}}}$
+                            \begin{center}
+                                $\implies$ $M_i$ akzeptiert $x = w_i$ nicht\\
+                                $\implies$ $\overline{M}_i$ hält nicht auf $w_i$\\
+                                $\implies$  $A(x) = \text{Kod}(\overline{M}_i)\#w_i \in L_{\text{H}}^\complement$
+                            \end{center}
+                            
+                            \item $\mathbf{x \notin L_{\text{diag}}}$
+                            \begin{center}
+                                $\implies$ $M_i$ akzeptiert $x = w_i$\\
+                                $\implies$ $\overline{M}_i$ hält auf $w_i$\\
+                                $\implies$  $A(x) = \text{Kod}(\overline{M}_i)\#w_i \notin L_{\text{H}}^\complement$
+                            \end{center}
+                        \end{enumerate}
+                        $\hfill\blacksquare$
+                    
                 
                 \section{Satz von Rice}
                 
@@ -2665,7 +2714,254 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                 
                     Zeige $$L_{\text{all}} \notin \Lr.$$
                 
-                
+                    \section{Satz von Rice - Beweis}
+
+                    
+                        \subsubsection{Prerequisites}
+                        Zur Erinnerung:
+                        \begin{mainbox}{Semantisch nichttriviales Entscheidungsproblem über TMs}
+                            Das Entscheidungsproblem $(\Sigma, L)$, bzw. die Sprache $L$ muss folgendes erfüllen.
+                            \begin{enumerate}[label=\Roman*.]
+                                
+                                \item $L \subseteq \textbf{KodTM}$
+                                
+                                \item $\exists M_1$ so dass $\text{Kod}(M_1) \in L (\text{i.e. } L \neq \emptyset)$
+                                \item $\exists M_2$ so dass $\text{Kod}(M_2) \notin L (\text{i.e. } L \neq \textbf{KodTM})$
+                                
+                                \item Für zwei TM $A$ und $B$ mit $L(A) = L(B)$ gilt
+                                $$\text{Kod}(A) \in L \iff \text{Kod}(B) \in L$$
+                            \end{enumerate}
+                        \end{mainbox}
+                        $\textbf{KodTM}\subseteq (\Sigma_{\text{bool}})^*$ ist die Menge aller Kodierungen von Turingmaschinen.
+                    
+                    
+                        Wir brauchen 
+                        \begin{mainbox}{Lemma 5.8}
+                            $$L_{H, \lambda} \notin \Lr$$
+                        \end{mainbox}
+                        Zur Erinnerung: 
+                        $$L_{H, \lambda} = \{\text{Kod}(M) \mid M \text{ hält auf }\lambda\}$$
+                    
+                    
+                    
+                        \subsubsection{Idee}
+                        Wir zeigen für jedes \textbf{semantisch nichtriviale Entscheidungsproblem} $(\Sigma, L)$
+                        
+                        $$L \in \Lr \implies L_{H, \lambda} \in \Lr$$
+                        
+                        Aus dem folgt dann per Kontraposition 
+                    
+                        $$L_{H, \lambda} \notin \Lr \implies L \notin \Lr$$
+                        
+                        Mit der Aussage $L_{H, \lambda} \notin \Lr$ von \textbf{Lemma 5.8}, können wir dann 
+                    
+                        $$L \notin \Lr$$
+                        wie gewünscht folgern.
+                    
+                    
+                        Wir müssen dann nur noch die Implikation 
+                        $$L \in \Lr \implies L_{H, \lambda} \in \Lr$$
+                        beweisen.
+                        
+                    
+                        \textbf{Kernidee}
+                        \begin{center}
+                            Wir zeigen die \textbf{Existenz} einer Reduktion, aus der die Implikation folgt. 
+                        \end{center}
+                        
+                        Konkret machen wir eine \textbf{Case Distinction} und zeigen jeweils 
+                        \begin{itemize}[label=-]
+                            \item Die \textbf{Existenz} einer EE-Reduktion von $L_{H, \lambda}$ auf  $L$
+                            
+                            Daraus folgt $L_{H, \lambda} \leq_{\text{EE}} L$.
+                            \item oder die \textbf{Existenz} einer EE-Reduktion $L_{H, \lambda} $ auf $ L^\complement$
+                            
+                            Daraus folgt $L_{H, \lambda} \leq_{\text{EE}} L^\complement$.
+                        \end{itemize}
+                        Zur Erinnerung:
+                    
+                        \begin{mainbox}{Lemma 5.3}
+                            Seien $L_1 \subseteq \Sigma_{1}^*$ und $L_2 \subseteq \Sigma_{2}^*$ zwei Sprachen.
+                            $$L_1 \leq_{\text{EE}} L_2 \implies L_1 \leq_{\text{R}} L_2$$
+                        \end{mainbox}
+                    
+                        Weshalb reicht es $L_{H, \lambda} \leq_{\text{EE}} L^\complement$ zu zeigen?
+                    
+                        
+                        \begin{mainbox}{Lemma 5.4}
+                            Sei $\Sigma$ ein Alphabet. Für jede Sprache $L \subseteq \Sigma^*$ gilt:
+                         $$L \leq_\text{R} L^\complement \text{ und } L^\complement \leq_\text{R} L$$
+                        \end{mainbox}
+                    
+                        In beiden Cases folgt mit \textbf{Lemma 5.3} und \textbf{Lemma 5.4}, die gewünschte Aussage $L_{H, \lambda} \leq_{\text{R}} L$.
+                    
+                        Explizit gilt nun
+                    
+                        \begin{enumerate}[label=\arabic*.]
+                            \item $$L_{H, \lambda} \leq_{\text{EE}} L^\complement \ \xRightarrow{\textbf{Lemma 5.3}} \ L_{H,\lambda} \leq_{\text{R}} L^\complement \ \xRightarrow{\textbf{Lemma 5.4}} \ L_{H,\lambda} \leq_{\text{R}} L$$
+                            \item $$L_{H, \lambda} \leq_{\text{EE}} L \ \xRightarrow{\textbf{Lemma 5.3}} \ L_{H,\lambda} \leq_{\text{R}} L$$
+                        \end{enumerate}
+                    
+                        
+                        Aus $L_{H,\lambda} \leq_{\text{R}} L$ folgt (in beiden Cases) die gewünschte Implikation  
+                        $$L \in \Lr \implies L_{H, \lambda} \in \Lr$$
+                    
+                    
+                    
+                        \subsubsection{Beweis}
+                        Sei $M_{\emptyset}$ eine TM s.d. $L(M_{\emptyset}) = \emptyset$. 
+                    
+                        \textbf{Case Distinction}
+                        \begin{enumerate}[label=\Roman*.]
+                            \item $\mathbf{\textbf{Kod}(M_{\emptyset}) \in L}$
+                            
+                            Wir zeigen $L_{H, \lambda} \leq_{\text{EE}} L^\complement$.
+                            \item $\mathbf{\textbf{Kod}(M_{\emptyset}) \notin L}$
+                            
+                            Wir zeigen $L_{H, \lambda} \leq_{\text{EE}} L$.
+                        \end{enumerate}
+                    
+                    
+                    
+                        \myTitle{Case I.  $\mathbf{\textbf{Kod}(M_{\emptyset}) \in L}$}
+                        
+                        Es \textbf{existiert} eine TM $\overline{M}$, so dass Kod$(\overline{M}) \notin L$. (Nichttrivialität)
+                    
+                        
+                        Wir beschreiben eine TM $S$, so dass für eine Eingabe $x \in (\Sigma_{\text{bool}})^*$
+                        $$x \in L_{H, \lambda} \iff S(x) \in L^\complement$$
+                    
+                        Daraus folgt dann die gewünschte EE-Reduktion.
+                    
+                        
+                        Wir verwenden dabei $M_{\emptyset}$ und $\overline{M}$, da $\text{Kod}(M_{\emptyset}) \notin L^\complement$ und Kod$(\overline{M}) \in L^\complement$.
+                    
+                    
+                    
+                        \myTitle{Case I.  $\mathbf{\textbf{Kod}(M_{\emptyset}) \in L}$ - Beschreibung von $S$}
+
+                        \textbf{Eingabe} $x \in (\Sigma_{\text{bool}})^*$
+                    
+                        \begin{enumerate}[label=\arabic*.]
+                            
+                            \item $S$ überprüft ob $x = \text{Kod}(M)$ für eine TM $M$.
+                            
+                            Falls dies \textbf{nicht} der Fall ist, gilt $S(x) = \text{Kod}(M_{\emptyset})$
+                            
+                            \item Sonst $x = \text{Kod}(M)$. Dann $S(x) = \text{Kod}(A)$, wobei $A$ wie folgt kodiert ist.
+                            \begin{enumerate}[label=\roman*.]
+                                \item Gleiches Eingabealphabet wie $\overline{M}$, i.e. $\Sigma_A = \Sigma_{\overline{M}}$.
+                                
+                                \item Für eine beliebige Eingabe $y \in (\Sigma_{\overline{M}})^*$, 
+                                simuliert $A$ zuerst $M$ auf $\lambda$ \textbf{ohne die Eingabe $y$ zu überschreiben}.
+                                
+                                \item Danach simuliert $A$ die TM $\overline{M}$ auf die gegebene Eingabe $y$.
+                                \item Akzeptiert $y$ genau dann, wenn $\overline{M}$ $y$ akzeptiert.
+                            \end{enumerate}
+                        \end{enumerate}
+                    
+                    
+                    
+                        \myTitle{Korrektheit}
+
+                        Wir zeigen 
+                        $$x \in L_{H, \lambda} \iff S(x) \in L^\complement$$
+                        $\mathbf{(\implies):}$
+                        
+                        Wir nehmen \textbf{$x \in L_{H, \lambda}$} an und zeigen $S(x) \in L^\complement$.
+                        
+                        
+                        Da $M$ auf $\lambda$ hält, wird $A$ immer $\overline{M}$ auf der Eingabe $y$ simulieren und wir haben $L(A) = L(\overline{M})$.
+                    
+                        
+                        Da $L$ (und somit auch $L^\complement$) ein \textbf{semantisches} Entscheidungsproblem ist, gilt 
+                        $$\text{Kod}(\overline{M}) \in L^\complement \implies \text{Kod}(A) \in L^\complement$$
+                        Da die LHS der Implikation gegeben ist, folgt $S(x) = \text{Kod}(A) \in L^\complement$
+                            
+                        $\mathbf{(\impliedby):}$
+                    
+                        Wir nehmen $x \notin L_{H, \lambda}$ an und zeigen $S(x) \notin L^\complement$. 
+                    
+                        Aus Kontraposition folgt dann die gewünschte Rückimplikation.
+                    
+                        
+                        Da $M$ nicht auf $\lambda$ hält, wird $A$ bei jeder Eingabe nicht halten.
+                    
+                        
+                        Somit folgt $L(A) = L(M_{\emptyset})$ und da $\text{Kod}(M_{\emptyset}) \notin L^\complement$ per semantische Eigenschaft von $L$
+                        $$S(x) = \text{Kod}(A) \notin L^\complement$$
+                    
+                    
+                    
+                        \myTitle{Case II.}
+
+                        Zweite Case funktioniert genau gleich.
+                    
+                        Wir haben Kod$(M_{\emptyset}) \notin L$. 
+                        
+                        Per Nichttrivialität existiert eine TM $\overline{M}$ mit Kod$(\overline{M}) \in L$.
+                        
+                        ...
+                        
+                        $\hfill\blacksquare$
+                    
+                        \section{EE Reduktion angewendet für $\Lre$}
+
+                        
+                            \subsection{Lemma zu RE-Reduktion}
+                            EE-Reduktion impliziert RE-Reduktion (\textbf{nicht in der Vorlesung})
+                            \begin{mainbox}{}
+                                $$L_1 \leq_{\text{EE}} L_2 \implies (L_2 \in \Lre \implies L_1 \in \Lre)$$
+                            \end{mainbox}
+                            \textbf{Beweis}
+                        
+                            Sei $L_1 \leq_{\text{EE}} L_2$ und $L_2 \in \Lre$.
+                        
+                            Wir zeigen nun $L_1 \in \Lre$.
+                        
+                            Per Definition von $L_1 \leq_{\text{EE}} L_2$ existiert ein Algorithmus $F$, 
+                            der die Funktion $f:\Sigma_1^* \to \Sigma_2^*$ berechnet, so dass
+                        
+                            $$\forall x \in \Sigma_1^*. x \in L_1 \iff f(x) \in L_2$$
+                        
+                            Da $L_2 \in \Lre$ existiert eine TM $M_2$ (die nicht unbedingt immer terminiert) mit $L(M_2) = L_2$.
+                        
+                            Wir beschreiben mit $F$ und $M_2$ nun eine TM $M_1$ mit $L(M_1) = L_1$.
+                            
+                            \textbf{Eingabe:} $x \in \Sigma_1^*$
+                            \begin{enumerate}[label=\arabic*.]
+                                \item $F$ berechnet auf $x$ und übergibt seine Ausgabe $f(x)$ zur TM $M_2$
+                                \item $M_2$ berechnet auf $f(x)$ und die Ausgabe wird übernommen.
+                            \end{enumerate}
+                        
+                            \begin{figure}[htp]
+                                \includegraphics[width = 0.75\textwidth]{Images/RE-Reduzierbarkeit.png}
+                                \caption{TM $M_1$, Zsf. Fabian Frei}
+                            \end{figure}
+                        
+                            \textbf{Korrektheit} ($L_1 = L(M_1)$)
+                            
+                            \textbf{Case Distinction}
+                            \begin{enumerate}[label=\Roman*.]
+                                \item $\mathbf{x \in L_1}$
+                                
+                                $\implies f(x) \in L_2$  (Algorithmus $F$ terminiert immer)
+                        
+                                $L(M_2) = L_2 \implies f(x) \in L(M_2)$ 
+                                
+                                da die Ausgabe von $M_2$ übernommen wird
+                                
+                                $\implies x \in L(M_1)$
+                                \item $\mathbf{x \notin L_1}$
+                                
+                                $\implies f(x) \notin L_2$
+                        
+                                $\implies f(x) \notin L(M_2)$
+                        
+                                $\implies x \notin L(M_1)$
+                            \end{enumerate}
+                            $\hfill\blacksquare$
+                        
                 
                 
                 \section{How To Reduktion}

@@ -1033,12 +1033,12 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex\latex\wasysym\uwasy.fd
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy8.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy6.tfm
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 OUTPUT Beweisideen101.toc
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
-INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
-INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
@@ -1147,6 +1147,13 @@ INPUT .\Images\18b_Zeichnung.png
 INPUT .\Images\18b_Zeichnung.png
 INPUT .\Images\18b_Zeichnung.png
 INPUT .\Images\18b_Zeichnung.png
+INPUT .\Images\RE-Reduzierbarkeit.png
+INPUT .\Images\RE-Reduzierbarkeit.png
+INPUT Images\RE-Reduzierbarkeit.png
+INPUT .\Images\RE-Reduzierbarkeit.png
+INPUT .\Images\RE-Reduzierbarkeit.png
+INPUT .\Images\RE-Reduzierbarkeit.png
+INPUT .\Images\RE-Reduzierbarkeit.png
 INPUT Beweisideen101.aux
 INPUT C:\Users\nshar\AppData\Local\MiKTeX\fonts\pk\ljfour\public\wasy\dpi657\wasy10.pk
 INPUT C:\Users\nshar\AppData\Local\MiKTeX\fonts\pk\ljfour\public\wasy\dpi657\wasy10.pk
@@ -1170,6 +1177,8 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb

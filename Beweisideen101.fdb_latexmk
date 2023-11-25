@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1700227191 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" "Beweisideen101.pdf" "Beweisideen101" 1700227198 0
-  "Beweisideen101.aux" 1700227197 8096 ff10e9d919dc4fc3ea63dbf2e27ef5f3 "pdflatex"
-  "Beweisideen101.tex" 1700224862 155045 99529d93595989b9406959a4605376f3 ""
-  "Beweisideen101.toc" 1700227197 4208 f25b47d63fbdb05f3244afbcd6f885b3 "pdflatex"
+["pdflatex"] 1700946076 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" "Beweisideen101.pdf" "Beweisideen101" 1700946081 0
+  "Beweisideen101.aux" 1700946081 9061 5940d667d2560ea2fa741bde49b7b8d1 "pdflatex"
+  "Beweisideen101.tex" 1700946071 172342 25340fca182d2c478cb37ba463199b79 ""
+  "Beweisideen101.toc" 1700946081 4720 ddf4c6ac943f5a494874e09dbc0b9b10 "pdflatex"
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1699536922 356719 66d2b7a56ceb46004626970aadcbfa64 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1670535525 12668 dfb72ac077806cdc6bad8d5cb073bbb5 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/pk/ljfour/public/wasy/dpi657/wasy10.pk" 1670620225 16476 efde6fbc466769b0b895e5e3099d5dac ""
@@ -52,6 +52,7 @@
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1247593066 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1247593066 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247593067 35752 024fb6c41858982481f6968b5fc26508 ""
+  "C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247593067 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247593066 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1247593067 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247593067 32726 39f0f9e62e84beb801509898a605dbd5 ""
@@ -262,9 +263,10 @@
   "Images/Diagonalisierung.png" 1698919598 30466 91c8105b36e562d17632eeeebd9f95cd ""
   "Images/NEA_A_k.png" 1698047236 40887 a33a84e5921c0596b80cdd446c60318a ""
   "Images/Potenzmengenkonstruktion_Beispiel.png" 1698046702 115978 0b8b645d3093e96729a0937eb936b938 ""
+  "Images/RE-Reduzierbarkeit.png" 1700743594 35459 e2398c14439a36229e40971cb0080d9c ""
   "Images/Schrittrelation.png" 1698303131 207294 e1b19300818545e3f361f579b28e2bd3 ""
   "Images/Turingmaschine.png" 1698051027 66365 7fd2755d40ab2bce1d36243d79b37086 ""
-  "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" 1700224862 155045 99529d93595989b9406959a4605376f3 ""
+  "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" 1700946071 172342 25340fca182d2c478cb37ba463199b79 ""
   (generated)
   "Beweisideen101.aux"
   "Beweisideen101.log"
