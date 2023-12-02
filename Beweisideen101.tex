@@ -2677,6 +2677,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                 
                 
                     \myTitle{Spezialfall des Halteproblems}
+                    
                     Wir definieren $L_{\text{H}, \lambda} = \{\text{Kod}(M) \mid M \text{ hält auf }\lambda\}$.
                     \begin{mainbox}{Lemma 5.8}
                         $$L_{\text{H}, \lambda} \notin \Lr$$
@@ -2962,7 +2963,52 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                             \end{enumerate}
                             $\hfill\blacksquare$
                         
-                
+                            \subsection{Verhältnis zwischen RE 'Reduktion' und R-Reduktion}
+                            
+                            $$L_1 \leq_{\text{R}} L_2 \centernot{\implies} (L_2 \in \Lre \implies L_1 \in \Lre)$$
+                            Wir beweisen diese Aussage per Gegenbeispiel. 
+                        
+                            Sei $L_1 = L_{\text{diag}}$ und $L_2 = L_{\text{diag}}^\complement$.
+                        
+                            Wir haben 
+                            \begin{itemize}[label=$\blacktriangleright$]
+                                \item $L_1 = L_{\text{diag}} \notin \Lre$ \hfill (Satz 5.5)
+                                \item $L_2 = L_{\text{diag}}^\complement \in \Lre\setminus\Lr$ \hfill(Korollar 5.2, Lemma 5.5)
+                            \end{itemize}
+                            
+                            Per \textbf{Lemma 5.4} gilt $L_{\text{diag}} \leq_{\text{R}} L_{\text{diag}}^\complement$.
+                        
+                            Die rechte Implikation gilt jedoch nicht.
+                            
+                            $\hfill\blacksquare$
+                        
+                            $$L_1 \leq_{\text{R}} L_2 \centernot{\impliedby} (L_2 \in \Lre \implies L_1 \in \Lre)$$
+                            Sei $L_1 = L_{\text{U}}$ und $L_2 = \{0^i \mid i \in \N\}$.
+                        
+                            Wir haben 
+                            \begin{itemize}[label=$\blacktriangleright$]
+                                \item $L_1 = L_{\text{diag}} \in \Lre \setminus \Lr$ \hfill (Satz 5.6 und 5.7)
+                                \item $L_2 = \{0^i \mid i \in \N\} \in \Lr$ \hfill(da $\L_{\text{EA}} \subset \Lr$)
+                            \end{itemize}
+                            
+                            Da $L_1 \in \Lre$, gilt die Implikation auf der rechten Seite für dieses $L_1$ und $L_2$.
+                        
+                            
+                            Da per Definition
+                            $$L_1 \leq_{\text{R}} L_2 \iff (L_2 \in \Lr \implies L_1 \in \Lr)$$
+                            folgt aus $L_1 \notin \Lr$ und $L_2 \in \Lr$, dass diese Instanzierung von $L_1$ und $L_2$ ein Gegenbeispiel ist.
+                            
+                            $\hfill\blacksquare$
+                        
+                            \myTitle{Relation zu EE-Reduktion}
+
+                            Wir haben aber gezeigt, dass 
+                            $$L_1 \leq_{\text{EE}} L_2 \implies L_1 \leq_{\text{R}} L_2$$
+                            und 
+                            
+                            $$L_1 \leq_{\text{EE}} L_2 \implies (L_2 \in \Lre \implies L_1 \in \Lre)$$
+                        
+                            Die Rückrichtung gilt jeweils nicht.
                 
                 \section{How To Reduktion}
                 
@@ -3047,7 +3093,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                             \item Die Eingabe sollte immer zuerst auf die Richtige Form überprüft werden!
                             
                             Auch im Korrektsheitsbeweis, sollte dieser Fall als erstes abgehandelt werden.
-                            \item Für Korrektheit müssen wir immer $x \in L_1 \iff A(x) \in L_2$ beweisen.
+                            \item EE-Reduktion: Für Korrektheit müssen wir immer $x \in L_1 \iff A(x) \in L_2$ beweisen.
                             
                             \item Wir verwenden meistens folgende 2 Tricks:
                             \begin{enumerate}[label=\roman*.]
@@ -3056,9 +3102,349 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                             \end{enumerate}
                             
                             \item Die Kodierung einer TM generieren, dessen Sprache gewisse Eigenschaften hat(z.B. sie akzeptiert alle Eingaben, läuft immer unendlich etc.)
+                            
+                            \item Bei $L_1 \leq_{\text{R/EE}} L_2$ nehmen wir einen Algorithmus $A_{L_2}$ an mit $L(A_{L_2}) = L_2$. 
+                            
+                            Wir können $A_{L_2}$ auch in der Kodierung einer TM $M'$ verwenden, die wir dann zu $A_{L_2}$ übergeben! 
                         \end{itemize}
+
+                        \myTitle{Fortgeschrittener Trick}
+
+                            \textbf{Aufgabe}
+                        
+                            Sei $L_{\text{all}} = \{\text{Kod}(M) \mid M \text{ akzeptiert jede Eingabe}\}$.
+                        
+                            Zeigen Sie $L_{\text{H}}^\complement \leq_{\text{EE}} L_{\text{all}}$.
+                            
+                            
+                            \textbf{Kernidee}
+                        
+                            Für eine Eingabe $x = \text{Kod}(M)\#w$, generieren wir Kod$(A)$ einer TM $A$, die folgendes folgendes macht:
+                            
+                            $\mathbf{A}:$
+                        
+                            \textbf{Eingabe} $y$
+                            \begin{enumerate}[label=\arabic*.]
+                                
+                                \item Berechnet $|y|$ Schritte von $M$ auf $w$.
+                                
+                                \item Falls danach die Berechnung nach $|y|$ noch nicht terminiert hat, akzeptiert $A$ die Eingabe $y$.
+                                
+                                \item Sonst verwirft $A$ die Eingabe.
+                            \end{enumerate}
+                            
+                            \begin{center}
+                                $A$ akzeptiert jede Eingabe $\iff$ $M$ läuft unendlich auf $w$
+                            \end{center}
+                            
+                            Wir nutzen, dass $L_{\text{all}}$ unendlich viele Wörter hat, um implizit jede mögliche endliche Berechnungslänge abzudecken und eine Endlosschleife zu erkennen.
+                        
                 
             
+                        \myTitle{Bemerkung: Implikationsbeweis für Reduktion}
+
+                            Wenn eine Reduktion verlangt wird, dann dürft ihr die Implikation nicht trivial per Implikationsaussage zeigen.
+                                
+                            Gemeint damit ist folgender Ansatz. 
+                        
+                                $L_1 \leq_{\text{R}} L_2$ soll gezeigt werden. 
+                            
+                                    
+                                Da per Definition 
+                                $$L_1 \leq_{\text{R}} L_2 \iff (L_2 \in \Lr \implies L_1 \in \Lr)$$
+                                folgt die gewünschte Aussage per $L_2 \notin \Lr$ (oder $L_1 \in \Lr$). 
+                        
+                                \textbf{Dieser Ansatz gibt an der Prüfung $0$ Punkte.}
+                       
+                        
+                        \section{Komplexitätstheorie}
+                        
+                        \subsection{Konfiguration}
+
+                            Wir erinneren uns:
+                            \begin{mainbox}{Konfiguration einer $k$-Band-TM}
+                                Die Konfiguration einer $k$-Band-TM sieht wie folgt aus
+                                $$(q, w, i, u_1, i_1, u_2, i_2, ..., u_k, i_k) \in Q \times \Sigma^* \times \N \times (\Gamma^* \times \N)^k$$
+                                wobei 
+                                \begin{itemize}[label = $\blacktriangleright$]
+                                    
+                                    \item $q$ der Zustand der TM ist
+                                    
+                                    \item $\cent w \$$ der Inhalt des Eingabebandes, Lesekopf Eingabeband auf dem $i$-ten Feld
+                                    
+                                    \item für $j \in \{1, ..., k\}$ ist der Inhalt des $j$-ten Bandes $\cent u_j \text{\textvisiblespace \textvisiblespace \textvisiblespace}$ und $i_j \leq |u_j|$ die Position des Kopfs auf dem $j$-ten Band. 
+                                \end{itemize}
+                            \end{mainbox}
+                       \subsection{Time}
+                            \begin{mainbox}{}
+                                Sei $M$ eine MTM oder TM, die immer hält. Sei $\Sigma$ das Eingabealphabet von $M$. 
+                                Sei $x \in \Sigma^*$ und $D = C_1, C_2, ...,C_k$ die Berechnung von $M$ auf $x$.
+                                
+                                
+                                Die \textbf{Zeitkomplexität $\mathbf{\textbf{Time}_M(x)}$ der 
+                                Berechnung von $\mathbf{M}$ auf $\mathbf{x}$} ist definiert durch
+                                $$\mathbf{\textbf{Time}_M(x)} = k-1.$$
+                                
+                                
+                                Die \textbf{Zeitkomplexität von $\mathbf{M}$} ist die Funktion $\text{Time}_M: \N \to \N$, definiert durch
+                                $$\mathbf{\textbf{Time}_M(n)} = \text{max}\left\{\text{Time}_M(x) \mid x \in \Sigma^n\right\}.$$
+                            \end{mainbox}
+                   
+                        
+                        \subsection{Space}
+                            \begin{mainbox}{}
+                                Sei $k \in \N\setminus\{0\}$. Sei $M$ eine $k$-Band-TM, die immer hält.
+                        
+                                Sei 
+                                \begin{align*}
+                                    C = (q, x, i, \alpha_1, i_1, \alpha_2, i_2, ..., \alpha_k, i_k)\\
+                                    \text{mit }0 \leq i \leq |x|+1 \text{ und } 0 \leq i_j \leq |\alpha_j| \text{ für } j = 1, ..., k
+                                \end{align*}
+                                eine Konfiguration von $M$. 
+                                
+                                
+                                Die \textbf{Speicherplatzkomplexität von $\mathbf{C}$} ist 
+                                $$\mathbf{\textbf{Space}_M(C)} = \max\{|\alpha_i| \mid i = 1, ..., k\}.$$
+                            \end{mainbox}
+                     
+                            \begin{mainbox}{}
+                                Sei $C_1, C_2, ..., C_l$ die Berechnung von $M$ auf $x$. Die \textbf{Speicherplatzkomplexität von $\mathbf{M}$ auf $\mathbf{x}$} ist 
+                                $$\mathbf{\textbf{Space}_M(x) }= \max\left\{\text{Space}_M(C_i) \mid i = 1, ..., l\right\}.$$
+                                
+                                Die \textbf{Speicherplatzkomplexität von $\mathbf{M}$} ist die Funktion $\text{Space}_M: \N \to \N$, definiert durch 
+                                $$\mathbf{\textbf{Space}_M(n)} = \max\left\{\text{Space}_M(x) \mid x \in \Sigma^n\right\}.$$
+                            \end{mainbox}
+                        
+                            \textbf{Bemerkungen}
+                            \begin{enumerate}[label=\arabic*.]
+                                \item Länge des Eingabewortes, hat keinen Einfluss auf die Speicherplatzkomplexität.
+                                \item Mächtigkeit des Alphabets hat keinen Einfluss auf die Speicherplatzkomplexität.
+                            \end{enumerate}
+                            
+                     
+                            \begin{mainbox}{Lemma 6.1}
+                                Sei $k \in \N\setminus\{0\}$. Für jede $k$-Band-TM $A$, die immer hält, existiert eine äquivalente $1$-Band-TM $B$, so dass 
+                                $$\text{Space}_B(n) \leq \text{Space}_A(n)$$
+                            \end{mainbox}
+                            
+                            \textbf{Beweisskizze: }
+                        
+                            Gleiche Konstruktion wie in Lemma 4.2.
+                            
+                            Lemma 4.2 = ''Für jede MTM $A$ existiert eine äquivalente TM $B$''. 
+                            
+                            Wir sehen, dass $B$ genau so viele Felder braucht, wie $A$.
+                        
+                            \begin{mainbox}{Lemma 6.2}
+                                Zu jeder MTM $A$ existiert eine äquivalente MTM $B$ mit 
+                                $$\text{Space}_B(n) \leq \frac{\text{Space}_A(n)}{2}+2$$
+                            \end{mainbox}
+                            
+                            \textbf{Beweisskizze: }
+                        
+                            Wir fassen jeweils 2 Felder von $A$ zu einem Feld in $B$ zusammen. $\Gamma_B = \Gamma_A \times \Gamma_A$. Wir addieren $1$ für das $\cent$ am linken Rand und $1$ für das Aufrunden im Fall von ungerader Länge.
+                        
+                            \subsection{Asymptotik}
+                            \begin{itemize}[label=$\blacktriangleright$]
+                                
+                                \item $\mathbf{\O(f(n))}$: 
+                                
+                                Menge aller Funktionen, die asymptotisch nicht schneller wachsen als $f(n)$.
+                                
+                                \item $\boldsymbol{\Omega}\mathbf{(g(n))}$: 
+                                
+                                Menge aller Funktionen, die asymptotisch mind. so schnell wachsen wie $g(n)$.
+                                
+                                \item $\boldsymbol{\Theta}\mathbf{(h(n))}$: 
+                                
+                                Menge aller Funktionen, die asymptotisch gleich schnell wachsen wie $h(n)$.
+                            \end{itemize}
+                            
+                            \begin{subbox}{Small o-notation}
+                                Seien $f$ und $g$ zwei Funktionen von $\N$ nach $\R^+$. 
+                        
+                                Falls $\lim_{n \to \infty} \frac{f(n)}{g(n)} = 0$, dann sagen wir, dass $g$ asymptotisch \textbf{schneller wächst} als $f$: 
+                        
+                                $$f(n) \in o(g(n))$$
+                            \end{subbox}
+                       
+                            \myTitle{Bloomsches Speedup Theorem}
+                            \begin{mainbox}{Satz 6.1}
+                                Es \textbf{existiert} ein Entscheidungsproblem $(\Sigma_{\text{bool}}, L)$, 
+                                so dass für jede MTM $A$, die $(\Sigma_{\text{bool}}, L)$ entscheidet, 
+                                eine MTM $B$ existiert, die auch $(\Sigma_{\text{bool}}, L)$ entscheidet, und für die gilt
+                                $$\text{Time}_B(n)\leq \log_2(\text{Time}_A(n))$$
+                                für unendlich viele $n \in \N$.
+                            \end{mainbox}
+                            
+                            I.e. es existieren Entscheidungsprobleme, die keinen optimalen Algorithmus haben.
+                        
+                            Deswegen fokussieren wir uns auf untere und obere Schranken der Komplexität eines Problemes und nicht auf die genaue Bestimmung davon.
+                        
+                            \myTitle{Komplexität eines Entscheidungsproblems $(\Sigma, L)$}
+                            \begin{mainbox}{}
+                                Sei $L$ eine Sprache. Sei $f, g: \N \to \R^+$.
+                                \begin{itemize}[label=$\blacktriangleright$]
+                                    
+                                    \item $\O(g(n))$ ist eine \textbf{obere Schranke für die Zeitkomplexität von $L$}, falls eine MTM $A$ \textbf{existiert}, die $L$ entscheidet und Time$_A(n) \in \O(g(n))$.
+                                    
+                                    \item $\Omega(f(n))$ ist eine \textbf{untere Schranke für die Zeitkomplexität von $L$}, falls für \textbf{jede} MTM $B$ die $L$ entscheidet und Time$_B(n) \in \Omega(f(n))$.
+                                    
+                                    \item Eine MTM $C$ heisst \textbf{optimal für $L$}, falls Time$_C(n) \in \O(f(n))$ und $\Omega(f(n))$ eine untere Schranke für die Zeitkomplexität ist. 
+                                \end{itemize}
+                            \end{mainbox}
+                            
+                            Untere Schranke finden und beweisen: \textbf{schwierig}.
+                        
+                            Obere Schranke kann durch einen konkreten Algorithmus gezeigt werden.
+                        \subsection{Komplexitätsklassen}
+                            \begin{mainbox}{Klassen}
+                                Für alle Funktionen $f, g : \N \to \R^+$ definieren wir
+                                
+                                \begin{align*}
+                                    \textbf{TIME}\mathbf{(f)} &= \{L(B) \mid B \text{ ist eine MTM mit Time}_B(n) \in \O(f(n))\}\\
+                                    \textbf{SPACE}\mathbf{(g)} &= \{L(A) \mid A \text{ ist eine MTM mit Space}_A(n) \in \O(g(n))\}\\
+                                    \textbf{DLOG} &= \text{SPACE}(\log_2 n)\\
+                                    \textbf{P} &= \bigcup_{c \in \N}\text{TIME}(n^c)\\
+                                    \textbf{PSPACE} &= \bigcup_{c \in \N}\text{SPACE}(n^c)\\
+                                    \textbf{EXPTIME} &= \bigcup_{d \in \N}\text{TIME}({2^n}^d)
+                                \end{align*}
+                            \end{mainbox}
+                    
+                        
+                        \myTitle{Zeitkomplexität zu Platzkomplexität}
+                            \begin{mainbox}{Lemma 6.3}
+                                Für jede Funktion $t: \N \to \R^+$ gilt
+                                $$\text{TIME}(t(n)) \subseteq \text{SPACE}(t(n))$$
+                            \end{mainbox}
+                            
+                            \textbf{Beweisskizze:}
+                        
+                            In $\O(t(n))$ Schritten sind höchstens $\O(t(n))$ Felder beschreibbar.
+                        
+                            
+                            \begin{mainbox}{Korollar 6.1}
+                                $$\text{P} \subseteq \text{PSPACE}$$
+                            \end{mainbox}
+                        \subsection{Platz- \& Zeitkonstruierbarkeit}
+                            \begin{mainbox}{}
+                                EIne Funktion: $s: \N \to \N$ heisst \textbf{platzkonstruierbar}, falls eine $1$-Band-TM $M$ existiert, so dass 
+                                \begin{enumerate}[label=(\roman*)]
+                                    \item Space$_M(n) \leq s(n)$ für alle $n \in \N$ und 
+                                    \item für jede Eingabe $0^n$, generiert $M$ das Wort $0^{s(n)}$ auf ihrem Arbeitsband und hält in $q_{\text{accept}}$.
+                                \end{enumerate}
+                            \end{mainbox}
+
+                            \begin{mainbox}{}
+                                EIne Funktion: $t: \N \to \N$ heisst \textbf{zeitkonstruierbar}, falls eine MTM $A$ existiert, so dass 
+                                \begin{enumerate}[label=(\roman*)]
+                                    \item Time$_A(n) \leq t(n)$ für alle $n \in \N$ und 
+                                    \item für jede Eingabe $0^n$, generiert $A$ das Wort $0^{t(n)}$ auf dem ersten Arbeitsband und hält in $q_{\text{accept}}$.
+                                \end{enumerate}
+                            \end{mainbox}
+
+                            \myTitle{Platzgarantien}
+                            \begin{mainbox}{Lemma 6.4 (verständlicher formuliert)}
+                                Sei $s: \N \to \N$ platzkonstruierbar.
+                        
+                                Für jede MTM $M$, für welche Space$_M(w) \leq s(|w|)$ nur für alle $w \in L(M)$ erfüllt, 
+                                existiert eine äquivalente MTM $A$, welche dies für alle $w \in \Sigma^*$ erfüllt.
+                            \end{mainbox}
+                            
+                            \textbf{Beweisskizze: }
+                            
+                            Erzeuge für jede Eingabe $x \in \Sigma^*$ zuerst $0^{s(|x|)}$ auf einem zusätzlichen Band und nutze das als Platzüberwachung. 
+                            
+                            
+                            Wenn $A$ diesen Platz überschreiten will, wird die Simulation unterbrochen und die Eingabe verworfen.
+                        
+                        \myTitle{Zeitgarantien}
+                            \begin{mainbox}{Lemma 6.5 (verständlicher formuliert)}
+                                Sei $t: \N \to \N$ zeitkonstruierbar. 
+                                
+                                Zu jeder MTM $M$, welche Time$_M(w) \leq t(|w|)$ nur für alle $w \in L(M)$ erfüllt, 
+                                
+                                existiert eine äquivalente MTM $A$, welche zumindest Time$_A(w) \leq 2t(|w|) \in \O(t(|w|))$ für alle $w \in \Sigma^*$ erfüllt.
+                        
+                                $$\implies \text{Time}_A(n) \in \O(t(n))$$
+                            \end{mainbox}
+                            
+                            \textbf{Beweisskizze: }
+                            
+                            Schreibe für jede Eingabe $x \in \Sigma^*$ $0^{t(|x|)}$ auf ein zusätzliches Arbeitsband und nutze dies zur Zeitzählung. 
+                            
+                            
+                            Wenn $A$ mehr Schritte machen will, wird die Simulation abgebrochen und die Eingabe verworfen.
+                        
+                        \myTitle{Speicherplatzkomplexität zu Zeitkomplexitä}
+                            \begin{mainbox}{Satz 6.2}
+                                Für jede Funktion $s$ mit $s(n) \geq \log_2(n)$ gilt:
+                        
+                            $$\textbf{SPACE}(s(n)) \subseteq \bigcup_{c \in \N} \textbf{TIME}(c^{s(n)})$$
+                            \end{mainbox}
+                            
+                            \textbf{Beweis}
+                        
+                            Sei $L \in \textbf{SPACE}(s(n))$. Nach Lemma 6.1 existiert eine 1-Band-TM 
+                            $M=(Q,\Sigma,\Gamma,\delta,q_0,q_{accept},q_{reject})$, die \textbf{immer hält}, 
+                            so dass $L = L(M)$ und Space$_M(n) \leq d \cdot s(n)$ für $d \in \N$ gelten. 
+                         
+                            Für jede Konfiguration $C =(q,w,i,x,j)$ von $M$ definieren wir die 
+                            \textbf{innere Konfiguration von $C$} als $$\text{In}(C) = (q,i,x,j).$$ 
+                            
+                            
+                            Die innere Konfiguration enthält das Eingabewort $w$ nicht, da dies sich während einer Berechnung nicht ändert. 
+                        
+                            Sei InKonf$_M(n)$ die Menge aller möglichen inneren Konfigurationen auf Eingabewörtern der Länge $n$.
+                        
+                            Sei $X = |\text{InKonf}_M(n)|$ dessen Kardinalität.
+                        
+                            
+                            Sei $D = C_1C_2...C_k$ eine endliche Berechnung von $M$ auf einem Wort $w, |w|=n$.
+                        
+                            
+                            Wir zeigen per Widerspruch, dass $D$ maximal $X$ verschiedene Konfigurationen haben kann, i.e. $k \leq X$.
+                        
+                            
+                            Nehmen wir zum Widerspruch an $k > X$.
+                        
+                            
+                            Dann muss es in $D = C_1C_2...C_i...C_j...C_k$, zwei identische innere Konfigurationen In($C_i$) und In($C_j$) geben (für $i < j$).
+                            
+                            
+                            Da $M$ deterministisch ist, sollte aber von $C_i = C_j$ aus immer die gleichen Berechnungsschritte ausgeführt werden.
+                        
+                             
+                            Dann wäre aber $D$ eine unendliche Berechnung mit der Endlosschleife $C_iC_{i+1}...C_j$. \textbf{Widerspruch}, da $M$ immer hält.
+                        
+                            Eine beliebige endliche Berechnung $D$ von $M$ auf $w, |w| = n$, kann höchstens $X$ viele Zeitschritte (i.e. Konfigurationen) haben.
+                        
+                            Jetzt müssen wir noch $X = |\text{InKonf}_M(n)$ abschätzen.
+                            
+                            Wir wissen folgendes
+                            \begin{itemize}[label=$\blacktriangleright$]
+                                
+                                \item Es gibt $|Q|$ verschieden mögliche Zustände.
+                                
+                                \item Index des Eingabekopfes ist $0 \leq i \leq n+1$ (Eingabeband $\cent w \$$ mit $|w| = n$)
+                                
+                                \item Inhalt des Arbeitsbandes $x$ hat Länge: $|x| \leq \text{Space}_M(n) \leq d \dot s(n)$
+                                
+                                \item Index vom Kopf auf dem Arbeitsband: $0 \leq j \leq \text{Space}_M(n) \leq d \cdot s(n)$
+                                
+                                \item $x \in \Gamma^{|x|}$
+                                
+                                \item $n + 2 \leq 4^{\log_2n}\leq 4^{s(n)}$ für $n \geq 2$
+                            \end{itemize}
+                        
+                    
+                            Setzen wir alles zusammen:
+                            \begin{align*}
+                                |\text{InKonf}_M(n)| &\leq |Q| \cdot (n + 2) \cdot |\Gamma|^{\text{Space}_M(n)}\cdot \text{Space}_M(n)\\
+                                                    &\leq (\max\{4, |Q|, |\Gamma|\})^{4d \cdot s(n)}\\
+                                                    &\leq c^{s(n)}
+                            \end{align*}
+                            $\hfill\blacksquare$
             % \section{How To Reduktion}
             
             %     \subsection{$L \in \Lr$ }
