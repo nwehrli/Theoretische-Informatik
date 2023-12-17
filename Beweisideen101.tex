@@ -3445,6 +3445,343 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                                                     &\leq c^{s(n)}
                             \end{align*}
                             $\hfill\blacksquare$
+
+
+
+
+\section{NP-Vollständigkeit}
+
+\subsection{Verifikation}
+
+	\begin{mainbox}{Verfizierer}
+		Sei $L \subseteq \Sigma^*$ eine Sprache und sei $p: \N \to \N$ eine Funktion. 
+		
+		Ein Algorithmus $A$ (MTM) ist ein 
+		\textbf{$\mathbf{p}$-Verfizierer für $\mathbf{L}$} mit $\mathbf{V(A) = L}$, falls 
+		$A$ mit folgenden Eigenschaften auf allen Eingaben aus $\Sigma^* \times (\Sigma_{\text{bool}})^*$ arbeitet:
+		\begin{enumerate}[label=(\roman*)]
+			
+			\item Time$_A(w, x) \leq p(|w|)$ für jede Eingabe $(w, x) \in \Sigma^* \times (\Sigma_{\text{bool}})^*$. 
+			
+			\item Für jedes $w \in L$ existiert ein $x \in (\Sigma_{\text{bool}})^*$, so dass $|x| \leq p(|w|)$ 
+			und $(w, x) \in L(A)$. Das Wort $x$ nennt man einen \textbf{Beweis} oder einen \textbf{Zeugen} 
+			der Behauptung $w \in L$.
+			
+			\item Für jedes $y \notin L$ gilt $(y, z) \notin L(A)$ für alle $z \in (\Sigma_{\text{bool}})^*$. 
+		\end{enumerate}
+	\end{mainbox}
+
+	\begin{mainbox}{Polynomialzeitverifikation}
+		Falls $p(n) \in \O(n^k)$ für ein $k \in \N$, so sagen wir, dass $A$ ein \textbf{Polynomialzeit-Verfizierer} ist.
+
+		Wir definieren die \textbf{Klasse der in Polynomialzeit verifzierbaren Sprachen} als 
+		$$\textbf{VP} = \{V(A) \mid A \text{ ist ein Polynomialzeit-Verfizierer}\}.$$
+	\end{mainbox}
+
+	\begin{mainbox}{Satz 6.8}
+		VP = NP
+	\end{mainbox}
+	Die Klasse NP ist demnach die Klasse aller Sprachen $L$, 
+	die für jedes $x \in L$ einen in $|x|$ polynomiell langen Beweis von ''$x \in L$'' haben, 
+	welchen man deterministisch in polynomieller Zeit verifizieren bekann. 
+
+	Dies können wir benutzen, um $L \in \text{NP}$ zu beweisen!
+
+\subsection{P-Reduktion}
+	\begin{mainbox}{}
+		Seien $L_1 \subseteq \Sigma_1^*, L_2 \subseteq \Sigma_2^*$ zwei Sprachen. 
+		Wir sagen, dass \textbf{$\mathbf{L_1}$ polynomiell auf $\mathbf{L_2}$ reduzierbar 
+		ist, $\mathbf{L_1 \leq_{p} L_2}$}, falls eine polynomieller Algorithmus $A$ existiert, 
+		der für jedes Wort $x \in \Sigma_1^*$ ein Wort $A(x) \in \Sigma_2^*$ berechnet, so dass
+		$$x \in L_1 \iff A(x) \in L_2$$
+		$A$ wird eine \textbf{polynomielle Reduktion} von $L_1$ auf $L_2$ genannt. 
+	\end{mainbox}
+	Bemerkung: Analog zur EE-Reduktion, nur das $A$ jetzt noch polynomiell laufen muss.
+
+{Begrifflichkeiten}
+	\begin{mainbox}{}
+		Eine Sprache $L$ ist \textbf{NP-schwer}, falls für alle Sprachen $L' \in $NP gilt $L' \leq_p L$.
+
+		Eine Sprache $L$ ist \textbf{NP-vollständig}, falls
+		\begin{enumerate}[label=(\roman*)]
+			\item $L \in $NP und
+			\item $L$ ist NP-schwer.
+		\end{enumerate}
+	\end{mainbox}
+	\begin{mainbox}{Lemma 6.7}
+		Falls $L \in P$ und $L$ ist NP-schwer, dann gilt P = NP.
+	\end{mainbox}
+
+
+\myTitle{Satz von Cook}
+	Wir haben 
+	$$\text{SAT} = \{x \in (\Sigma_{\text{logic}})^* \mid x \text{ kodiert eine erfüllbare Formel in KNF}\}$$
+
+	\begin{mainbox}{Satz 6.9}
+		SAT ist NP-vollständig.
+	\end{mainbox}
+	Da $$L_1 \leq_{p} L_2 \implies (L_2 \in \text{P} \implies L_1 \in \text{P})$$
+	können wir mit diesem Resultat die NP-Schwere anderer Probleme einfacher beweisen.
+
+
+\subsection{Klassische Probleme}
+	\begin{align*}
+		\text{SAT} &= \{\phi \mid \phi \text{ ist eine erfüllbare Formel in KNF}\}\\
+		\text{CLIQUE} &= \{(G, k) \mid G \text{ ist ein ungerichteter Graph, der eine $k$-Clique enthält}\}\\
+		\text{VC} &= \{(G, k) \mid G \text{ ist ein ungerichteter Graph mit einer Knotenüberdeckung}\\ 
+		 & \hspace{2cm}\text{(vertex cover) der Mächtigkeit höchstens }k\}
+	\end{align*}
+	
+	Higher-Level of Abstraction. 
+
+	Wir müssen uns nicht mehr überlegen, wie die Probleminstanzen als endliche Wörter kodiert sind!
+
+	
+	Das heisst auch, dass ihr nicht mehr explizit auf falsche Form überprüfen müsst.
+
+	Ihr könnt annehmen, dass die Eingabe jeweils schon eine wohlgeformte Instanz des Problems ist.
+
+
+\subsection{Aufgabe 6.22.a}
+	Beweise 
+	$$\text{VC} \leq_p \text{CLIQUE}$$
+	Zur Erinnerung:
+	\begin{align*}
+		\text{CLIQUE} &= \{(G, k) \mid G \text{ ist ein ungerichteter Graph, der eine $k$-Clique enthält}\}\\
+		\text{VC} &= \{(G, k) \mid G \text{ ist ein ungerichteter Graph mit einer Knotenüberdeckung}\\ 
+		 & \hspace{2cm}\text{(vertex cover) der Mächtigkeit höchstens }k\}
+	\end{align*}
+	Ein VC ist eine Knotenmenge $C \subseteq V$, so dass 
+	$$\forall \{u, v\}. v \in C \lor u \in C.$$
+
+	Wir beschreiben einen polynomiellen Algorithmus $A$:
+
+	Eingabe $(G = (V, E), k)$ für VC
+	\begin{enumerate}[label=\arabic*.]
+		\item Findet $\overline{G} = (V, \overline{E})$ mit $\overline{E} = \{\{u, v\} \mid u, v \in V, u \neq v, \{u, v\} \notin E\}$
+		\item Gibt $(\overline{G}, |V| - k)$ aus.
+	\end{enumerate}
+	Es sollte klar sein, dass $A$ polynomiell läuft.
+
+	\textbf{Korrektheit}
+
+	Wir beweisen nun 
+	$$S \subseteq V \text{ ist ein Vertex Cover von }G \iff V\setminus S \text{ ist eine Clique von } \overline{G}$$
+
+	$\mathbf{(\implies):}$
+
+	Sei $S \subseteq V$ ein Vertex Cover von $G$. 
+	
+	
+	$\implies$ Per Definition gilt für jede Kante $\{u, v\} \in E$ mindestens $u \in S$ oder $v \in S$.
+		
+	
+	$\implies$ Also existiert keine Kante $\{u, v\} \in E$ mit $u, v \in V\setminus S$.
+
+	
+	$\implies$ Deshalb gilt für alle $u, v \in V \setminus S, u \neq v$, dass $\{u, v\} \in \overline{E}$. 
+		
+	
+	$\implies$ $V \setminus S$ ist eine Clique in $\overline{G}$.
+
+
+	$\mathbf{(\impliedby):}$
+
+	Sei $V\setminus S$ eine Clique in $\overline{G}$. 
+	
+	
+	$\implies$ Per Definition gilt für alle Knotenpaare $u, v \in V\setminus S, u \neq v$ jeweils $\{u, v\} \in \overline{E}$.
+		
+	
+	$\implies$ Also existiert keine Kante $\{u, v\} \in E$ mit $u, v \in V\setminus S$.
+
+	
+	$\implies$ Deshalb gilt für alle $\{u, v\} \in E$, dass $u \in S$ oder $v \in S$. 
+		
+	
+	$\implies$ $S$ ist ein Vertex Cover in $G$.
+	
+	Mit der Aussage 
+	$$S \subseteq V \text{ ist ein Vertex Cover von }G \iff V\setminus S \text{ ist eine Clique von } \overline{G} \qquad (1)$$
+	können wir nun die Korrektheit beweisen.
+	
+	\begin{align*}
+		(G, k) \in \text{VC} &\iff \exists S \subseteq V: S \text{ ist ein VC von } G \text{ und } |S| \leq k\\
+		&\iff V\setminus S \text{ ist eine Clique von } \overline{G} \text{ und } |V\setminus S| \geq |V| - k\\
+		&\iff (\overline{G}, |V| - k) \in \text{CLIQUE}\\
+		&\iff A((G, k)) \in \text{CLIQUE}
+	\end{align*}
+	$\hfill\blacksquare$
+
+
+\section{How To P-Reduktion}
+
+\subsection{PROBLEM $\in $ NP}
+	Beschreibung eine NTM $M$, die PROBLEM erkennt mit folgender Form:
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $M$ errät für eine Eingabe $x$ nicht deterministisch ein Zertifikat/Beweis (z.B. eine erfüllende Belegung für SAT oder eine Clique für CLIQUE). 
+		
+		\item $M$ verfiziert das Zertifikat deterministisch in Polynomialzeit.
+	\end{enumerate}
+	
+	\textbf{Korrektheit}
+	
+	$x \in \text{PROBLEM}$ $\iff$ Es existiert ein solches Zertifikat $\iff$ Es existiert eine akzept. Berechnung von $M$ auf $x$ $\iff$ $x \in L(M)$ 
+
+\subsection{PROBLEM ist NP-schwer}
+	Beweise $$\text{OTHERPROBLEM} \leq_p \text{PROBLEM}$$
+	für ein anderes OTHERPROBLEM, dass NP-schwer ist (in der Vorlesung gezeigt oder ähnl.).
+
+	\textit{Alternativ könnte man auch etwas wie den Beweis vom Satz von Cook machen}. \textbf{(Don't)}
+
+\subsection{PROBLEM ist NP-Vollständig}
+	Zeige 
+	\begin{enumerate}[label=\arabic*]
+		\item PROBLEM $\in $ NP
+		\item PROBLEM ist NP-schwer
+	\end{enumerate}
+
+	\subsection{OTHERPROBLEM $\leq_p$ PROBLEM}
+	\begin{enumerate}[label=\arabic*.]
+		
+		\item \textbf{Beschreibung} eines Algorithmus $A$, so dass 
+		$$x \in \text{OTHERPROBLEM} \iff A(x) \in \text{PROBLEM}$$
+		
+		\item \textbf{Korrektsheitsbeweis} von 
+		$$x \in \text{OTHERPROBLEM} \iff A(x) \in \text{PROBLEM}$$
+		(nichttrivial)
+		
+		\item \textbf{Polynomialzeit} von $A$ beweisen/argumentieren. Meistens recht einfach. 
+	\end{enumerate}
+
+\subsection{Idee finden für Polynomialzeitreduktion}
+	Grundsätzlich 2 Typen von Problemen/Sprachen:
+	\begin{enumerate}[label=\arabic*]
+		\item Satisifiability: Logische Formeln (deren Erfüllbarkeit). Beispielsweise SAT und 3SAT, 4SAT...
+		\item Graphenprobleme: Eigenschaften von Graphen. Beispielsweise CLIQUE, VC, DS etc.
+	\end{enumerate}
+	% Das SCP würde ich vom Typ her, zu den Graphenproblemen zählen.
+
+
+\subsubsection{Satisfiablity zu Satisfiability - Idee}
+	Meist müssen wir einzelne Klauseln umschreiben. Veränderung der Anzahl Literale.
+	\begin{itemize}[label=-]
+		\item \textbf{Literale verringern.} (Für allg. siehe im Buch, Lemma 6.11)
+			
+		Beispiel: 6SAT $\leq_p$ 4SAT
+			$$(x_1 \lor x_2 \lor x_3 \lor x_4 \lor x_5) \mapsto  (y_1 \lor x_1 \lor x_2 \lor x_3) \land (\overline{y}_1 \lor x_4 \lor x_5)$$
+			$$(x_1 \lor x_2 \lor x_3 \lor x_4 \lor x_5 \lor x_6) \mapsto  (y_1 \lor x_1 \lor x_2 \lor x_3) \land (\overline{y}_1 \lor x_4 \lor x_5 \lor x_6)$$
+			Beispiel: E8SAT $\leq_p$ E4SAT
+			
+			\begin{align*}
+				(x_1 \lor x_2 \lor x_3 \lor x_4 \lor x_5 \lor x_6 \lor x_7 \lor x_8) \mapsto  &(y_1 \lor x_1 \lor x_2 \lor x_3) \land (\overline{y}_1 \lor x_4 \lor x_5 \lor y_2) \\
+				&\land (\overline{y}_2 \lor x_6 \lor x_7 \lor x_8)
+			\end{align*}
+
+	\item \textbf{Mehr Literale.} 
+	
+			Beispiel: 5SAT $\leq_p$ E5SAT
+			$$(x_1 \lor x_2 \lor x_3 \lor x_4 \lor x_5) \mapsto  (x_1 \lor x_2 \lor x_3 \lor x_4 \lor x_5)$$
+			$$(x_1 \lor x_2 \lor x_3 \lor x_4) \mapsto  (x_1 \lor x_2 \lor x_3 \lor x_4 \lor y_1) \land (x_1 \lor x_2 \lor x_3 \lor x_4  \lor \overline{y}_1)$$
+			
+			\begin{align*}
+				(x_1 \lor x_2 \lor x_3) \mapsto &(x_1 \lor x_2 \lor x_3 \lor y_1 \lor y_2) \\
+			&\land (x_1 \lor x_2 \lor x_3 \lor \overline{y}_1 \lor y_2) \\
+			&\land (x_1 \lor x_2 \lor x_3 \lor y_1 \lor \overline{y}_2) \\
+			&\land (x_1 \lor x_2 \lor x_3 \lor \overline{y}_1 \lor \overline{y}_2)
+			\end{align*}
+			etc.
+
+		\item \textbf{Mehr erfüllende Belegungen.}
+		
+		Füge Klausel hinzu. I.e.
+
+		$$\phi \mapsto \phi \land (y_1 \lor y_2)$$
+		verdreifacht die Anzahl der erfüllenden Belegungen.
+	\end{itemize}
+
+
+\subsubsection{Satisfiability zu Satisfiability Reduktion - OTHERPROBLEM $\leq_p$ PROBLEM}
+	\textbf{Schema}
+	
+	Sei $F = F_1 \land ... \land F_m$ eine KNF Formel vom Typ OTHERPROBLEM
+	
+	
+	Eingabe für $A$: $F$
+	\begin{itemize}[label=-]
+		\item $A$ konstruiert $B = B_1 \land ... \land B_m$ mit einem der Tricks von oben.
+	\end{itemize} 
+
+	
+	\textbf{Korrektheit}
+	
+	
+	\begin{align*}
+		F \in \text{OTHERPROBLEM} &\iff F \text{ erfüllbar}\\
+		&\iff \text{ Es existiert eine Belegung } \varphi: \varphi(F) = 1\\
+		&\iff \exists \varphi: \varphi(F_i) = 1 \forall i \in \{1, ..., m\}\\
+		&\text{  ...} \text{ Argumentation für beliebige Klausel }\\
+		&\iff \exists \varphi': \varphi'(B_i) = 1 \forall i \in \{1, ..., m\}\\
+		&\iff B \text{ erfüllbar}\\
+		&\iff B \in \text{PROBLEM}
+	\end{align*}
+
+
+\subsubsection{Graphproblem zu Graphproblem - Reduktion}
+
+	\textbf{Patterns}
+	\begin{enumerate}[label=\arabic*.]
+		
+		\item Aus $G = (V, E)$ Komplementgraph $\overline{G}$ bilden. I.e. $\overline{G} = (V, \overline{E})$ mit 
+		$$\overline{E} = \{\{u, v\} \mid u, v \in V, u \neq v, \{u, v\} \notin E\}$$
+		
+		\item Eingabetupel $(G, k)$ zu $(G, n - k)$ abbilden ($n = |V|$).
+		
+		\item Beides davon (siehe CLIQUE zu VC).
+		
+		\item Ersetzen einer Kante durch anderes Konstrukt 
+		\begin{itemize}[label=-]
+			\item 2 Kanten mit Knoten dazwischen
+			\item Knoten hinzufügen für jede Kante und mit beiden Eckpunkten verbinden
+		\end{itemize}
+	\end{enumerate}
+
+\subsubsection{Satisfiability zu Graphproblem}
+	Beispiel: Lemma 6.9 SAT $\leq_p$ CLIQUE
+
+	Denkt über die Reduktion vom Satisfiability Problem zu SAT und von CLIQUE zum Graphproblem.
+
+	Versucht diese Abbildungen zu verknüpfen.
+
+
+\subsubsection{Graphenproblem zu Satisfiability}
+	Vielleicht \textbf{Satz von Cook} verwenden?
+
+	Scheint sehr komplex eine konkrete Reduktion zu machen.
+
+
+	\myTitle{PROBLEM $\leq_p$ SAT}
+	
+	\textbf{Generelle Idee}
+
+	\begin{itemize}[label= -]
+		
+		\item Denke über Zertifikate für PROBLEM nach. Welche Bestandteile haben sie?
+		
+		Beispielsweise im Fall von Clique ist das Zertifikat eine Knotenmenge (alle untereinander verbunden).
+
+		
+		\item Kreiert eine Variablenmenge mit einer Variable pro mögliches Element für das Zertifikat. 
+		
+		I.e. im Fall von CLIQUE eine Variable pro Knoten
+
+		
+		\item I.e. Wir werden dann für eine Belegung der Formel wissen welche Knoten im Zertifikat enthalten sind.
+		
+		\item Baue die Formel, die die Bedingungen kodiert, damit genau dann erfüllt sein kann, falls es ein Zertifikat gibt.
+	\end{itemize}
+
             % \section{How To Reduktion}
             
             %     \subsection{$L \in \Lr$ }
