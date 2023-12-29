@@ -23,4 +23,4 @@ This is a personal summary I completed during my time as a Teaching Assistant
 
    Hope this helps. Good luck in your future and may you achieve your goals!
 
-   Feel free to reach out if you have any questions.ct.
+   Feel free to reach out if you have any questions.
