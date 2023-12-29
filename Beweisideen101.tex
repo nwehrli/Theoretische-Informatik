@@ -7,14 +7,19 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{mathtools}
+
+% drawing automata
 \usepackage{tikz}
 \usetikzlibrary{arrows,automata,positioning}
-\usepackage{enumitem}
+
+% various
 \usepackage{amsfonts}
 \usepackage{scalerel}
 \usepackage{amssymb}
 \usepackage{wasysym}
 \usepackage{amsmath}
+
+% pseudocode
 \usepackage{listings}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -34,6 +39,19 @@
 
 % for centered slash through \implies and \iff
 \usepackage{centernot}
+
+% hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkcolor = black,
+    filecolor = magenta,
+    urlcolor = blue,
+    pdftitle = {Theoretische Informatik - Beweise 101},
+    pdfpagemode = FullScreen,
+}
+
+\urlstyle{same}
 
 %Checkboxes for multiple choice
 \newlist{Checkboxes}{itemize}{2}
@@ -131,6 +149,35 @@
     \end{center}
    
    \end{titlepage}
+
+   {\LARGE\textbf{Disclaimer}}
+
+   This is a personal summary I completed during my time as a Teaching Assistant 
+   for this course at ETH Zurich. It is not an official document and the content 
+   is neither \textbf{complete} nor does it \textbf{guarantee} to be correct.
+
+   I tried to give examples to accompany the theory and show some common recipes to solve certain exercises. 
+   
+   If you find any mistakes or inconsistencies, I would be very happy about a quick message so that I can correct them;)
+
+   You can reach me under \href{mailto: nwehrl@student.ethz.ch}{nwehrl@student.ethz.ch} 
+   and the LaTex Source code can be found \href{https://github.com/nwehrli/Theoretische-Informatik}{here}.
+
+   The corresponding slides from my exercise session are available on a small \href{https://n.ethz.ch/~nwehrl/TI.html}{website} of mine.
+   
+   Note that the summary does not cover 'Grammatiken' since this was only covered 
+   after the second midterm in the autumn semester of 2023. 
+   The non-deterministic hierarchical stuff (section 6.4 in the german version of the book) 
+   was also not covered since the endterm preparation was prioritised.
+
+   These parts may be added later.
+   
+
+   Hope this helps. Good luck in your future and may you achieve your goals!
+
+   Feel free to reach out if you have any questions.
+   \newpage
+
     %--------------------------------------------------
     %--------------------------------------------------
     %--------------------------------------------------
@@ -2715,7 +2762,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                 
                     Zeige $$L_{\text{all}} \notin \Lr.$$
                 
-                    \section{Satz von Rice - Beweis}
+                    \subsection{Satz von Rice - Beweis}
 
                     
                         \subsubsection{Prerequisites}
@@ -3376,7 +3423,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                             
                             Wenn $A$ mehr Schritte machen will, wird die Simulation abgebrochen und die Eingabe verworfen.
                         
-                        \myTitle{Speicherplatzkomplexität zu Zeitkomplexitä}
+                        \myTitle{Speicherplatzkomplexität zu Zeitkomplexität}
                             \begin{mainbox}{Satz 6.2}
                                 Für jede Funktion $s$ mit $s(n) \geq \log_2(n)$ gilt:
                         
@@ -3419,7 +3466,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
                         
                             Eine beliebige endliche Berechnung $D$ von $M$ auf $w, |w| = n$, kann höchstens $X$ viele Zeitschritte (i.e. Konfigurationen) haben.
                         
-                            Jetzt müssen wir noch $X = |\text{InKonf}_M(n)$ abschätzen.
+                            Jetzt müssen wir noch $X = |\text{InKonf}_M(n)|$ abschätzen.
                             
                             Wir wissen folgendes
                             \begin{itemize}[label=$\blacktriangleright$]
@@ -3496,9 +3543,11 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
 		$$x \in L_1 \iff A(x) \in L_2$$
 		$A$ wird eine \textbf{polynomielle Reduktion} von $L_1$ auf $L_2$ genannt. 
 	\end{mainbox}
-	Bemerkung: Analog zur EE-Reduktion, nur das $A$ jetzt noch polynomiell laufen muss.
+	\textbf{Bemerkung} 
+    
+    Analog zur EE-Reduktion, nur das $A$ jetzt noch polynomiell laufen muss.
 
-{Begrifflichkeiten}
+\myTitle{Begrifflichkeiten}
 	\begin{mainbox}{}
 		Eine Sprache $L$ ist \textbf{NP-schwer}, falls für alle Sprachen $L' \in $NP gilt $L' \leq_p L$.
 
@@ -3514,6 +3563,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
 
 
 \myTitle{Satz von Cook}
+
 	Wir haben 
 	$$\text{SAT} = \{x \in (\Sigma_{\text{logic}})^* \mid x \text{ kodiert eine erfüllbare Formel in KNF}\}$$
 
@@ -3532,7 +3582,7 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
 		 & \hspace{2cm}\text{(vertex cover) der Mächtigkeit höchstens }k\}
 	\end{align*}
 	
-	Higher-Level of Abstraction. 
+	\textbf{Higher-Level of Abstraction} 
 
 	Wir müssen uns nicht mehr überlegen, wie die Probleminstanzen als endliche Wörter kodiert sind!
 
@@ -3552,11 +3602,13 @@ Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wab
 		 & \hspace{2cm}\text{(vertex cover) der Mächtigkeit höchstens }k\}
 	\end{align*}
 	Ein VC ist eine Knotenmenge $C \subseteq V$, so dass 
-	$$\forall \{u, v\}. v \in C \lor u \in C.$$
+	$$\forall \{u, v\} \in E. v \in C \lor u \in C.$$
+
+    Dies kann ein bisschen non-intuitiv sein, da die Knotenmenge eigentlich alle Kanten überdecken muss:)
 
 	Wir beschreiben einen polynomiellen Algorithmus $A$:
 
-	Eingabe $(G = (V, E), k)$ für VC
+	\textbf{Eingabe} $(G = (V, E), k)$ für VC
 	\begin{enumerate}[label=\arabic*.]
 		\item Findet $\overline{G} = (V, \overline{E})$ mit $\overline{E} = \{\{u, v\} \mid u, v \in V, u \neq v, \{u, v\} \notin E\}$
 		\item Gibt $(\overline{G}, |V| - k)$ aus.
