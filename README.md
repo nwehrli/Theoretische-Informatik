@@ -2,7 +2,7 @@
 
 This is a personal summary I completed during my time as a Teaching Assistant 
    for this course at ETH Zurich. It is not an official document and the content 
-   is neither \textbf{complete} nor does it \textbf{guarantee} to be correct.
+   is neither **complete** nor does it **guarantee** to be correct.
 
    I tried to give examples to accompany the theory and show some common recipes to solve certain exercises. 
    
