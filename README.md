@@ -8,7 +8,7 @@ This is a personal summary I completed during my time as a Teaching Assistant
    
    If you find any mistakes or inconsistencies, I would be very happy about a quick message so that I can correct them;)
 
-   You can reach me under [nwehrl@student.ethz.ch](mailto: nwehrl@student.ethz.ch) 
+   You can reach me under [nwehrl@student.ethz.ch](mailto:nwehrl@student.ethz.ch) 
    and the LaTex Source code can be found [here](https://github.com/nwehrli/Theoretische-Informatik).
 
    The corresponding slides from my exercise session are available on a small [website](https://n.ethz.ch/~nwehrl/TI.html) of mine.
