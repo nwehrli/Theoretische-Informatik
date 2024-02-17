@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1703868941 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" "Beweisideen101.pdf" "Beweisideen101" 1703868947 0
-  "Beweisideen101.aux" 1703868947 13829 4e06c23b3d0d6e653cadfaae847e01c2 "pdflatex"
-  "Beweisideen101.out" 1703868947 14992 5dde675e9b8d256b1583edf2ee35c780 "pdflatex"
-  "Beweisideen101.tex" 1703868940 212348 b3c251af97ccb0d20e4f3ce2bf83970f ""
-  "Beweisideen101.toc" 1703868947 7855 651b7bfa36cb31b020dad762e6dcdbf1 "pdflatex"
+["pdflatex"] 1703869498 "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" "Beweisideen101.pdf" "Beweisideen101" 1703869506 0
+  "Beweisideen101.aux" 1703869506 13829 4e06c23b3d0d6e653cadfaae847e01c2 "pdflatex"
+  "Beweisideen101.out" 1703869506 14992 5dde675e9b8d256b1583edf2ee35c780 "pdflatex"
+  "Beweisideen101.tex" 1703869498 212348 b3c251af97ccb0d20e4f3ce2bf83970f ""
+  "Beweisideen101.toc" 1703869506 7855 651b7bfa36cb31b020dad762e6dcdbf1 "pdflatex"
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1699536922 356719 66d2b7a56ceb46004626970aadcbfa64 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1670535525 12668 dfb72ac077806cdc6bad8d5cb073bbb5 ""
   "C:/Users/nshar/AppData/Local/MiKTeX/fonts/pk/ljfour/public/wasy/dpi657/wasy10.pk" 1670620225 16476 efde6fbc466769b0b895e5e3099d5dac ""
@@ -299,7 +299,7 @@
   "Images/RE-Reduzierbarkeit.png" 1700743594 35459 e2398c14439a36229e40971cb0080d9c ""
   "Images/Schrittrelation.png" 1698303131 207294 e1b19300818545e3f361f579b28e2bd3 ""
   "Images/Turingmaschine.png" 1698051027 66365 7fd2755d40ab2bce1d36243d79b37086 ""
-  "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" 1703868940 212348 b3c251af97ccb0d20e4f3ce2bf83970f ""
+  "c:/Users/nshar/OneDrive/Dokumente/GitHub/Theoretische-Informatik/Beweisideen101.tex" 1703869498 212348 b3c251af97ccb0d20e4f3ce2bf83970f ""
   (generated)
   "Beweisideen101.aux"
   "Beweisideen101.log"
