@@ -11,7 +11,7 @@ This is a personal summary I completed during my time as a Teaching Assistant
    You can reach me under [nwehrl@student.ethz.ch](mailto:nwehrl@student.ethz.ch) 
    and the LaTex Source code can be found [here](https://github.com/nwehrli/Theoretische-Informatik).
 
-   The corresponding slides from my exercise session are available on a small [website](https://n.ethz.ch/~nwehrl/TI.html) of mine.
+   The corresponding slides from my exercise session are available on a small [website](https://n.ethz.ch/~nwehrl/TheoInf) of mine.
    
    Note that the summary does not cover 'Grammatiken' since this was only covered 
    after the second midterm in the autumn semester of 2023. 
