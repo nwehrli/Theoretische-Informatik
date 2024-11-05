@@ -1,0 +1,319 @@
+\section{Grundbegriffe} % Sections are added in order to organize your presentation into discrete blocks, all sections and subsections are automatically output to the table of contents as an overview of the talk but NOT output in the presentation as separate slides
+
+%------------------------------------------------
+
+	Für eine Menge $A$ bezeichnet $|A|$ die Kardinalität von $A$ und $\mathcal{P}(A) = \{S \mid S \subseteq A\}$ die Potenzmenge von $A$.
+		
+	 In diesem Kurs definieren wir $\N = \{0,1,2, \dots\}$.
+
+
+\subsection{Alphabet}
+
+
+		
+	 \begin{mainbox}{Definition Alphabet}
+		Eine endliche, nichtleere Menge $\Sigma$ heisst \textbf{Alphabet}. Die Elemente eines Alphabets werden \textbf{Buchstaben (Zeichen, Symbole)} genannt.
+	 \end{mainbox}
+	 
+	 \myTitle{Beispiele}
+	 \begin{itemize}
+		\item $\Sigma_{\text{bool}} = \{0,1\}$
+		\item $\Sigma_{\text{lat}} = \{a, ..., z\}$
+		\item $\Sigma_{\text{Tastatur}} = \Sigma_{\text{lat}} \cup \{A, ..., Z, \text{\textvisiblespace}, >, <, (,),...,! \}$
+		\item $\Sigma_{\text{logic}} = \{0,1,(,),\land, \lor, \lnot\}$
+		\item $\Sigma_{abc} = \{a,b,c\}$ (\textbf{unser Beispiel für weitere Definitionen})
+	 \end{itemize}
+
+
+%------------------------------------------------
+
+\subsection{Wort}
+
+
+	
+	\begin{mainbox}{Definition Wort}
+		\begin{itemize}[label = -]
+			\item Sei $\Sigma$ ein Alphabet. Ein \textbf{Wort} über $\Sigma$ ist eine endliche (eventuell leere) Folge von Buchstaben aus $\Sigma$.
+			\item Das \textbf{leere Wort $\lambda$} ist die leere Buchstabenfolge.
+			
+			\item Die \textbf{Länge $|w|$} eines Wortes $w$ ist die Länge des Wortes als Folge, i.e. die Anzahl der Vorkommen von Buchstaben in $w$. 
+			\item $\Sigma^*$ ist die Menge aller Wörter über $\Sigma$. $\Sigma^+ := \Sigma^* \setminus \{\lambda\}$ ist Menge aller nichtleeren Wörter über $\Sigma$.
+			
+			\item Seien $x \in \Sigma^*$ und $a \in \Sigma$. Dann ist $|x|_a$ definiert als die Anzahl der Vorkommen von $a$ in $x$.
+		\end{itemize}
+	 \end{mainbox}
+	 Achtung Metavariablen! I.e. Das $a$ in der Definition ist steht für einen beliebigen Buchstaben aus $\Sigma$ und \textbf{nicht} nur für den Buchstaben '$a$', der in $\Sigma$ sein könnte.  
+
+
+
+	\myTitle{Bemerkungen}
+	
+	\begin{itemize}[label = -]
+		
+		\item Wir schreiben Wörter ohne Komma, i.e. eine Folge $x_1,x_2,...,x_n$ schreiben wir $x_1x_2...x_n$.
+		\item $|\lambda| = 0$ aber $|\text{\textvisiblespace}| = 1$ von $\Sigma_{\text{Tastatur}}$.
+		\item Der Begriff \textbf{Wort} als Fachbegriff der Informatik entspricht \textbf{nicht} der Bedeutung des Begriffs Wort in natürlichen Sprachen!
+		\item E.g. Mit \textvisiblespace \ kann der Inhalt eines Buches oder ein Programm als ein Wort über $\Sigma_{\text{Tastatur}}$ betrachtet werden.
+	 \end{itemize}
+	 
+	 \myTitle{Beispiel}
+	 Verschiedene Wörter über $\Sigma_{abc}$:
+
+	 $a$, $aa$, $aba$, $cba$, $caaaab$ etc.
+
+
+
+	
+	\begin{mainbox}{}
+		Die \textbf{Verkettung (Konkatenation)} für ein Alphabet $\Sigma$ ist eine Abbildung Kon$: \Sigma^* \times \Sigma^* \to \Sigma^*$, so dass 
+		$$\text{Kon}(x, y) = x \cdot y = xy$$
+		für alle $x, y \in \Sigma^*$.
+	\end{mainbox}
+	
+	\begin{itemize}[label=-]
+		\item Die Verkettung Kon (i.e. Kon von einem Kon (über das gleiche Alphabet $\Sigma$)) ist eine assoziative Operation über $\Sigma^*$.
+		$$\text{Kon}(u, \text{Kon}(v, w)) = \text{Kon}(\text{Kon}(u, v), w), \ \forall u,v,w \in \Sigma^*$$
+		\item $x\cdot \lambda = \lambda \cdot x = x, \ \forall x \in \Sigma^*$
+		\item $\implies$ ($\Sigma^*$, Kon) ist ein Monoid mit neutralem Element $\lambda$.
+		\item Kon nur kommutativ, falls $|\Sigma| = 1$.
+		\item $|xy|=|x\cdot y| = |x|+|y|$. (Wir schreiben ab jetzt $xy$ statt Kon($x$, $y$))
+	\end{itemize}
+
+
+
+	\myTitle{Beispiel}
+
+	Wir betrachten wieder $\Sigma_{abc}$. Sei $x = abba$, $y = cbcbc$, $z = aaac$.
+	\begin{itemize}[label=-]
+		\item Kon($x, \text{Kon}(y, z)) = $  $\text{Kon}(x, yz) = xyz = abbacbcbcaaac$
+		\item $|xy| =$$ |abbacbcbc| = 9 = 4 + 5 = |abba| + |cbcbc| = |x| + |y|$
+	\end{itemize}
+	
+
+	
+
+
+
+	
+	\begin{mainbox}{}
+		Für eine Wort $a = a_1a_2...a_n$, wobei $\forall i \in \{1,2, ..., n\}. \ a_i \in \Sigma$, 
+		bezeichnet $a^\text{R} = a_na_{n-1}...a_1$ die \textbf{Umkehrung (Reversal)} von $a$.
+	\end{mainbox}
+	
+	\begin{mainbox}{}
+		Sei $\Sigma$ ein Alphabet. Für alle $x \in \Sigma^*$ und alle $i \in \N$ definieren wir die $i$-te \textbf{Iteration} $x^i$ von $x$ als 
+		$$x^0 = \lambda, x^1 = x \text{ und } x^i = xx^{i-1}.$$
+	\end{mainbox}
+
+
+
+	\myTitle{Beispiel}
+
+	Wir betrachten wieder $\Sigma_{abc}$. Sei $x = abba$, $y = cbcbc$, $z = aaac$.
+	\begin{itemize}[label = -]
+		\item $z^\text{R} =$  $ (aaac)^\text{R} = caaa$
+		\item $x^\text{R} =$  $ (abba)^\text{R} = abba$
+		\item $x^0 = $  $ \lambda$
+		\item  $y^2 = $ $yy^{2-1}= yy = cbcbccbcbc$
+		\item $z^3 =$  $zz^2= zzz = aaacaaacaaac$
+		\item $(x^\text{R}z^\text{R})^\text{R} = $ $((abba)^\text{R}(aaac)^\text{R})^\text{R} = (abbacaaa)^\text{R} = aaacabba$
+	\end{itemize}
+
+	
+
+
+
+	
+	\begin{mainbox}{}
+		Seien $v, w \in \Sigma^*$ für ein Alphabet $\Sigma$.
+		\begin{itemize}[label=-]
+			\item $v$ heisst ein \textbf{Teilwort} von $w$ $\iff$ $\exists x,y \in \Sigma^*: \ w = xvy$
+			\item $v$ heisst ein \textbf{Präfix} von $w$ $\iff$ $\exists y \in \Sigma^*: \ w = vy$
+			\item $v$ heisst ein \textbf{Suffix} von $w$ $\iff$ $\exists x \in \Sigma^*: \ w = xv$
+			\item $v \neq \lambda$ heisst ein \textbf{echtes} Teilwort (Präfix, Suffix) von $w$ $\iff$ $v \neq w$ und $v$ Teilwort(Präfix, Suffix) von $w$
+		\end{itemize}
+	\end{mainbox}
+
+
+
+	\myTitle{Beispiel}
+
+	Wir betrachten wieder $\Sigma_{abc}$. Sei $x = abba$, $y = cbcbc$, $z = aaac$.
+	\begin{itemize}[label=-]
+		\item $bc$ ist ein echtes Suffix von $y$
+		\item $abba$ ist kein echtes Teilwort von $x$.
+		\item $cbcb$ ist ein echtes Teilwort und echtes Präfix von $y$.
+		\item $ac$ ist ein echtes Suffix.
+		\item $abba$ ist ein Suffix, Präfix und Teilwort von $x$.
+	\end{itemize}
+
+    \begin{subbox}{Aufgabe}
+
+	Sei $\Sigma$ ein Alphabet und sei $w \in \Sigma^*$ ein Wort der Länge $n \in \N \setminus \{0\}$. Wie viele unterschiedliche Teilwörter kann $w$ höchstens haben?
+	\end{subbox}
+
+	\myTitle{Lösung}
+
+	Wir haben $w = w_1w_2...w_n$ mit $w_i \in \Sigma$ für $i = 1, ...,n$. Wie viele Teilwörter beginnen mit $w_1$? Wie viele Teilwörter beginnen mit $w_2$?
+	 
+	
+	Wir haben also $n + (n-1) + ... + 1 = \frac{n(n+1)}{2}$ Teilwörter. Etwas fehlt aber in unserer Berechnung\dots
+	
+	
+	Das leere Wort $\lambda$ ist auch ein Teilwort! Also haben wir $\frac{n(n+1)}{2}+ 1$ Teilwörter. 
+
+    \vspace*{1cm}
+    \myTitle{Aufgabe 2}
+
+	Sei $\Sigma = \{a, b, c\}$ und $n \in \N$. Bestimme die Anzahl der Wörter aus $\Sigma^n$, die das Teilwort $a$ enthalten.
+	
+    \myTitle{Lösung}
+    
+	In solchen Aufgaben ist es manchmal einfach, das Gegenteil zu berechnen und so auf die Lösung zu kommen. Wie viele Wörter aus $\Sigma^n$ enthalten das Teilwort $a$ \textbf{nicht}?
+
+	
+	Da wir jetzt die Anzahl Wörter der Länge $n$ wollen, die nur $b$ und $c$ enthalten, kommen wir auf $|\{b,c\}|^n = 2^n$.
+	
+	Daraus folgt, dass genau $|\Sigma|^n - 2^n = 3^n -2^n$ Wörter das Teilwort $a$ enthalten.
+    \vspace*{1cm}
+
+    \myTitle{Aufgabe 3}
+
+	Sei $\Sigma= \{a,b,c\}$ und $n \in \N \setminus\{0\}$. Bestimme die Anzahl der Wörter aus $\Sigma^n$, die das Teilwort $aa$ nicht enthalten.
+
+	\myTitle{Lösung}
+
+	Wir bezeichnen die Menge aller Wörter mit Länge $n$ über $\Sigma$, die $aa$ nicht enthalten als $L_n$.
+
+	Schauen wir mal die ersten zwei Fälle an:
+	\begin{itemize}
+		\item $L_1 = \{a,b,c\} \implies |L_1| = 3$
+		\item $L_2 = \{ab, ac, ba, bb, bc, ca, cb, cc\} \implies |L_2| = 8$ 
+	\end{itemize}
+	
+	Nun können wir für $m \geq 3$ jedes Wort $w \in L_m$ als Konkatination $w = x \cdot y \cdot z$ schreiben, wobei wir zwei Fälle unterscheiden:
+	
+	\begin{enumerate}[label= (\alph*)]
+		
+		\item $\mathbf{z \neq a}$
+		
+		In diesem Fall kann $y \in \{a,b,c\}$ sein, ohne dass die Teilfolge $aa$ entsteht und somit ist $xy$ ein beliebiges Wort aus $L_{m-1}$. 
+		
+		Dann könnten wir alle Wörter in diesem Case durch $L_{m-1}\cdot \{b,c\}$ beschreiben, was uns die Kardinalität $2 \cdot |L_{m-1}|$ gibt.
+		
+		\item $\mathbf{z = a}$
+		
+		In diesem Fall muss $y \neq a$ sein, da sonst $aa$ entstehen würde. 
+		
+		Somit kann $xy$ nur in $b$ oder $c$ enden. $x$ kann aber ein beliebiges Wort der Länge $m-2$ sein. 
+		
+		Deshalb können wir alle Wörter in diesem Case durch $L_{m-2}\cdot\{b, c\} \cdot \{a\}$ beschreiben. Kardinalität: $2 \cdot |L_{m-2}|$.
+	\end{enumerate}
+
+    Daraus folgt $$|L_n| = \begin{cases}
+        3 &  n = 1\\
+        8 & n = 2\\
+        2|L_{n-1}|+ 2|L_{n-2}| &n \geq 3
+    \end{cases}$$
+
+\vspace*{1cm}
+
+	
+	\begin{mainbox}{}
+		Sei $\Sigma = \{s_1,s_2, ...,s_m\}, m \geq 1$, ein Alphabet und sei $s_1 < s_2 < ... <s_m$ eine Ordnung auf $\Sigma$. Wir definieren die \textbf{kanonische Ordnung} auf $\Sigma^*$ für $u, v \in \Sigma^*$ wie folgt:
+		\begin{align*}
+			u < v \iff &|u| < |v| \lor (|u| = |v| \land u = x\cdot s_i \cdot v = u' \land x \cdot s_j \cdot v') \\
+			&\text{ für irgendwelche } x, u', v' \in \Sigma^* \text{ und } i < j. 
+		\end{align*}
+	\end{mainbox}
+
+	\begin{subbox}{Aufgabe}
+		Sei $\Sigma_{abc} = \{a, b, c\}$ und wir betrachten folgende Ordnung auf $\Sigma_{abc}$: $c < a < b$.
+
+	Was wäre die kanonische Ordnung folgender Wörter?
+
+	$c$, $abc$, $aaac$, $aaab$, $bacc$, $a$, $\lambda$
+	\end{subbox}
+	
+	$\lambda$, $c$, $a$, $abc$, $aaac$, $aaab$, $bacc$
+
+
+%------------------------------------------------
+
+\subsection{Sprache}
+
+
+	
+	\begin{mainbox}{}
+	 Eine \textbf{Sprache $L$} über einem Alphabet $\Sigma$ ist eine Teilmenge von $\Sigma^*$. 
+	\end{mainbox}
+	\begin{itemize}[label=-]
+		\item Das Komplement \textbf{$L^\complement$} der Sprache $L$ bezüglich $\Sigma$ ist die Sprache $\Sigma^* \setminus L$.
+		\item $L_\emptyset = \emptyset$ ist die \textbf{leere Sprache}.
+		\item $L_\lambda = \{\lambda\}$ ist die einelementige Sprache, die nur aus dem leeren Wort besteht.
+	\end{itemize}
+	
+	\myTitle{Konkatenation von Sprachen}
+	\begin{mainbox}{}
+		Sind $L_1$ und $L_2$ Sprachen über $\Sigma$, so ist 
+		$$L_1 \cdot L_2 = L_1L_2 = \{vw \mid v \in L_1 \text{ und } w \in L_2\}$$
+		die \textbf{Konkatenation} von $L_1$ und $L_2$. 
+	\end{mainbox}
+
+
+
+	\begin{mainbox}{}
+		Ist $L$ eine Sprache über $\Sigma$, so definieren wir
+		\begin{align*}
+			&L^0 := L_{\lambda} \text{ und } L^{i+1} := L^{i}\cdot L \text{ für alle } i \in \N,\\
+			&L^* = \bigcup_{i \in \N}L^i \text{ und } L^+ = \bigcup_{i \in \N \setminus \{0\}} L^i = L \cdot L^*.
+		\end{align*}
+		$L^*$ nennt man den \textbf{Kleene'schen Stern} von $L$.
+	\end{mainbox}
+	Man bemerke, dass $\Sigma^i = \{x \in \Sigma^* \mid |x| = i\}$, $L_\emptyset L = L_\emptyset = \emptyset$ und $L_\lambda \cdot L = L$.
+	
+
+
+
+	Mögliche Sprachen über $\Sigma_{abc}$
+	\begin{itemize}[label=-]
+		\item $L_1 = \emptyset$
+		\item $L_2 = \{\lambda\}$
+		\item $L_3 = \{\lambda, ab, baca\}$
+		\item $L_4 = \Sigma_{abc}^*$, $L_5 = \Sigma_{abc}^+$, $L_6 = \Sigma_{abc}$ oder $L_7 = \Sigma_{abc}^{27}$
+		\item $L_8 = \{c\}^* = \{c^i \mid i \in \N\}$
+		\item $L_9 = \{a^p \mid p \text{ ist prim.}\}$
+		\item $L_{10} = \{c^{i}a^{3i^2}ba^ic \mid i \in \N\}$
+	\end{itemize}
+	$\lambda$ ist ein Wort über jedes Alphabet. Aber es muss nicht in jeder Sprache enthalten sein!
+
+
+% --------------------------------------------------------------------------------------
+
+
+	\begin{subbox}{}
+		Seien $L_1$, $L_2$ und $L_3$ Sprachen über einem Alphabet $\Sigma$. Dann gilt
+		\begin{align}
+			&L_1L_2 \cup L_1L_3 = L_1(L_2 \cup L_3) \\
+			&L_1(L_2 \cap L_3) \subseteq L_1L_2 \cap L_1L_3
+		\end{align}
+	\end{subbox}
+	Weshalb nicht '$=$' bei $(2)$?
+
+	Sei $\Sigma = \Sigma_{\text{bool}} = \{0,1\}$, $L_1 = \{\lambda, 1\}$, $L_2 = \{0\}$ und $L_3 = \{10\}$.
+
+	Dann haben wir $L_1(L_2 \cap L_3) = \emptyset \neq \{10\} = L_1L_2 \cap L_1L_3$.
+
+	\textit{Beweise im Buch/Vorlesung}
+
+
+
+	\begin{mainbox}{Homomorphismus}
+		Seien $\Sigma_1$ und $\Sigma_2$ zwei beliebige Alphabete. Ein Homomorphismus von $\Sigma_1^*$ nach $\Sigma_2^*$ ist jede Funktion $h: \Sigma_1^* \to \Sigma_2^*$ mit den folgenden Eigenschaften:
+		\begin{enumerate}[label=(\roman*)]
+			\item $h(\lambda) = \lambda$ und 
+			\item $h(uv) = h(u)\cdot h(v)$ für alle $u, v \in \Sigma_1^*$.
+		\end{enumerate}
+	\end{mainbox}
+	Wir können Probleme etc. in anderen Alphabeten kodieren. So wie wir verschiedenste Konzepte, die wir auf Computer übertragen in $\Sigma_{\text{bool}}$ kodieren.
+

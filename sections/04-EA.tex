@@ -1,0 +1,246 @@
+
+\section{Endliche Automaten}
+
+\subsection{Erster Ansatz zur Modellierung von Algorithmen}
+\begin{mainbox}{}
+    Ein (deterministischer) \textbf{endlicher Automat (EA)} ist ein Quintupel $M = (Q, \Sigma, \delta, q_0, F)$, wobei
+    \begin{enumerate}[label=(\roman*)]
+        \item $Q$ eine endliche Menge von \textbf{Zuständen} ist,
+        \item $\Sigma$ ein Alphabet, genannt \textbf{Eingabealphabet}, ist,
+        \item $q_0 \in Q$ der Anfangszustand ist,
+        \item $F \subseteq Q$ die \textbf{Menge der akzeptierenden Zustände} ist und
+        \item $\delta: Q \times \Sigma \to Q$ die \textbf{Übergangsfunktion} ist.
+    \end{enumerate}
+\end{mainbox}
+
+
+
+
+\begin{mainbox}{Konfigurationen}
+    Eine \textbf{Konfiguration} von $M$ ist ein Tupel $(q, w) \in Q \times \Sigma^*$. 
+\end{mainbox}
+\begin{itemize}[label=-]
+    \item ''$M$ befindet sich in einer Konfiguration $(q,w) \in Q \times \Sigma^*$, wenn $M$ im Zustand $q$ ist und noch das Suffix $w$ eines Eingabewortes lesen soll.''
+    \item Die Konfiguration $(q_0, x) \in \{q_0\} \times \Sigma^*$ heisst die \textbf{Startkonfiguration von $M$ auf $x$}.
+    \item Jede Konfiguration aus $Q \times \{\lambda\}$ nennt man \textbf{Endkonfiguration}.
+\end{itemize}
+\begin{mainbox}{}
+    Ein \textbf{Schritt} von $M$ ist eine Relation (auf Konfigurationen) $\sststile{M}{} \ \subseteq (Q \times \Sigma^*)\times(Q\times \Sigma^*)$, definiert durch
+    $$(q, w) \sststile{M}{}(p, x) \iff w = ax, a \in \Sigma \text{ und }\delta(q, a) = p.$$
+\end{mainbox}
+
+\begin{mainbox}{Berechnungen}
+    Eine \textbf{Berechnung} $C$ von $M$ ist eine endliche Folge $C = C_0, C_1, ..., C_n$ von Konfigurationen, so dass 
+    $$C_i \sststile{M}{} C_{i+1} \text{ für alle } 0 \leq i \leq n-1.$$
+
+    $C$ ist die \textbf{Berechnung von $M$ auf einer Eingabe $x \in \Sigma^*$}, falls $C_0 = (q_0, x)$ und $C_n \in Q \times \{\lambda\}$ eine Endkonfiguration ist.
+\end{mainbox}
+Falls $C_n \in F \times \{\lambda\}$, sagen wir, dass $C$ eine \textbf{akzeptierende Berechnung} von $M$ auf $x$ ist, und dass \textbf{$M$ das Wort $x$ akzeptiert}.
+
+Falls $C_n \in (Q \setminus F) \times \{\lambda\}$, sagen wir, dass $C$ eine \textbf{verwerfende Berechnung} von $M$ auf $x$ ist, und dass \textbf{$M$ das Wort $x$ verwirft (nicht akzeptiert)}.
+
+
+
+\myTitle{Transitivität von $\sststile{M}{}$ und $\delta$}
+\begin{mainbox}{}
+    Sei $M = (Q, \Sigma, \delta, q_0, F)$ ein endlicher Automat. Wir definieren $\sststile{M}{*}$ als die reflexive und transitive Hülle der Schrittrelation $\sststile{M}{}$ von $M$; daher ist
+    $$(q, w) \sststile{M}{*}(p,u) \iff (q = p \land w = u) \text{ oder } \exists k \in \N\setminus\{0\},$$
+    so dass 
+    \begin{enumerate}[label=(\roman*)]
+        \item $w = a_1a_2...a_ku, a_i \in \Sigma$ für $i = 1,2,...,k$, und
+        \item $\exists r_1, r_2, ...,r_{k-1}\in Q$, so dass 
+        $$(q,w) \sststile{M}{}(r_1, a_2...a_ku) \sststile{M}{}...\sststile{M}{}(r_{k-1},a_ku)\sststile{M}{}(p, u)$$
+    \end{enumerate}
+\end{mainbox}
+
+\begin{mainbox}{}
+    Wir definieren $\hat{\delta}: Q \times \Sigma^* \to Q$ durch:
+    \begin{enumerate}[label=(\roman*)]
+        \item $\hat{\delta}(q, \lambda) = q$ für alle $q \in Q$ und
+        \item $\hat{\delta}(q, wa) = \delta(\hat{\delta}(q,w), a)$ für alle $a \in \Sigma, w \in \Sigma^*, q \in Q$.
+    \end{enumerate}
+\end{mainbox}
+$$\hat{\delta}(q, w) = p \iff (q, w) \sststile{M}{*} (p, \lambda)$$
+
+
+
+
+\subsection{Reguläre Sprachen}
+
+Die \textbf{von $M$ akzeptierte Sprache $L(M)$} ist definiert als
+\begin{align*}
+    L(M) &= \{w \in \Sigma^* \mid \text{Berechnung von }M \text{ auf } w \text{ endet in } (p, \lambda) \in F \times \{\lambda \}\}\\
+    &= \{w \in \Sigma^* \mid (q_0, w)\sststile{M}{*}(p, \lambda) \land p \in F\}\\
+    &= \{w \in \Sigma^* \mid \hat{\delta}(q_0, w) \in F\}
+\end{align*}
+\begin{mainbox}{}
+    $\mathbf{\mathcal{L}_{\textbf{EA}}} = \{L(M) \mid M \text{ ist ein EA}\}$ ist die Klasse der Sprachen, die von endlichen Automaten akzeptiert werden.
+
+    $\mathcal{L}_{\text{EA}}$ bezeichnet man auch als die \textbf{Klasse der regulären Sprachen}, und jede Sprache $L \in \mathcal{L}_{\text{EA}}$ wird \textbf{regulär} genannt.
+\end{mainbox}
+
+\begin{mainbox}{Klassen für alle Zustände im Endlichen Automaten}
+    Für alle $p \in Q$ definieren wir die Klasse
+    \begin{align*}
+        \textbf{Kl}\mathbf{[p]} &= \{w \in \Sigma^* \mid \hat{\delta}(q_0, w) = p\}\\
+        &= \{w \in \Sigma^* \mid (q_0, w) \sststile{M}{*}(p, \lambda)\}
+    \end{align*}
+\end{mainbox}
+Wir bemerken dann
+$$\bigcup_{q \in Q}\text{Kl[q]} = \Sigma^*$$
+$$\text{Kl}[q] \cap \text{Kl}[p] = \emptyset, \forall p, q \in Q, p \neq q$$
+$$L(M) = \bigcup_{q \in F}\text{Kl}[q]$$
+
+
+
+
+
+\begin{subbox}{EA Konstruktion - Beispielaufgabe}
+
+Entwerfen sie für folgende Sprache einen Endlichen Automat und geben Sie eine Beschreibung von Kl$[q]$ für jeden Zustand $q \in Q$.
+
+$$L_1 = \{xbbya \in \{a, b\}^* \mid x,y \in \{a, b\}^*\}$$
+\end{subbox}
+
+\begin{tikzpicture}[shorten >=2pt,node distance=4cm,on grid,auto]
+    \node[state,initial]    (q_0) {$q_0$};
+    \node[state]            (q_1)  [right of=q_0] {$q_1$};
+    \node[state]            (q_2)  [right of=q_1] {$q_2$};
+    \node[state, accepting] (q_3)  [above right of=q_2]    {$q_3$};
+    \path[->]
+    (q_0) edge [loop above] node {$a$}   (   )
+          edge [bend left]  node {$b$}   (q_1)
+    (q_1) edge [bend left]  node {$b$}   (q_2)
+          edge [bend left]  node {$a$}   (q_0)
+    (q_2) edge [loop below]  node {$b$}   ()
+          edge [bend left] node {$a$}   (q_3)
+    (q_3) edge [loop above] node {$a$}   (   )
+          edge [bend left]  node {$b$}   (q_2)
+          
+    ;
+\end{tikzpicture}
+
+Wir beschreiben nun die Klassen für die Zustände $q_0, q_1, q_2, q_3$:
+\\Kl[$q_0$] $= \{wa \in \{a,b\}^* \mid \text{Das Wort }w \text{ enthält nicht die Teilfolge } bb\} \cup \{\lambda\}$
+\\Kl[$q_1$] $= \{wb \in \{a,b\}^* \mid \text{Das Wort } w \text{ enthält nicht die Teilfolge } bb\}$
+\\Kl[$q_3$] $= \{wa \in \{a,b\}^* \mid \text{Das Wort } w \text{ enthält die Teilfolge } bb\} = L_1$
+\\Kl[$q_2$] $= \{a,b\}^* - (\text{Kl[$q_0$] $\cup $ Kl[$q_1$] $\cup $ Kl[$q_3$]})$
+
+
+
+\subsection{Produktautomaten - Simulationen}
+\begin{mainbox}{Lemma 3.2}
+    Sei $\Sigma$ ein Alphabet und seien $M_1 = (Q_1, \Sigma, \delta_1, q_{01}, F_1)$ und $M_2 = (Q_2, \Sigma, \delta_2, q_{02}, F_2)$ zwei EA. Für jede Mengenoperation $\odot \in \{\cup, \cap, -\}$ existiert ein EA $M$, so dass
+    $$L(M) = L(M_1) \odot L(M_2).$$
+\end{mainbox}
+Sei $M = (Q, \Sigma, \delta, q_0, F_{\odot})$, wobei
+\begin{enumerate}[label=(\roman*)]
+    \item $Q = Q_1 \times Q_2$
+    \item $q_0 = (q_{01}, q_{02})$
+    \item für alle $q \in Q_1$, $p \in Q_2$ und $a \in \Sigma$, $\delta((q,p), a) = (\delta_1(q,a), \delta_2(p, a))$,
+    \item falls $\odot = \cup$, dann ist $F = F_1 \times Q_2 \cup Q_1 \times F_2$\\
+    falls $\odot = \cap$, dann ist $F = F_1 \times F_2$, und\\
+    falls $\odot = -$, dann ist $F = F_1 \times (Q_2 - F_2)$.
+\end{enumerate}
+
+
+
+\begin{subbox}{Produktautomat - Beispielaufgabe}
+
+Verwenden Sie die Methode des modularen Entwurfs (Konstruktion eines Produktautomaten), um einen endlichen Automaten (in Diagrammdarstellung) für die Sprache 
+$$L = \{w \in \{a, b\}^* \mid |w|_a = 2 \text{ oder } w = ya\}$$
+zu entwerfen. Zeichnen Sie auch jeden der Teilautomaten und geben Sie für die Teilautomaten für jeden Zustand $q$ die Klasse Kl$[q]$ an.
+\end{subbox}
+
+
+Wir teilen $L$ wie folgt auf:
+\begin{align*}
+    L &= L_1 \cup L_2 \ \text{wobei gilt:} \\
+    L_1 &= \{w \in \{a,b\}^* \mid w = ya\} \\
+    L_2 &= \{w \in \{a,b\}^* \mid |w|_a = 2\}
+\end{align*}
+
+Zuerst zeichnen wir die 2 einzelnen Teilautomaten und geben für jeden Zustand $q$ bzw. $p$ die Klasse Kl[$q$] respektive Kl[$p$] an:
+
+\textbf{erster Teilautomat: $L_1 = \{w \in \{a,b\}^* \mid  w = ya\}$}
+\begin{tikzpicture}[shorten >=2pt,node distance=4cm,on grid,auto]
+        \node[state, initial]    (q_0) {$q_0$};
+        \node[state, accepting]  (q_1) [right of =q_0] {$q_1$};
+        
+        \path[->]
+        (q_0) edge [loop above] node {$b$}   (   )
+              edge [bend left]  node {$a$}   (q_1)
+        (q_1) edge [bend left] node {$b$}   (q_0)
+              edge [loop above] node {$a$}   (   )
+              
+        ;
+\end{tikzpicture}
+\\Wir beschreiben nun die Zustände für die Klassen $q_0$ und $q_1$: \\
+Kl$[q_0] = \{ yb \mid y \in \{a,b\}^* \} \cup \{\lambda\}$ \\
+Kl$[q_1] = \{ya\mid  y \in \{a,b\}^*  \}$ 
+
+\textbf{zweiter Teilautomat: $L_2 = \{w \in \{a,b\}^* \mid |w|_a = 2\}$}
+
+\begin{tikzpicture}[shorten >=2pt,node distance=4cm,on grid,auto]
+        \node[state, initial]    (p_0) {$p_0$};
+        \node[state]             (p_1) [right of =p_0] {$p_1$};
+        \node[state, accepting]  (p_2) [right of =p_1] {$p_2$};
+        \node[state]  (p_trash) [below of =p_2] {$p_{trash}$};
+        
+        \path[->]
+        (p_0) edge [loop above] node {$b$}   (   )
+              edge [bend left]  node {$a$}   (p_1)
+        (p_1) edge [bend left] node {$a$}   (p_2)
+              edge [loop above] node {$b$}   (   )
+        (p_2) edge [] node {$a$}   (p_trash)
+              edge [loop above] node {$b$}   (   )
+        (p_trash) edge [loop left] node {$a$}   (   )
+              edge [loop right] node {$b$}   (   )
+              
+        ;
+\end{tikzpicture}
+
+Wir beschreiben nun die Zustände für die Klassen $p_0$, $p_1$, $p_2$, $p_{trash}$: 
+Kl$[p_0] = \{w \in \{a,b\}^* \mid |w|_a = 0 \}$ \\
+Kl$[p_1] = \{w \in \{a,b\}^* \mid |w|_a = 1 \}$ \\
+Kl$[p_2] = \{w \in \{a,b\}^* \mid |w|_a = 2 \}$ \\
+Kl$[p_{trash}] = \{w \in \{a,b\}^* \mid |w|_a > 2 \}$ \\
+
+Zum Schluss kombinieren wir diese Teilautomaten zu einem Produktautomaten: \\
+\textbf{Produktautomat: $L = L_1 \cup L_2$} \\
+\begin{tikzpicture}[shorten >=2pt,node distance=3.3cm,on grid,auto]
+        \node[state, initial]    (q_0p_0) {$(q_0,p_0)$};
+        \node[state]    (q_0p_1) [right of =q_0p_0] {$(q_0,p_1)$};
+        \node[state, accepting]    (q_0p_2) [right of =q_0p_1] {$(q_0,p_2)$};
+        \node[state]    (q_0p_trash) [right of =q_0p_2] {$(q_0,p_{trash})$};
+        
+        \node[state, accepting]    (q_1p_0) [below of =q_0p_0] {$(q_1,p_0)$};
+        \node[state, accepting]    (q_1p_1) [below of =q_0p_1] {$(q_1,p_1)$};
+        \node[state, accepting]    (q_1p_2) [below of =q_0p_2] {$(q_1,p_2)$};
+        \node[state, accepting]    (q_1p_trash) [below of =q_0p_trash] {$(q_1,p_{trash})$};
+        
+        
+        
+        
+        \path[->]
+        (q_0p_0) edge [loop right] node {$b$}   (   )
+                 edge []  node {$a$}   (q_1p_1)
+        (q_0p_1) edge [loop right] node {$b$}   (   )
+                 edge []  node {$a$}   (q_1p_2)
+        (q_0p_2) edge [loop right] node {$b$}   (   )
+                 edge []  node {$a$}   (q_1p_trash)
+        (q_0p_trash) edge [loop right] node {$b$}   (   )
+                 edge [bend left]  node {$a$}   (q_1p_trash)
+                 
+        (q_1p_0) edge [] node {$b$}   (q_0p_0)
+                 edge []  node {$a$}   (q_1p_1)
+        (q_1p_1) edge [] node {$b$}   (q_0p_1)
+             edge []  node {$a$}   (q_1p_2)
+        (q_1p_2) edge [] node {$b$}   (q_0p_2)
+                 edge []  node {$a$}   (q_1p_trash)
+        (q_1p_trash) edge [] node {$b$}   (q_0p_trash)
+                 edge [loop right] node {$a$}   (   )
+        
+              
+        ;
+\end{tikzpicture}

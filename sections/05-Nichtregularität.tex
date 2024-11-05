@@ -1,0 +1,317 @@
+\section{Beweise für Nichtregularität}
+
+
+    \subsection{Einführung und grundlegende Tipps}
+    \begin{enumerate}[label= \roman*.]
+        \item Wichtiges Unterkapitel. Kommt fast garantiert am Midterm.
+        \item Um $L \notin \mathcal{L}_{\text{EA}}$ zu zeigen, genügt es zu beweisen, dass es keinen EA gibt, der $L$ akzeptiert.
+        \item Nichtexistenz ist generell sehr schwer zu beweisen, da aber die Klasse der endlichen Automaten sehr eingeschränkt ist, ist dies nicht so schwierig.
+        \item Wir führen Widerspruchsbeweise.
+        \item Es gibt 3 Arten Nichtregularitätsbeweise zu führen (Lemma 3.3, Pumping-Lemma und Kolmogorov-Komplexität).
+        \item Ihr müsst alle 3 Methoden können. Ist aber halb so wild.
+     \end{enumerate}
+
+\subsection{Theorie für Nichtregularitätsbeweise}
+
+\subsubsection{Lemma 3.3 Methode}
+    \begin{mainbox}{Lemma 3.3}
+        Sei $A = (Q, \Sigma, \delta_A, q_0, F)$ ein EA. Seien $x, y \in \Sigma^*, x \neq y$, so dass 
+    $$\hat{\delta}_A(q_0, x) = p = \hat{\delta}_A(q_0, y)$$
+    für ein $p \in Q$ (also $x,y \in \text{Kl[$p$]}$). Dann existiert für jedes $z \in \Sigma^*$ ein $r \in Q$, so dass $xz$ und $yz \in$ Kl[$r$], also gilt insbesondere 
+    $$xz \in L(A) \iff yz \in L(A)$$
+    \end{mainbox}
+
+    \textbf{Beweis: }
+    
+    Aus der Existenz der Berechnungen 
+
+    $(q_0, x) \sststile{A}{*} (p, \lambda)$ und $(q_0, y) \sststile{A}{*} (p, \lambda)$
+    von $A$ folgt die Existenz der Berechnungen auf $xz$ und $yz$:
+
+    $(q_0, xz) \sststile{A}{*} (p, z)$ und $(q_0, yz) \sststile{A}{*} (p, z)$ für alle $z \in \Sigma^*$.
+
+    Wenn $r = \hat{\delta}_A(p, z)$ ist, dann ist die Berechnung von $A$ auf $xz$ und $yz$:
+
+    $(q_0, xz) \sststile{A}{*} (p, z) \sststile{A}{*} (r, \lambda)$ und $(q_0, yz) \sststile{A}{*} (p, z) \sststile{A}{*} (r, \lambda)$.
+
+    Wenn $r \in F$, dann sind beide Wörter $xz$ und $yz$ in $L(A)$. Falls $r \notin F$, dann sind $xz, yz \notin L(A)$.
+
+    \hspace*{0pt}\hfill$\blacksquare$
+
+    \myTitle{Bemerkungen}\\
+    \begin{itemize}[label=-]
+        \item Von den 3 vorgestellten Methoden, ist diese Methode die einzige, die (unter der richtigen Anwendung) garantiert für jede nichtreguläre Sprache funktioniert.
+        \item Um die Nichtregularität von $L$ zu beweisen, verwenden wir die Endlichkeit von $Q$ und das Pigeonhole-Principle.
+    \end{itemize}
+
+    \begin{subbox}{Beispielaufgabe - Lemma 3.3}
+
+    Betrachten wir mal eine Beispielaufgabe mit dieser Methode am Paradebeispiel $$L = \{0^n1^n \mid n \in \N\}$$
+    \end{subbox}
+
+    Nehmen wir zum Widerspruch an $L$ sei regulär.
+
+    Dann existiert ein EA $A = (Q, \Sigma, \delta, q_0, F)$ mit $L(A) = L$.
+
+    Wir betrachten die Wörter \comm{$0^1, \dots, 0^{|Q|+1}$}. Per Pigeonhole-Principle existiert O.B.d.A. $i < j$, so dass 
+    $$\hat{\delta}(q_0, 0^i) = \hat{\delta}(q_0, 0^{j})$$ 
+    Nach Lemma 3.3 gilt
+    $$0^iz \in L \iff 0^jz \in L$$
+    für alle $z \in (\Sigma_{\text{bool}})^*$. Dies führt aber zu einem Widerspruch, weil für \comm{$z = 1^i$} das Wort \comm{$0^i1^i \in L$ aber $0^j1^i \notin L$}.
+    \(\hfill\blacksquare\)
+
+    \comm{Hier ist der markierte Teil, der einzige Teil der je nach Aufgabe anders ausgefüllt werden muss.}
+    \begin{itemize}
+        \item Wahl der Wörter
+        \item Wahl des Suffixes
+        \item Argumentation zum Widerspruch. Die Argumentation kann more involved sein, wenn nicht offensichtlich.
+    \end{itemize}
+
+
+    \subsubsection{Pumping Lemma Methode}
+    \begin{mainbox}{Pumping Lemma}
+        Sei $L$ regulär. Dann existiert eine Konstante $n_0 \in \N$, so dass jedes Wort $w \in \Sigma^*$ mit $|w| \geq n_0$ in drei Teile $x, y$ und $z$ zerlegen lässt, das heisst $w = yxz$, wobei
+        \begin{enumerate}[label=(\roman*)]
+            \item $|yx| \leq n_0$
+            \item $|x| \geq 1$
+            \item entweder $\{yx^kz \mid k \in \N\} \subseteq L$ oder $\{yx^kz \mid k \in \N\} \cap L = \emptyset$.
+        \end{enumerate}
+    \end{mainbox}
+    
+    \textbf{Beweis}
+
+    Sei $L \in \Sigma^*$ regulär. Dann existiert ein EA $A= (Q, \Sigma, \delta_A, q_0, F)$, so dass $L(A) = L$.
+    
+    Sei $n_0 = |Q|$ und $w \in \Sigma^*$ mit $|w| \geq n_0$. Dann ist $w = w_1w_2...w_{n_0}u$, wobei $w_i \in \Sigma$ für $i = 1, ..., n_0$ und $u \in \Sigma^*$. Betrachten wir die Berechnung auf $w_1w_2...w_{n_0}$:
+
+    $$(q_0, w_1w_2w_3...w_{n_0}) \sststile{A}{} (q_1, w_2w_3...w_{n_0}) \sststile{A}{} ... \sststile{A}{} (q_{n_0-1}, w_{n_0}) \sststile{A}{} (q_{n_0}, \lambda)$$
+
+    In dieser Berechnung kommen $n_0 + 1$ Zustände $q_0,q_1, ..., q_{n_0}$ vor. Da $|Q| = n_0$, existieren $i, j \in \{0, 1, ..., n_0\}, i < j$, so dass $q_i = q_j$. Daher haben wir in der Berechnung die Konfigurationen
+    $$(q_0, w_1w_2w_3...w_{n_0}) \sststile{A}{*} (q_i, w_{i+1}w_{i+2}...w_{n_0}) \sststile{A}{*} (q_i, w_{j+1}...w_{n_0}) \sststile{A}{*} (q_{n_0}, \lambda)$$
+    Dies impliziert
+    $$(q_i, w_{i+1}w_{i+2}...w_j) \sststile{A}{*} (q_i, \lambda) \qquad (1)$$
+    Wir setzen nun $y = w_1...w_i$, $x = w_{i+1}...w_j$ und $z = w_{j+1}...w_{n_0}u$, so dass $w = yxz$.
+
+    Wir überprüfen nun die Eigenschaften (i),(ii) und (iii):
+    \begin{enumerate}[label = (\roman*)]
+        \item $yx = w_1...w_iw_{i+1}...w_j$ und daher $|yx| = j \leq n_0$.
+        \item Da $|x| \geq j-i$ und $i < j$, ist $|x| \geq 1$.
+        \item (1) impliziert $(q_i, x^k) \sststile{A}{*} (q_i, \lambda)$ für alle $k \in \N$.
+        Folglich gilt für alle $k \in \N$:
+        $$(q_0, yx^kz) \sststile{A}{*} (q_i, x^kz) \sststile{A}{*} (q_i, z) \sststile{A}{*} (\hat{\delta}_A(q_i, z), \lambda)$$
+        Wir sehen, dass für alle $k \in \N$ die Berechnungen im gleichen Zustand $q_{end} = \hat{\delta}_A(q_i, z)$ enden. Falls also $q_{end} \in F$, akzeptiert $A$ alle Wörter aus $\{yx^kz \mid k \in \N\}$. Falls $q_{end}\notin F$, dann akzeptiert $A$ kein Wort aus $\{yx^kz \mid k \in \N\}$.
+    \end{enumerate}
+    \hspace*{0pt}\hfill$\blacksquare$
+
+
+
+    \begin{subbox}{Beispielaufgabe - Pumping Lemma}
+
+    Versuchen wir zu beweisen, dass 
+    $$L_2 = \{wabw^{\textbf{R}} \mid w \in \{a,b\}^*\}$$
+    nicht regulär ist.
+    \end{subbox}
+
+    Wir nehmen zum Widerspruch an, dass $L_2$ regulär ist. 
+
+Das Pumping-Lemma (Lemma 3.4) besagt, dass dann eine Konstante $n_0 \in \mathbb{N}$ existiert, so dass sich jedes Wort $w \in \Sigma*$ mit $|w| \geq n_0$ in drei Teile $y$, $x$, und $z$ zerlegen lässt. ($\implies w = yxz$). Wobei folgendes gelten muss:
+\begin{enumerate}[label=(\roman*)]
+    \item  $|yx| \leq n_0$
+    \item $|x| \geq 1$
+    \item \textbf{entweder} $\{yx^kz \mid k \in \mathbb{N} \} \subseteq L_2$ \textbf{oder} $\{yx^kz \mid k \in \mathbb{N} \} \cap L_2 = \emptyset$
+\end{enumerate}
+
+    Wir wählen \comm{$w = a^{n_0}aba^{n_0}$}. Es ist leicht zu sehen das $|w| = 2n_0 + 2 \geq n_0$. \newline \newline
+
+    Sei \(y, x, z\) die Zerlegung die (i)-(iii) nach dem PL erfüllt.
+
+Da nach (i), $|yx| \leq n_0$ gelten muss, haben wir \comm{$y=a^l$ und $x=a^m$} für beliebige $l,m \in \N, l+m \leq n_0$. 
+\newline 
+Somit gilt \comm{$z = a^{n_0 - (l+m)}aba^{n_0}$}
+
+Nach (ii) ist $m \geq 1$. 
+
+Wir haben also $\{yx^kz \mid k \in \mathbb{N} \} = \{a^{n_0-m+km}aba^{n_0} \mid k \in \mathbb{N} \}$
+
+    Da $\comm{yx^1z} = a^{n_0}aba^{n_0} \in L_2$ gilt, folgt 
+$$\{a^{n_0-m+km}aba^{n_0} \mid k \in \mathbb{N} \}  \cap L_2 \neq \emptyset$$
+Wenn wir nun \comm{$k = 0$} wählen und uns daran erinnern, dass $m \geq 1$, erhalten wir folgendes
+$$\Rightarrow yx^0z = yz = a^{n_0-m}aba^{n_0} \notin L_2$$
+Daraus folgt,
+$$\{a^{n_0-m+km}aba^{n_0} \mid k \in \N \} \nsubseteq L_2$$
+Somit gilt (iii) nicht.
+
+Dies ist ein Widerspruch! Somit haben wir gezeigt, dass die Sprache $L_2 = \{wabw^{\textbf{R}} \mid w \in \{a,b\}^*\}$ nicht regulär ist.
+
+\comm{Der markierte Teil ändert sich je nach Aufgabe.}
+\begin{itemize}
+    \item Wahl des Wortes
+    \item Anwendung von (i) und (ii) (kann eine Case-Distinction sein)
+    \item Wahl des \(k\) für den Widerspruch
+    \item Widerspruch herleiten (braucht manchmal ausführliche Argumente)
+\end{itemize}
+
+
+    \subsubsection{Kolmogorov Methode}
+    \begin{mainbox}{Satz 3.1}
+        Sei $L \subseteq (\Sigma_{\text{bool}})^*$ eine reguläre Sprache. Sei $L_x = \{y \in (\Sigma_{\text{bool}})^* \mid xy \in L\}$ für jedes $x\in (\Sigma_{\text{bool}})^*$. Dann existiert eine Konstante \textbf{const}, so dass für alle $x, y \in (\Sigma_\text{bool})^*$
+        $$K(y) \leq \left\lceil \log_2(n+1)\right\rceil + \textbf{ const},$$
+        falls $y$ das $n$-te Wort in der Sprache $L_x$ ist.
+    \end{mainbox}
+    \textbf{Beweis} \comm{TODO. Der Beweis find ich auch relevant, auch wenn nicht aufgeschrieben.}
+
+
+    Wie wir sehen werden, beruht der Nichtregularitätsbeweis darauf, dass die Differenz von $|w_{n+1}| - |w_n|$ für kanonische Wörter $(w_i)_{i \in \N}$ beliebig gross werden kann.
+
+
+
+    \begin{subbox}{Beispielaufgabe - Kolmogorov Methode}
+
+    Verwenden Sie die Methode der Kolmogorov-Komplexität, um zu zeigen, dass die Sprache 
+    $$L_1 = \{0^{n^2 \cdot 2^n} \mid n \in \N\}$$
+    nicht regulär ist.
+    \end{subbox}
+
+    Angenommen $L_1$ sei regulär. 
+    
+    Wir betrachten 
+    $$L_{\comm{0^{m^2 \cdot 2^m + 1}}} = \{y \mid 0^{m^2 \cdot 2^m + 1}y \in L_1\}$$
+    für \(m \in \N\) beliebig.
+
+    Da
+    \begin{align*}
+        \comm{ (m+1)^2 \cdot 2^{m+1} - (m^2 \cdot 2^m + 1)}&\comm{= (m^2 + 2m + 1)\cdot 2^{m+1} - m^2\cdot2^m-1}\\
+        &\comm{= m^2 \cdot 2^m + m^2 \cdot 2^m + (2m + 1) \cdot 2^{m+1}- m^2\cdot2^m-1}\\
+        &\comm{= (m^2 + 4m + 2) \cdot 2^m-1}
+    \end{align*}
+    ist $y_1 = 0^{(m^2 + 4m + 2) \cdot 2^m - 1}$ das kanonisch erste Wort der Sprache $L_{0^{m^2\cdot 2^m +1}}$.
+
+    Nach Satz 3.1 existiert eine Konstante $c$, unabhängig von $m$, so dass 
+    $$K(y_1) \leq \left\lceil\log_2(1+1)\right\rceil + c = 1+ c.$$
+    Die Anzahl aller Programme, deren Länge kleiner oder gleich $1 + c$ sind, ist endlich. 
+    
+    Da es aber unendlich \textbf{unterschiedliche} Wörter der Form $0^{(m^2 + 4m + 2) \cdot 2^m - 1}$ gibt, ist dies ein Widerspruch.
+
+    Demzufolge ist $L_1$ nicht regulär.
+
+    $\hfill\blacksquare$
+
+    \comm{Der markierte Teil ändert sich je nach Aufgabe.}
+\begin{itemize}
+    \item Wahl der Präfixsprache
+    \item Richtiges erstes/zweites Wort
+    \item Beweis dass es unendlich viele unterschiedliche \(y_1\) gibt, für Widerspruch
+\end{itemize}
+
+\subsection{Weitere Aufgaben}
+
+    \begin{subbox}{Beispielaufgabe - Direkte Methode (Lemma 3.3)}
+
+    Verwende eine direkte Argumentation über den Automaten (unter Verwendung von Lemma 3.3), um zu zeigen, dass die Sprache
+    $$L_2 = \{w \in \{0,1\}^* \mid |u|_0 \leq |u|_1 \text{ für alle Präfixe }u \text{ von }w\}$$
+    nicht regulär ist.
+    \end{subbox}
+
+    Angenommen $L_2$ sei regulär. 
+    
+    Dann existiert ein Endlicher Automat $A = (Q, \{0,1\}, \delta, q_0, F)$ mit $L(A) = L_2$. 
+    
+    Wir betrachten die Wörter
+    $$1, 1^2, ..., 1^{|Q|+1}$$
+    Per Pigeonhole-Principle existiert $i, j \in \{1, ..., |Q|+1\}$ mit $i < j$, so dass 
+    $$\hat{\delta}(q_0, 1^i) = \hat{\delta}(q_0, 1^j).$$
+    Nach Lemma 3.3 gilt nun für alle $z \in \{0,1\}^*$
+    $$1^iz \in L_2 \iff 1^jz \in L_2$$
+
+    Sei $z = 0^j$. Wir haben dann also 
+    $$1^iz = 1^i0^j \notin L_2,$$
+    da $i < j$ und ein Wort auch ein Präfix von sich selbst ist (Die Bedingung $|1^i0^j|_0 \leq |1^i0^j|_1$ wird verletzt).
+    Aber wir haben auch
+    $$1^jz = 1^j0^j \in L_2,$$
+    was zu einem Widerspruch führt. Also ist die Annahme falsch und $L_2$ nicht regulär.
+
+    $\hfill\blacksquare$
+
+\begin{subbox}{Einschub - Sprachen mit Einsymbolalphabet}
+    Angenommen es handelt sich bei $L \subseteq \Sigma^*$ um eine Sprache über einem unären Alphabet ($|\Sigma| = 1, \Sigma = \{x\}$).
+
+    Dann gilt: $$\forall w \in \Sigma^*: w = x^{|w|}$$
+    Insbesondere gibt es für jede Länge nur ein Wort. 
+    
+    Sei die Folge $(w_i)_{i \in \N}$ kanonisch geordnet, so dass $w_i \in L$ (Wenn $L$ endlich betrachten wir nur endlich viele Wörter der Folge).
+    
+    Durch das gilt folgendes
+    $$\forall w \in \Sigma^*. \ \forall k \in \N. \ |w_k| < |w| < |w_{k+1}| \implies w \notin L$$
+\end{subbox}
+
+
+    \begin{subbox}{Beispielaufgabe 2 - Pumping Lemma}
+
+    Zeigen Sie, dass 
+    $$L = \{0^{n\cdot \lceil \sqrt{n}\rceil} \mid n \in \N\}$$ 
+    nicht regulär ist.
+    \end{subbox}
+
+    Angenommen $L = \{0^{0\cdot \lceil \sqrt{0}\rceil}, 0^{1\cdot \lceil \sqrt{1}\rceil}, 0^{2\cdot \lceil \sqrt{2}\rceil}, ...\}$ sei regulär.
+
+    Seien  $w_0, w_1, w_2, ...$ die Wörter von $L$ in kanonischer Reihenfolge. 
+    Nach dem Pumping Lemma gibt es ein $n_0 \in \N$, dass die Bedingungen (i)-(iii) erfüllt sind.
+
+    Wir wählen $w = w_{n_0^2} = 0^{n_0^2\lceil\sqrt{n_0^2}\rceil} \in L$. 
+    
+    Es ist leicht zu sehen das $|w| \geq n_0$ und folglich existiert eine Aufteilung $w = yxz$ ($y = 0^l$, $x = 0^m$ und $z = 0^{n_0^2\lceil\sqrt{n_0^2}\rceil-l-m}$), die (i)-(iii) erfüllt. 
+    
+    Da nach (i) $|yx| = l + m \leq n_0$, folgt $|x| = m \leq n_0$.
+
+    Aus (ii) folgt $|x| = m \geq 1$.
+
+    Wegen $|yx^2z| = |yxz| + |x|$ gilt also $|yxz| < |yx^2z| \leq |yxz| + n_0$.
+
+    Das nächste Wort in $L$ nach $w_{n_0^2}$ ist $w_{n_0^2+1}$ und es gilt
+    \begin{align*}
+        |w_{n_0^2+1}| - |w_{n_0^2}| &= (n_0^2+1)\cdot \lceil\sqrt{n_0^2 + 1}\rceil - n_0^2 \cdot \lceil\sqrt{n_0^2}\rceil\\
+        &= (n_0^2+1)\cdot\lceil\sqrt{n_0^2+1}\rceil - n_0^2 \cdot n_0\\
+        &> (n_0^2+1)\cdot n_0 - n_0^3\\
+        &= n_0
+    \end{align*}
+    Die strikte Ungleichung gilt da $n_0 \in \N$ und $n_0 = \left\lceil\sqrt{n_0^2}\right\rceil < \sqrt{n_0^2+1} \leq \left\lceil\sqrt{n_0^2+1}\right\rceil$.
+
+    $$\implies |w_{n_0^2+1}| \geq |w_{n_0^2}| + (n_0 + 1)$$
+
+    Somit gilt 
+    $$|w_{n_0^2}| < |yx^2z| < |w_{n_0^2+1}|$$
+    Daraus folgt $yx^2z \notin L$, während $yxz \in L$, in Widerspruch zu (iii).
+
+    $\hfill\blacksquare$
+
+
+
+    \begin{subbox}{Beispielaufgabe 3 - Kolmogorov Methode}
+
+    Zeigen Sie, dass 
+    $$L = \{0^{n\cdot \lceil \sqrt{n}\rceil} \mid n \in \N\}$$ 
+    nicht regulär ist.
+    \end{subbox}
+
+    Widerspruchsannahme: Sei $L$ regulär.
+
+   Wir betrachten $$L_{0^{m\cdot \lceil \sqrt{m}\rceil + 1}} = \{y \in \Sigma^* \mid 0^{m\cdot \lceil \sqrt{m}\rceil + 1}y \in L\}$$
+
+   Dann ist für jedes $m \in \N$ das Wort $$y_1 = 0^{(m+1)\cdot \lceil \sqrt{m+1}\rceil - (m\cdot \lceil \sqrt{m}\rceil + 1)}$$
+   das kanonisch erste Wort der Sprache $L_{0^{m\cdot \lceil \sqrt{m}\rceil + 1}}$.
+
+    Nach Satz 3.1 existiert eine Konstante $c$, so dass gilt
+    $$K(y_1) \leq \lceil\log_2(1+1)\rceil + c = 1 + c$$
+    für jedes $m \in \N$.
+
+    Da die Länge von $|y_1|$
+    \begin{align*}
+        |y_1| &= (m+1)\cdot \lceil \sqrt{m+1}\rceil - (m\cdot \lceil \sqrt{m}\rceil + 1)\\
+             &\geq (m+1) \cdot  \lceil \sqrt{m}\rceil -m\cdot \lceil \sqrt{m}\rceil -1\\
+             &= \lceil \sqrt{m}\rceil -1 \overset{m \to \infty}{\longrightarrow} \infty
+    \end{align*}
+    beliebig gross werden kann, gibt es unendlich viele Wörter von dieser Form.
+
+    Dies ist ein Widerspruch, da es nur endlich viele Programme der Länge maximal $1+c$ geben kann.
+
+    $\hfill\blacksquare$

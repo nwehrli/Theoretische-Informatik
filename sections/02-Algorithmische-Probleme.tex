@@ -1,0 +1,103 @@
+\section{Algorithmische Probleme}
+
+	Mathematische Definition folgt in Kapitel 4 (Turingmaschinen).
+	\begin{mainbox}{Algorithmen - Provisorische Definition}
+		Vorerst betrachten wir Programme, die \textbf{für jede zulässige Eingabe halten und eine Ausgabe liefern}, als Algorithmen.
+
+		Wir betrachten ein Programm (Algorithmus) $A$ als Abbildung $A: \Sigma_1^* \to \Sigma_2^*$ für beliebige Alphabete $\Sigma_1$ und $\Sigma_2$. Dies bedeutet, dass 
+		\begin{enumerate}[label=(\roman*)]
+			\item die Eingaben als Wörter über $\Sigma_1$ kodiert sind,
+			\item die Ausgaben als Wörter über $\Sigma_2$ kodiert sind und
+			\item $A$ für jede Eingabe eine eindeutige Ausgabe bestimmt.
+		\end{enumerate}
+	\end{mainbox}
+
+	$A$ und $B$ äquivalent $\iff$ Eingabealphabet $\Sigma$ gleich, $A(x) = B(x), \forall x \in \Sigma^*$
+	
+	Ie. diese Notion von ''Äquivalenz'' bezieht sich nur auf die Ein und Ausgabe.
+
+
+
+
+	\begin{mainbox}{Entscheidungsproblem}
+		Das \textbf{Entscheidungsproblem $(\Sigma, L)$} für ein gegebenes Alphabet $\Sigma$ und eine gegebene Sprache $L \subseteq \Sigma^*$ ist, für jedes $x \in \Sigma^*$ zu entscheiden, ob 
+		$$x \in L \text{ oder } x \notin L.$$
+		Ein Algorithmus $A$ \textbf{löst} das Entscheidungsproblem $(\Sigma, L)$, falls für alle $x \in \Sigma^*$ gilt:
+		$$A(x) = \begin{cases}
+			1, &\text{falls }x \in L,\\
+			0, &\text{falls }x \notin L.
+		\end{cases}$$
+		Wir sagen auch, dass $A$ die Sprache $L$ erkennt.
+	\end{mainbox}
+
+
+
+
+
+
+	\begin{subbox}{Rekursive Sprachen}
+		Wenn für eine Sprache $L$ ein Algorithmus existiert, der $L$ erkennt, sagen wir, dass $L$ \textbf{rekursiv} ist.
+	\end{subbox}
+
+	Wir sind oft an spezifischen Eigenschaften von Wörtern aus $\Sigma^*$ interessiert, die wir mit einer Sprache $L \subseteq \Sigma^*$ beschreiben können.
+
+	Dabei sind dann $L$ die Wörter, die die Eigenschaft haben und $L^\complement = \Sigma^* \setminus L$ die Wörter, die diese Eigenschaft nicht haben. 
+
+	Jetzt ist die allgemeine Formulierung von Vorteil!
+
+
+
+	\begin{enumerate}[label=\roman*.]
+		\item \textbf{Primzahlen finden}: 
+		
+		Entscheidungsproblem $(\Sigma_{\text{bool}}, L_p)$ wobei \\
+        $L_p = \{x \in (\Sigma_{\text{bool}})^* \mid \text{Nummer}(x) \text{ ist prim}\}$.
+		\item \textbf{Syntaktisch korrekte Programme}: 
+		
+		Entscheidungsproblem $(\Sigma_{\text{Tastatur}}, L_{C++})$ wobei\\ 
+        $L_{C++} = \{x \in (\Sigma_{\text{Tastatur}})^* \mid x \text{ ist ein syntaktisch korrektes C++ Programm}\}$.
+		\item \textbf{Hamiltonkreise finden: } 
+		
+		Entscheidungsproblem $(\Sigma, \text{HK})$ wobei $\Sigma = \{0,1,\#\}$ und \\
+        HK$=\{x \in \Sigma^* \mid x \text{ kodiert einen Graphen, der einen Hamiltonkreis enthält.}\}$
+	\end{enumerate}
+	Äquivalenzprobleme $\subset$ Entscheidungsprobleme
+
+
+
+	\begin{mainbox}{}
+		Seien $\Sigma$ und $\Gamma$ zwei Alphabete. 
+		\begin{itemize}[label=-]
+			\item Wir sagen, dass ein Algorithmus $A$ eine \textbf{Funktion (Transformation) $f: \Sigma^* \to \Gamma^*$ berechnet (realisiert)}, falls
+			$$A(x) = f(x) \text{ für alle } x \in \Sigma^*$$
+			\item Sei $R \subseteq \Sigma^* \times \Gamma^*$ eine Relation in $\Sigma^*$ und $\Gamma^*$. Ein Algorithmus \textbf{$A$ berechnet $R$} 
+			(bzw. \textbf{löst das Relationsproblem $R$}), falls für jedes $x \in \Sigma^*$, für das ein $y \in \Gamma^*$ mit $(x,y) \in R$ existiert, gilt:
+			$$(x, A(x)) \in R$$
+		\end{itemize}
+		
+	\end{mainbox}
+
+
+
+
+	\begin{mainbox}{Optimierungsproblem}
+		Ein \textbf{Optimierungsproblem} ist ein $6$-Tupel $\mathcal{U} = (\Sigma_I, \Sigma_O, L, M, \text{cost}, \text{goal})$, wobei:
+		\begin{enumerate}[label=(\roman*)]
+			\item $\Sigma_I$ ist ein Alphabet (genannt \textbf{Eingabealphabet}),
+			\item $\Sigma_O$ ist ein Alphabet (genannt \textbf{Ausgabealphabet}),
+			\item $L \subseteq \Sigma_I^*$ ist die Sprache der \textbf{zulässigen Eingaben} (als Eingaben kommen nur Wörter in Frage, die eine sinnvolle Bedeutung haben). 
+			Ein $x \in L$ wird ein \textbf{Problemfall (Instanz) von $\mathcal{U}$} genannt.
+			\item $M$ ist eine Funktion von $L$ nach $\mathcal{P}(\Sigma_O^*)$, und für jedes $x \in L$ ist $M(x)$ die \textbf{Menge der zulässigen Lösungen für $x$},
+			\item \textbf{cost} ist eine Funktion, \textbf{cost}$: \bigcup_{x \in L}(\mathcal{M}(x)\times\{x\}) \to \R^+$, genannt \textbf{Kostenfunktion},
+			\item \textbf{goal} $\in \{\text{Minimum}, \text{Maximum}\}$ ist das \textbf{Optimierungsziel}.
+		\end{enumerate}	
+        Eine zulässige Lösung $\alpha \in \mathcal{M}(x)$ heisst \textbf{optimal} für den Problemfall $x$ des Optimierungsproblems $\mathcal{U}$, falls 
+		\begin{center}
+			cost($\alpha, x$) $= \textbf{Opt}_\mathcal{U}(x) = \text{ goal}\{\text{cost}(\beta, x) \mid \beta \mathcal{M}(x)\}$.
+		\end{center}
+		Ein Algorithmus $A$ \textbf{löst $\mathcal{U}$}, falls für jedes $x \in L$
+		\begin{enumerate}[label=(\roman*)]
+			\item $A(x) \in \mathcal{M}(x)$
+			\item cost$(A(x), x) = \text{ goal}\{\text{cost}(\beta, x) \mid \beta \in \mathcal{M}(x)\}$.
+		\end{enumerate} 
+	\end{mainbox}
