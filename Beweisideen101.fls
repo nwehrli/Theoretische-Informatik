@@ -1311,8 +1311,6 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\tex\latex\wasysym\uwasy.fd
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy8.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy6.tfm
-INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
-INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 OUTPUT Beweisideen101.toc
 INPUT .\sections\01-Grundbegriffe.tex
 INPUT sections\01-Grundbegriffe.tex
@@ -1321,6 +1319,8 @@ INPUT sections\01-Grundbegriffe.tex
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT .\sections\02-Algorithmische-Probleme.tex
 INPUT sections\02-Algorithmische-Probleme.tex
@@ -1403,6 +1403,10 @@ INPUT .\Images\Schrittrelation.png
 INPUT .\Images\Schrittrelation.png
 INPUT .\Images\Schrittrelation.png
 INPUT .\Images\Schrittrelation.png
+INPUT .\sections\08-Einstieg-Berechenbarkeit.tex
+INPUT sections\08-Einstieg-Berechenbarkeit.tex
+INPUT .\sections\08-Einstieg-Berechenbarkeit.tex
+INPUT sections\08-Einstieg-Berechenbarkeit.tex
 INPUT .\Images\Abzählen.png
 INPUT .\Images\Abzählen.png
 INPUT Images\Abzählen.png
@@ -1432,6 +1436,10 @@ INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy10.tfm
 INPUT C:\Users\nshar\AppData\Local\Programs\MiKTeX\fonts\tfm\public\wasy\wasy7.tfm
+INPUT .\sections\09-Reduktion.tex
+INPUT sections\09-Reduktion.tex
+INPUT .\sections\09-Reduktion.tex
+INPUT sections\09-Reduktion.tex
 INPUT .\Images\Basic_EE-Reduktion.png
 INPUT .\Images\Basic_EE-Reduktion.png
 INPUT Images\Basic_EE-Reduktion.png
