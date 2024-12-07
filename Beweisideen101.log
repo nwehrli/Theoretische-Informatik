@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  5 NOV 2024 12:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.9)  26 NOV 2024 10:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -928,35 +928,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--125
  []
 
 [24] [25] [26]) (sections/06-NEA.tex [27] [28] [29]
-<Images/Beispiel_NEA.png, id=667, 804.50563pt x 246.9225pt>
+<Images/Beispiel_NEA.png, id=592, 804.50563pt x 246.9225pt>
 File: Images/Beispiel_NEA.png Graphic file (type png)
 <use Images/Beispiel_NEA.png>
 Package pdftex.def Info: Images/Beispiel_NEA.png  used on input line 107.
 (pdftex.def)             Requested size: 404.71353pt x 124.21448pt.
-<Images/Berechnungsbaum.png, id=669, 620.3175pt x 357.335pt>
+<Images/Berechnungsbaum.png, id=594, 620.3175pt x 357.335pt>
 File: Images/Berechnungsbaum.png Graphic file (type png)
 <use Images/Berechnungsbaum.png>
 Package pdftex.def Info: Images/Berechnungsbaum.png  used on input line 117.
 (pdftex.def)             Requested size: 303.53708pt x 174.85031pt.
  [30 <./Images/Beispiel_NEA.png> <./Images/Berechnungsbaum.png>]
-<Images/Potenzmengenkonstruktion_Beispiel.png, id=679, 679.03688pt x 417.56pt>
+<Images/Potenzmengenkonstruktion_Beispiel.png, id=604, 679.03688pt x 417.56pt>
 File: Images/Potenzmengenkonstruktion_Beispiel.png Graphic file (type png)
 <use Images/Potenzmengenkonstruktion_Beispiel.png>
 Package pdftex.def Info: Images/Potenzmengenkonstruktion_Beispiel.png  used on input line 166.
 (pdftex.def)             Requested size: 379.4175pt x 233.3159pt.
-<Images/NEA_A_k.png, id=680, 617.80812pt x 118.94438pt>
+<Images/NEA_A_k.png, id=605, 617.80812pt x 118.94438pt>
 File: Images/NEA_A_k.png Graphic file (type png)
 <use Images/NEA_A_k.png>
-Package pdftex.def Info: Images/NEA_A_k.png  used on input line 177.
+Package pdftex.def Info: Images/NEA_A_k.png  used on input line 176.
 (pdftex.def)             Requested size: 404.71353pt x 77.92093pt.
- [31 <./Images/Potenzmengenkonstruktion_Beispiel.png>] [32 <./Images/NEA_A_k.png>] [33]) (sections/07-TM.tex [34]
-<Images/Turingmaschine.png, id=709, 872.25874pt x 288.07625pt>
+ [31 <./Images/Potenzmengenkonstruktion_Beispiel.png>] [32 <./Images/NEA_A_k.png>] [33]) (sections/07-TM.tex
+Overfull \hbox (28.42923pt too wide) in paragraph at lines 4--6
+\OT1/cmr/bx/n/12 Motivation und []Uberblick \OT1/cmr/m/n/10.95 For-mal-isierung notwendig, um math-e-ma-tisch ^^?uber die au-toma-tis-che Unl^^?osbarkeit
+ []
+
+[34]
+<Images/Turingmaschine.png, id=634, 872.25874pt x 288.07625pt>
 File: Images/Turingmaschine.png Graphic file (type png)
 <use Images/Turingmaschine.png>
 Package pdftex.def Info: Images/Turingmaschine.png  used on input line 30.
 (pdftex.def)             Requested size: 354.12144pt x 116.95155pt.
  [35 <./Images/Turingmaschine.png>]
-<Images/Schrittrelation.png, id=723, 1039.63406pt x 289.08pt>
+<Images/Schrittrelation.png, id=648, 1039.63406pt x 289.08pt>
 File: Images/Schrittrelation.png Graphic file (type png)
 <use Images/Schrittrelation.png>
 Package pdftex.def Info: Images/Schrittrelation.png  used on input line 63.
@@ -966,636 +971,611 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--200
 []\OT1/cmr/m/n/10.95 Eine \OT1/cmr/bx/n/10.95 nicht-de-ter-min-is-tis-che Tur-ing-mas-chine (NTM) \OT1/cmr/m/n/10.95 ist ein $7$-Tupel $\OML/cmm/m/it/10.95 M \OT1/cmr/m/n/10.95 =
  []
 
-[38] [39]) [40]
-<Images/Abzählen.png, id=764, 444.66125pt x 226.34563pt>
+[38] [39]) (sections/08-Einstieg-Berechenbarkeit.tex [40]
+<Images/Abzählen.png, id=689, 444.66125pt x 226.34563pt>
 File: Images/Abzählen.png Graphic file (type png)
 <use Images/Abzählen.png>
-Package pdftex.def Info: Images/Abzählen.png  used on input line 254.
+Package pdftex.def Info: Images/Abzählen.png  used on input line 53.
 (pdftex.def)             Requested size: 354.12144pt x 180.2582pt.
-<Images/Diagonalisierung.png, id=765, 414.54875pt x 209.28188pt>
+<Images/Diagonalisierung.png, id=690, 414.54875pt x 209.28188pt>
 File: Images/Diagonalisierung.png Graphic file (type png)
 <use Images/Diagonalisierung.png>
-Package pdftex.def Info: Images/Diagonalisierung.png  used on input line 280.
+Package pdftex.def Info: Images/Diagonalisierung.png  used on input line 79.
 (pdftex.def)             Requested size: 354.12144pt x 178.78136pt.
- [41 <./Images/Abzählen.png>] [42 <./Images/Diagonalisierung.png>] [43]
-<Images/Basic_EE-Reduktion.png, id=782, 480.79625pt x 136.00812pt>
+ [41 <./Images/Abzählen.png>] [42 <./Images/Diagonalisierung.png>]) (sections/09-Reduktion.tex [43]
+<Images/Basic_EE-Reduktion.png, id=707, 480.79625pt x 136.00812pt>
 File: Images/Basic_EE-Reduktion.png Graphic file (type png)
 <use Images/Basic_EE-Reduktion.png>
-Package pdftex.def Info: Images/Basic_EE-Reduktion.png  used on input line 436.
+Package pdftex.def Info: Images/Basic_EE-Reduktion.png  used on input line 38.
 (pdftex.def)             Requested size: 404.71353pt x 114.48885pt.
- [44 <./Images/Basic_EE-Reduktion.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 471.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 471.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 471.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 471.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\complement' on input line 471.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 471.
-
-[45] [46] [47] [48]
-<Images/17a_Zeichnung.png, id=819, 463.7325pt x 228.855pt>
+ [44 <./Images/Basic_EE-Reduktion.png>] [45] [46] [47]
+<Images/17a_Zeichnung.png, id=738, 463.7325pt x 228.855pt>
 File: Images/17a_Zeichnung.png Graphic file (type png)
 <use Images/17a_Zeichnung.png>
-Package pdftex.def Info: Images/17a_Zeichnung.png  used on input line 718.
+Package pdftex.def Info: Images/17a_Zeichnung.png  used on input line 314.
 (pdftex.def)             Requested size: 354.12144pt x 174.7627pt.
- [49 <./Images/17a_Zeichnung.png>]
-<Images/18b_Zeichnung.png, id=827, 393.47pt x 203.25937pt>
+ [48] [49 <./Images/17a_Zeichnung.png>]
+<Images/18b_Zeichnung.png, id=755, 393.47pt x 203.25937pt>
 File: Images/18b_Zeichnung.png Graphic file (type png)
 <use Images/18b_Zeichnung.png>
-Package pdftex.def Info: Images/18b_Zeichnung.png  used on input line 805.
+Package pdftex.def Info: Images/18b_Zeichnung.png  used on input line 401.
 (pdftex.def)             Requested size: 379.4175pt x 195.99828pt.
- [50] [51 <./Images/18b_Zeichnung.png>] [52] [53] [54] [55]
+ [50 <./Images/18b_Zeichnung.png>] [51] [52] [53] [54]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1114.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1114.
+(hyperref)                removing `math shift' on input line 726.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1114.
+(hyperref)                removing `subscript' on input line 726.
 
-<Images/RE-Reduzierbarkeit.png, id=884, 474.77374pt x 211.28937pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 726.
+
+[55]
+<Images/RE-Reduzierbarkeit.png, id=812, 474.77374pt x 211.28937pt>
 File: Images/RE-Reduzierbarkeit.png Graphic file (type png)
 <use Images/RE-Reduzierbarkeit.png>
-Package pdftex.def Info: Images/RE-Reduzierbarkeit.png  used on input line 1144.
+Package pdftex.def Info: Images/RE-Reduzierbarkeit.png  used on input line 754.
 (pdftex.def)             Requested size: 379.4175pt x 168.85762pt.
-[56 <./Images/RE-Reduzierbarkeit.png>]
+ [56 <./Images/RE-Reduzierbarkeit.png>])
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1220.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 1220.
+(hyperref)                removing `math shift' on input line 208.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1220.
+(hyperref)                removing `\in' on input line 208.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1220.
+(hyperref)                removing `subscript' on input line 208.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 208.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathrel' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathchoice' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lineskiplimit' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\maxdimen' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\vtop' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\baselineskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lineskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\everycr' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\tabskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\halign' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lineskiplimit' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\maxdimen' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\vtop' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\baselineskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lineskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\everycr' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\tabskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\halign' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lineskiplimit' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\maxdimen' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\vtop' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\baselineskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lineskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\everycr' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\tabskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\halign' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathsurround' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lineskiplimit' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\maxdimen' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\vtop' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\baselineskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lineskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\everycr' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\tabskip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\z@skip' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\halign' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 225.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 225.
 
 [57]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathrel' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchoice' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskiplimit' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\maxdimen' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vtop' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\baselineskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\everycr' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tabskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\halign' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskiplimit' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\maxdimen' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vtop' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\baselineskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\everycr' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tabskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\halign' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskiplimit' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\maxdimen' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vtop' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\baselineskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\everycr' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tabskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\halign' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskiplimit' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\maxdimen' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vtop' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\baselineskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\everycr' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tabskip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\halign' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1237.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1237.
-
-
-Overfull \hbox (29.90007pt too wide) in paragraph at lines 1264--1265
+Overfull \hbox (29.90007pt too wide) in paragraph at lines 252--253
 \OT1/cmr/m/n/10.95 F^^?ur den let-zten Punkt (4) muss man ^^?uberpr^^?ufen, ob in der Def-i-ni-tion von $\OML/cmm/m/it/10.95 L \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 M\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 j \OML/cmm/m/it/10.95 M[]\OMS/cmsy/m/n/10.95 g$
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1271.
+(hyperref)                removing `math shift' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 1271.
+(hyperref)                removing `\in' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1271.
+(hyperref)                removing `subscript' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1271.
-
-[58]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1283.
+(hyperref)                removing `math shift' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathrel' on input line 1283.
+(hyperref)                removing `math shift' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1283.
+(hyperref)                removing `\mathrel' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1283.
+(hyperref)                removing `\mathsurround' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathchoice' on input line 1283.
+(hyperref)                removing `\z@' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1283.
+(hyperref)                removing `\mathchoice' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1283.
+(hyperref)                removing `\mathsurround' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskiplimit' on input line 1283.
+(hyperref)                removing `\z@' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\maxdimen' on input line 1283.
+(hyperref)                removing `\lineskiplimit' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vtop' on input line 1283.
+(hyperref)                removing `\maxdimen' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\baselineskip' on input line 1283.
+(hyperref)                removing `\vtop' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1283.
+(hyperref)                removing `\baselineskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskip' on input line 1283.
+(hyperref)                removing `\z@skip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\everycr' on input line 1283.
+(hyperref)                removing `\lineskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tabskip' on input line 1283.
+(hyperref)                removing `\everycr' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1283.
+(hyperref)                removing `\tabskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\halign' on input line 1283.
+(hyperref)                removing `\z@skip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1283.
+(hyperref)                removing `\halign' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1283.
+(hyperref)                removing `\mathsurround' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskiplimit' on input line 1283.
+(hyperref)                removing `\z@' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\maxdimen' on input line 1283.
+(hyperref)                removing `\lineskiplimit' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vtop' on input line 1283.
+(hyperref)                removing `\maxdimen' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\baselineskip' on input line 1283.
+(hyperref)                removing `\vtop' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1283.
+(hyperref)                removing `\baselineskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskip' on input line 1283.
+(hyperref)                removing `\z@skip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\everycr' on input line 1283.
+(hyperref)                removing `\lineskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tabskip' on input line 1283.
+(hyperref)                removing `\everycr' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1283.
+(hyperref)                removing `\tabskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\halign' on input line 1283.
+(hyperref)                removing `\z@skip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1283.
+(hyperref)                removing `\halign' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1283.
+(hyperref)                removing `\mathsurround' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskiplimit' on input line 1283.
+(hyperref)                removing `\z@' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\maxdimen' on input line 1283.
+(hyperref)                removing `\lineskiplimit' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vtop' on input line 1283.
+(hyperref)                removing `\maxdimen' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\baselineskip' on input line 1283.
+(hyperref)                removing `\vtop' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1283.
+(hyperref)                removing `\baselineskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskip' on input line 1283.
+(hyperref)                removing `\z@skip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\everycr' on input line 1283.
+(hyperref)                removing `\lineskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tabskip' on input line 1283.
+(hyperref)                removing `\everycr' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1283.
+(hyperref)                removing `\tabskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\halign' on input line 1283.
+(hyperref)                removing `\z@skip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathsurround' on input line 1283.
+(hyperref)                removing `\halign' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@' on input line 1283.
+(hyperref)                removing `\mathsurround' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskiplimit' on input line 1283.
+(hyperref)                removing `\z@' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\maxdimen' on input line 1283.
+(hyperref)                removing `\lineskiplimit' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\vtop' on input line 1283.
+(hyperref)                removing `\maxdimen' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\baselineskip' on input line 1283.
+(hyperref)                removing `\vtop' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1283.
+(hyperref)                removing `\baselineskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lineskip' on input line 1283.
+(hyperref)                removing `\z@skip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\everycr' on input line 1283.
+(hyperref)                removing `\lineskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tabskip' on input line 1283.
+(hyperref)                removing `\everycr' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\z@skip' on input line 1283.
+(hyperref)                removing `\tabskip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\halign' on input line 1283.
+(hyperref)                removing `\z@skip' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1283.
+(hyperref)                removing `\halign' on input line 271.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1283.
+(hyperref)                removing `subscript' on input line 271.
 
-[59] [60] [61]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 271.
+
+[58] [59] [60]
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 1459.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 445.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 1459.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 445.
 
-[62] [63]
-Overfull \hbox (16.6534pt too wide) in paragraph at lines 1561--1562
+[61] [62]
+Overfull \hbox (16.6534pt too wide) in paragraph at lines 547--548
 []\OT1/cmr/m/n/10.95 Erzeuge f^^?ur jede Eingabe $\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OT1/cmr/m/n/10.95 ^^F[]$ zuerst $0[]$ auf einem zus^^?atzlichen Band und nutze das als Platz^^?uberwachung. 
  []
 
-[64] [65] [66] [67]
+[63] [64] [65] [66]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1829.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\in' on input line 1829.
+(hyperref)                removing `math shift' on input line 815.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1829.
+(hyperref)                removing `\in' on input line 815.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1855.
+(hyperref)                removing `math shift' on input line 815.
+
+[67]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1855.
+(hyperref)                removing `\leq' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1855.
+(hyperref)                removing `subscript' on input line 841.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1855.
+(hyperref)                removing `math shift' on input line 841.
 
 [68]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1915.
+(hyperref)                removing `math shift' on input line 901.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 1915.
+(hyperref)                removing `\leq' on input line 901.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1915.
+(hyperref)                removing `subscript' on input line 901.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1915.
+(hyperref)                removing `math shift' on input line 901.
 
-[69] [70] [71] 
+[69] [70] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (Beweisideen101.aux)
 Package rerunfilecheck Info: File `Beweisideen101.out' has not changed.
-(rerunfilecheck)             Checksum: BD26D706BE6AA93146171789F5596DCD;14918.
+(rerunfilecheck)             Checksum: D76EB151843A7C894A656F156D6595DD;12483.
  ) 
 Here is how much of TeX's memory you used:
- 41722 strings out of 476315
- 974753 string characters out of 5787197
+ 41703 strings out of 476315
+ 974754 string characters out of 5787197
  1877068 words of memory out of 5000000
- 61079 multiletter control sequences out of 15000+600000
+ 61067 multiletter control sequences out of 15000+600000
  530337 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,103p,796b,1149s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/public/wasy/dpi657\wasy10.pk> <C:\Users\nshar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/nshar/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Beweisideen101.pdf (72 pages, 1210819 bytes).
+Output written on Beweisideen101.pdf (71 pages, 1199637 bytes).
 PDF statistics:
- 1173 PDF objects out of 1200 (max. 8388607)
- 379 named destinations out of 1000 (max. 500000)
- 761 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1094 PDF objects out of 1200 (max. 8388607)
+ 366 named destinations out of 1000 (max. 500000)
+ 641 words of extra memory for PDF output out of 10000 (max. 10000000)
 

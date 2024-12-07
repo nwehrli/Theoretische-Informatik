@@ -168,8 +168,7 @@
         \end{figure}
     
     
-    
-        \subsection{Exponentiell mehr Zustände - manchmal}
+        \subsection{Mindestanzahl Zustände}
         Sei 
         $$L_k = \{x1y \mid x \in (\Sigma_{\text{bool}})^*, \ y \in (\Sigma_{\text{bool}})^{k-1}\}$$
         Folgender NEA $A_k$ mit $k+1$ akzeptiert $L_k$.
@@ -216,8 +215,8 @@
         
         \hspace*{0pt}\hfill$\blacksquare$
     
+        \myTitle{Generelles Schema}
     
-    \subsection{Mindestanzahl Zustände}
     
         Die Grundidee ist es $n$ Wörter anzugeben und zu beweisen, dass jedes von diesen $n$ Wörtern in einem eigenen Zustand enden muss.
         
@@ -255,6 +254,8 @@
                 $w_{n-1}$& &  & $z_{n-1, n}$
             \end{tabular}
         \end{table}
+        
+        \(\hfill\blacksquare\)
         \begin{itemize}[label=-]
             \item Wenn es offensichtlich ist, muss $\mathbf{(1)}$ nicht bei jedem Suffix begründet werden.
             \item Ein minimaler endlicher Automat ist nicht notwendig für den Beweis. Hilft aber fürs
